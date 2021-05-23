@@ -1,26 +1,25 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function ProductCard({permalink, image, name, description, price}) {
+export default function ProductCard({permalink, image, name, price}) {
   return (
-    <Link href="/product/[permalink]" as={`/product/${permalink}`}>
-      <a className="mb-5 d-block font-color-black cursor-pointer">
-        <div
-          className="mb-3"
-          style={{
-            paddingBottom: '125%',
-            background: `url("${image}") center center/cover`,
-          }}
-        />
-        <div className="violet-item">
-          <div className="another-div">
-            <p className="item-name">{name}</p>
-            {/*<p>{description}</p>*/}
-            <p className="item-price">{price}</p>{' '}
+    <div className="collection-item">
+      <div className="product-image-wrap">
+        <div className="item-description">
+          <Link href="/product/[permalink]" as={`/product/${permalink}`}>
+            <a className="div-block-7">
+              <img className="product-image" src={image} />
+            </a>
+          </Link>
+          <div className="image-name-sector">
+            <div className="mobile-act-main">
+              <div className="item-name">{name}</div>
+              <div className="item-price">{price}</div>
+            </div>
+            <div className="add-button"> Add + </div>
           </div>
-          <div className="add-button"> Add + </div>
         </div>
-      </a>
-    </Link>
+      </div>
+    </div>
   );
 }

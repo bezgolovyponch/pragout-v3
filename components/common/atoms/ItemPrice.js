@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 
 export const ItemPrice = () => {
   const [isShown, setIsShown] = useState(false);
-
   return (
     <div
       className="package-button-container"

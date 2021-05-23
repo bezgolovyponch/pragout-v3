@@ -9,12 +9,18 @@ class CorporateBanner extends Component {
     return (
       <div className="corporate-banner">
         <div className="corporate-event">
-          <div className="text-corporate-package-container">
-            <p className="top-text-ladies">Increase your team efficiency</p>
-            <h1 className="text-header">CORPORATE EVENTS</h1>
-            <p className="paragraph-text">
-              - Seminars and Conferences - Trade Shows - Appreciation Events - Team-Building Events - Product Launch
-              Events and even more
+          <div className="corporate-event-container">
+            <div className="text-corporate-package-container">
+              <p className="paragraph-text-corporate">Increase your team efficiency</p>
+              <br />
+              <h1 className="text-header">CORPORATE EVENTS</h1>
+            </div>
+            <p className="paragraph-list">
+              - Seminars and Conferences <br />
+              - Trade Shows <br />
+              - Appreciation Events <br />
+              - Team-Building Events <br />
+              - Product Launch events and even more <br />
             </p>
             <LinkButton className="button_contact" text="Show more" withIcon={false} />
           </div>

@@ -26,7 +26,9 @@ class ProductsBanner extends Component {
           </div>
         </div>
         <div className="products-wrapper">
-          <ProductRow products={products.slice(0, 4)} />
+          <div className="product-dynamic-list">
+            <ProductRow products={products.slice(0, 4)} />
+          </div>
         </div>
       </div>
     );

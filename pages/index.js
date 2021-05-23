@@ -2,10 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 import Root from '../components/common/Root';
 import Footer from '../components/common/Footer';
-import SocialMedia from '../components/common/SocialMedia';
 import ExploreBanner from '../components/productAssets/ExploreBanner';
 import HeroSection from '../components/homepage/HeroSection';
-import CategoryBanner from '../components/homepage/CategoryBanner';
+import {GirlsBanner} from '../components/homepage/GirlsBanner';
 import ProductsBanner from '../components/homepage/ProductsBanner';
 import CorporateBanner from '../components/homepage/CorporateBanner';
 import ContactFormBanner from '../components/homepage/ContactFormBanner';
@@ -19,9 +18,8 @@ const Home = () => (
     <HeroSection />
 
     <ProductsBanner />
-    <CategoryBanner />
+    <GirlsBanner />
     {/*    <ExploreBanner />*/}
-    {/*    <SocialMedia />*/}
     <CorporateBanner />
     <ContactFormBanner />
     <Footer />
