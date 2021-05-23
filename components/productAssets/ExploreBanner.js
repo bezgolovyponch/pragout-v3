@@ -7,6 +7,7 @@ export default class ExploreBanner extends React.Component {
 
     this.exploreContainer = React.createRef();
     this.image = React.createRef();
+    this.image2 = React.createRef();
 
     this.handleScroll = this.handleScroll.bind(this);
     this.animate = this.animate.bind(this);
@@ -34,11 +35,12 @@ export default class ExploreBanner extends React.Component {
 
     if (x.matches) {
       if (dimensions.top - window.innerHeight < 0 && dimensions.bottom > 0) {
-        const scrolledRatio =
-          (window.innerHeight - dimensions.top) / window.innerHeight - 1;
+        const scrolledRatio = (window.innerHeight - dimensions.top) / window.innerHeight - 1;
 
-        this.image.current.style.transform = `translateY(${-scrolledRatio *
-          100}px)`;
+        // this.image.current.style.transform = `translateY(${-scrolledRatio * 100}px)`;
+        this.image.current.style.transform = `translate3d(0, ${scrolledRatio * 100}px, 0) scale3d(2, 0.7, 0.1)`;
+        //this.image2.current.style.transform = `translate3d(0, ${scrolledRatio * 100}px, 0) scale3d(2, 1.7, 0.1)`;
+        this.image2.current.style.transform = `translate3d(0, ${scrolledRatio * 200}px, 0)`;
       }
     }
   }
@@ -54,10 +56,8 @@ export default class ExploreBanner extends React.Component {
                 <div className="col-md-5 offset-md-7">
                   <div className="position-relative">
                     <div className="position-md-absolute right-0 left-0 bottom-0">
-                      <div
-                        ref={this.image}
-                        className="explore-banner--image"
-                      />
+                      <div ref={this.image} className="explore-banner--image" />
+                      <div ref={this.image2} className="explore-girl" />
                     </div>
                   </div>
                 </div>
@@ -69,10 +69,7 @@ export default class ExploreBanner extends React.Component {
           <div ref={this.exploreContainer} className="custom-container py-md-5">
             <div className="row py-5">
               <div className="col-12 col-md-6 py-5">
-                <p
-                  className="font-size-display3 font-weight-light mb-4"
-                  style={{ maxWidth: '20rem' }}
-                >
+                <p className="font-size-display3 font-weight-light mb-4" style={{maxWidth: '20rem'}}>
                   A new shopping experience
                 </p>
                 <div className="d-flex">

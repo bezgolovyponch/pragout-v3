@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function ProductCard({ permalink, image, name, description, price}) {
+export default function ProductCard({permalink, image, name, description, price}) {
   return (
     <Link href="/product/[permalink]" as={`/product/${permalink}`}>
       <a className="mb-5 d-block font-color-black cursor-pointer">
@@ -9,16 +9,17 @@ export default function ProductCard({ permalink, image, name, description, price
           className="mb-3"
           style={{
             paddingBottom: '125%',
-            background: `url("${image}") center center/cover`
+            background: `url("${image}") center center/cover`,
           }}
         />
-        <p className="font-size-subheader mb-2 font-weight-medium">
-          {name}
-        </p>
-        <p className="mb-2 font-color-medium">{description}</p>
-        <p className="font-size-subheader font-weight-medium pb-2 borderbottom border-color-black">
-          {price}
-        </p>
+        <div className="violet-item">
+          <div className="another-div">
+            <p className="item-name">{name}</p>
+            {/*<p>{description}</p>*/}
+            <p className="item-price">{price}</p>{' '}
+          </div>
+          <div className="add-button"> Add + </div>
+        </div>
       </a>
     </Link>
   );

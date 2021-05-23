@@ -1,7 +1,7 @@
 // ####################################### //
 // ## STYLE.SCSS ## //
 // ####################################### //
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 // Base
 @import "base/vars";
 
@@ -29,3 +29,6 @@
 @import "components/footer-follow";
 @import "components/loader";
 @import "components/breadcrumbs";
+@import "components/corporate-banner";
+@import "components/contact-form-banner";
+@import "components/button-contact";

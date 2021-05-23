@@ -1,6 +1,12 @@
+
 .explore-banner {
+  .explore-girl {
+    background: url("/images/Mainbg_high-01.svg") center center/cover;;
+    padding-bottom: 100%;
+  }
+
   .explore-banner--image {
-    background: url("/images/explore-banner.png") center center/cover;
+    background: url("/images/Mainbg_light-01.svg") center center/cover;
     padding-bottom: 100%;
 
     @include md {

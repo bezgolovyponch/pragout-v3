@@ -1,30 +1,30 @@
-import React, { Component } from 'react';
-import Link from 'next/link'
-import { Transition } from 'react-transition-group';
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import React, {Component} from 'react';
+import Link from 'next/link';
+import {Transition} from 'react-transition-group';
+import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock';
 import CartItem from '../cart/CartItem';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 // Cart redux action creators
-import { retrieveCart as dispatchRetreiveCart } from '../../store/actions/cartActions';
+import {retrieveCart as dispatchRetreiveCart} from '../../store/actions/cartActions';
 
 const duration = 300;
 
 const defaultStyle = {
-  transition: `transform ${duration}ms ease-in-out`
+  transition: `transform ${duration}ms ease-in-out`,
 };
 
 const transitionStyles = {
-  entering: { transform: 'translateX(100%)' },
-  entered: { transform: 'translateX(0)' },
-  exiting: { transform: 'translateX(100%)' },
-  exited: { transform: 'translateX(100%)' }
+  entering: {transform: 'translateX(100%)'},
+  entered: {transform: 'translateX(0)'},
+  exiting: {transform: 'translateX(100%)'},
+  exited: {transform: 'translateX(100%)'},
 };
 
 const backdropTransitionStyles = {
-  entering: { opacity: '0' },
-  entered: { opacity: '0.56' },
-  exiting: { opacity: '0' },
-  exited: { opacity: '0' }
+  entering: {opacity: '0'},
+  entered: {opacity: '0.56'},
+  exiting: {opacity: '0'},
+  exited: {opacity: '0'},
 };
 
 class Cart extends Component {
@@ -41,7 +41,7 @@ class Cart extends Component {
    * Retrieve cart and contents client-side to dispatch to store
    */
   componentDidMount() {
-    this.props.dispatchRetreiveCart()
+    this.props.dispatchRetreiveCart();
   }
 
   componentWillUnmount() {
@@ -57,24 +57,18 @@ class Cart extends Component {
   }
 
   render() {
-    const { isOpen, toggle } = this.props;
-    const { cart } = this.props;
+    const {isOpen, toggle} = this.props;
+    const {cart} = this.props;
 
     return (
-      <Transition
-        in={isOpen}
-        timeout={duration}
-        unmountOnExit
-        onEntering={this.onEntering}
-        onExiting={this.onExiting}
-      >
-        {state => (
+      <Transition in={isOpen} timeout={duration} unmountOnExit onEntering={this.onEntering} onExiting={this.onExiting}>
+        {(state) => (
           <div className="cart-modal font-weight-regular">
             <div
               className="backdrop"
               style={{
                 transition: `opacity ${duration}ms ease-in-out`,
-                ...backdropTransitionStyles[state]
+                ...backdropTransitionStyles[state],
               }}
               onClick={() => toggle(false)}
             />
@@ -84,42 +78,28 @@ class Cart extends Component {
               className="main-cart-content d-flex flex-column"
               style={{
                 ...defaultStyle,
-                ...transitionStyles[state]
-              }}
-            >
+                ...transitionStyles[state],
+              }}>
               {/* Cart Header */}
               <div className="px-4 px-md-5">
                 <div className="pt-4 pb-3 borderbottom border-color-black d-flex justify-content-between align-items-center">
-                  <p className="font-family-secondary font-size-subheader">
-                    Shopping Cart
-                  </p>
-                  <button
-                    className="bg-transparent p-0"
-                    onClick={() => toggle(false)}
-                  >
+                  <p className="font-family-secondary font-size-subheader">Shopping Cart</p>
+                  <button className="bg-transparent p-0" onClick={() => toggle(false)}>
                     <img src="/icon/cross.svg" title="Times icon" alt="" />
                   </button>
                 </div>
               </div>
               {cart.total_unique_items > 0 ? (
                 <>
-                  <div
-                    className="flex-grow-1 overflow-auto pt-4"
-                    ref={this.cartScroll}
-                  >
-                    {cart.line_items.map(item => (
-                      <CartItem
-                        key={item.id}
-                        item={item}
-                      />
+                  <div className="flex-grow-1 overflow-auto pt-4" ref={this.cartScroll}>
+                    {cart.line_items.map((item) => (
+                      <CartItem key={item.id} item={item} />
                     ))}
                   </div>
                   {/* Cart Footer */}
                   <div className="cart-footer">
                     <div className="mb-3 d-flex">
-                      <p className="font-color-light mr-2 font-weight-regular">
-                        Subtotal:
-                      </p>
+                      <p className="font-color-light mr-2 font-weight-regular">Subtotal:</p>
                       <p>{cart.subtotal.formatted_with_symbol}</p>
                     </div>
                     <div className="row">
@@ -146,14 +126,11 @@ class Cart extends Component {
                     <img src="/icon/cart.svg" title="Cart icon" alt="" className="w-32" />
                     <div
                       className="position-absolute font-size-tiny font-weight-bold"
-                      style={{ right: '-4px', top: '-4px' }}
-                    >
+                      style={{right: '-4px', top: '-4px'}}>
                       0
                     </div>
                   </div>
-                  <p className="text-center font-weight-medium">
-                    Your cart is empty
-                  </p>
+                  <p className="text-center font-weight-medium">Your cart is empty</p>
                 </div>
               )}
             </div>
@@ -164,6 +141,6 @@ class Cart extends Component {
   }
 }
 
-export default connect(state => state, {
+export default connect((state) => state, {
   dispatchRetreiveCart,
 })(Cart);
