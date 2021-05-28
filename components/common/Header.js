@@ -30,7 +30,7 @@ const mobileMenuLinks = [
   },
   {
     name: 'Shop',
-    link: '/collection',
+    link: '/activities',
   },
   {
     name: 'About',
@@ -181,13 +181,13 @@ class Header extends Component {
         </div>
 
         <div className="navbar_menu2">
-          <Link href="/collection">
-            <a href="/collection" className="navbar_link2">
+          <Link href="/activities">
+            <a href="/activities" className="navbar_link2">
               <p className="paragraph_nav2">Activities</p>
             </a>
           </Link>
-          <Link href="/about">
-            <a href="/about" className="navbar_link2">
+          <Link href="/stag-do-package">
+            <a href="/stag-do-package" className="navbar_link2">
               <p className="paragraph_nav2"> Stag do package</p>
             </a>
           </Link>

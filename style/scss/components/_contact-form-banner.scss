@@ -1,26 +1,106 @@
-
 .contact-form-banner {
   display: block;
   overflow: hidden;
   padding-top: 10vw;
-  padding-bottom: 6vw;
+   padding-bottom: 6vw;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-left: 0px;
-  -webkit-box-pack: center;
-  background-color: transparent;
+   -webkit-box-direction: normal;
+   -webkit-flex-direction: column;
+   -ms-flex-direction: column;
+   flex-direction: column;
+   -webkit-box-align: center;
+   -webkit-align-items: center;
+   -ms-flex-align: center;
+   align-items: center;
+   padding-left: 0px;
+   -webkit-box-pack: center;
+   background-color: transparent;
   position: relative;
-  font-family: Rubik, sans-serif;
+  .cont_img_light {
+    position: absolute;
+    left: auto;
+    top: auto;
+    right: 0%;
+    bottom: 0%;
+    padding-right: 5vw;
+    .light {
+      display: block;
+      width: 75vw;
+      border-bottom: 1px solid #000;
+      max-width: 100%;
+    }
+  }
+  .cont_img_mid {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: auto;
+    bottom: auto;
+    display: block;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    padding-left: 52vw;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    .mid {
+      width: 34vw;
+      -webkit-align-self: center;
+      -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+      max-width: 100%;
+      vertical-align: middle;
+    }
+  }
+  .cont_img_high {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: auto;
+    bottom: auto;
+    display: block;
+    padding-top: 6vw;
+    padding-left: 55vw;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 auto;
+    -ms-flex: 0 auto;
+    flex: 0 auto;
+    .high {
+      position: static;
+      display: block;
+      width: 23vw;
+      margin-right: 15vw;
+    }
+  }
+  .image-21 {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: auto;
+    bottom: auto;
+    z-index: -1;
+    width: 12vw;
+    margin-top: 8vw;
+    margin-left: 13vw;
+    max-width: 100%;
+    vertical-align: middle;
+  }
   .contact-section{
     display: block;
-    padding-right: 12.5px;
+    padding-right: 12.5vw;
     padding-left: 12.5vw;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -35,93 +115,12 @@
     -ms-flex-align: start;
     align-items: flex-start;
     box-sizing: border-box;
-    .cont_img_light {
-      position: absolute;
-      left: auto;
-      top: auto;
-      right: 0%;
-      bottom: 0%;
-      padding-right: 5vw;
-      .light {
-        display: block;
-        width: 75vw;
-        border-bottom: 1px solid #000;
-        max-width: 100%;
-      }
-    }
-    .cont_img_mid {
-      position: absolute;
-      left: 0%;
-      top: 0%;
-      right: auto;
-      bottom: auto;
-      display: block;
-      padding-top: 10vw;
-      padding-bottom: 10vw;
-      padding-left: 52vw;
-      -webkit-box-pack: end;
-      -webkit-justify-content: flex-end;
-      -ms-flex-pack: end;
-      justify-content: flex-end;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      .mid {
-        width: 34vw;
-        -webkit-align-self: center;
-        -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-        max-width: 100%;
-        vertical-align: middle;
-      }
-    }
-    .cont_img_high {
-      position: absolute;
-      left: 0%;
-      top: 0%;
-      right: auto;
-      bottom: auto;
-      display: block;
-      padding-top: 6vw;
-      padding-left: 55vw;
-      -webkit-box-pack: end;
-      -webkit-justify-content: flex-end;
-      -ms-flex-pack: end;
-      justify-content: flex-end;
-      -webkit-align-self: auto;
-      -ms-flex-item-align: auto;
-      align-self: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 auto;
-      -ms-flex: 0 auto;
-      flex: 0 auto;
-      .high {
-        position: static;
-        display: block;
-        width: 23vw;
-        margin-right: 15vw;
-      }
-    }
-    .image-21 {
-      position: absolute;
-      left: 0%;
-      top: 0%;
-      right: auto;
-      bottom: auto;
-      z-index: -1;
-      width: 12vw;
-      margin-top: 8vw;
-      margin-left: 13vw;
-      max-width: 100%;
-      vertical-align: middle;
-    }
+
     .contact-form{
+      position: relative;
+      z-index: 999999;
       width: 25vw;
       .contact-fields-form{
-        padding-top: 0vw;
-        margin: 0 0 15px;
         .input-fields-form{
           display: -webkit-box;
           display: -webkit-flex;
@@ -158,7 +157,7 @@
             padding: 0px;
             border-style: solid;
             border-width: 0px 0px 1px;
-           border-color: #fff;
+            border-color: #fff;
             border-radius: 0px;
             background-color: hsla(0, 0%, 100%, 0) !important;
             color: #141c8a;
@@ -170,6 +169,23 @@
             height: 38px;
             vertical-align: middle;
             background-color: #ffffff;
+            border: 1px solid #cccccc;
+          }
+          .contact-dropdown{
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+            padding: 0px;
+            border-style: none;
+            border-width: 0px 0px 2px;
+            border-color: #000 #000 #ef799b;
+            background-color: transparent;
+            color: #ef799b;
+            font-size: 1vw;
+            display: block;
+            width: 100%;
+            height: 38px;
+            line-height: 1.42857143;
+            vertical-align: middle;
             border: 1px solid #cccccc;
           }
         }
@@ -220,7 +236,7 @@
         color: hsla(0, 0%, 100%, 0.75);
         font-size: 1vw;
         text-align: left;
-    }
-    }
+      }
     }
   }
+}

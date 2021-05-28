@@ -4,7 +4,7 @@ import Link from 'next/link';
 import {connect} from 'react-redux';
 import {ItemPrice} from '../common/atoms/ItemPrice';
 
-export const GirlsBanner = () => {
+export function GirlsBanner() {
   const [isShown, setIsShown] = useState(false);
   return (
     <div className="section-girls">
@@ -51,4 +51,4 @@ export const GirlsBanner = () => {
       </div>
     </div>
   );
-};
+}

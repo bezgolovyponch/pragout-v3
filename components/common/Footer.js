@@ -11,23 +11,23 @@ const Footer = () => (
       </a>
     </Link>
     <div className="navigation">
-      <Link href="/collection">
-        <a href="/collection" className="footer-link">
+      <Link href="/activities">
+        <a href="/activities" className="footer-link">
           <p className="footer-link-text">Activities</p>
         </a>
       </Link>
-      <Link href="/collection">
-        <a href="/collection" className="footer-link">
+      <Link href="/activities">
+        <a href="/activities" className="footer-link">
           <p className="footer-link-text">Stag do package</p>
         </a>
       </Link>
-      <Link href="/collection">
-        <a href="/collection" className="footer-link">
+      <Link href="/activities">
+        <a href="/activities" className="footer-link">
           <p className="footer-link-text">Hen do package</p>
         </a>
       </Link>
-      <Link href="/collection">
-        <a href="/collection" className="footer-link">
+      <Link href="/activities">
+        <a href="/activities" className="footer-link">
           <p className="footer-link-text">Corporate events</p>
         </a>
       </Link>

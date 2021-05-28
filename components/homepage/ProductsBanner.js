@@ -20,14 +20,14 @@ class ProductsBanner extends Component {
             </h1>
           </div>
           <div className="div-block-7">
-            <Link href="/collection">
+            <Link href="/activities">
               <a className="button-link">Browse all</a>
             </Link>
           </div>
         </div>
         <div className="products-wrapper">
           <div className="product-dynamic-list">
-            <ProductRow products={products.slice(0, 4)} />
+            <ProductRow products={products.slice(0, 3)} />
           </div>
         </div>
       </div>

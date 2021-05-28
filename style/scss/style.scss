@@ -1,8 +1,9 @@
 // ####################################### //
 // ## STYLE.SCSS ## //
 // ####################################### //
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 // Base
+//@import "~antd/dist/antd.css";
+//@import "default.less";
 @import "base/vars";
 
 // Helpers
@@ -21,11 +22,12 @@
 @import "pages/about";
 @import "pages/login";
 @import "pages/account";
+@import "pages/stag-do-package";
 
 // Components
 @import "components/cart-modal";
 @import "components/explore-banner";
-@import "components/collection-banner";
+@import "components/activities-banner";
 @import "components/footer-follow";
 @import "components/loader";
 @import "components/breadcrumbs";

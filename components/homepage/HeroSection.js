@@ -2,10 +2,7 @@ import React, {Component} from 'react';
 import Swiper, {EffectFade, Autoplay} from 'react-id-swiper';
 import Link from 'next/link';
 import commerce from '../../lib/commerce';
-import {Button} from 'antd';
-import {PoweroffOutlined} from '@ant-design/icons';
 import {LinkButton} from '../common/atoms/Button';
-import ContactFormBanner from './ContactFormBanner';
 import {ItemPrice} from '../common/atoms/ItemPrice';
 
 const params = {
@@ -27,10 +24,10 @@ const params = {
 export default class HeroSection extends Component {
   constructor(props) {
     super(props);
-
     this.exploreContainer = React.createRef();
     this.image = React.createRef();
     this.image2 = React.createRef();
+    this.image3 = React.createRef();
 
     this.handleScroll = this.handleScroll.bind(this);
     this.animate = this.animate.bind(this);
@@ -59,12 +56,23 @@ export default class HeroSection extends Component {
     if (x.matches) {
       if (dimensions.top - window.innerHeight < 0 && dimensions.bottom > 0) {
         const scrolledRatio = (window.innerHeight - dimensions.top) / window.innerHeight - 1;
-
+        const percentage = Math.round((window.innerHeight - dimensions.top) / window.innerHeight);
+        const percentage2 = (window.innerHeight - dimensions.top) / window.innerHeight;
         // this.image.current.style.transform = `translateY(${-scrolledRatio * 100}px)`;
         // this.image.current.style.transform = `translate3d(0, ${scrolledRatio * 100}px, 0) scale3d(2, 0.7, 0.1)`;
         //this.image2.current.style.transform = `translate3d(0, ${scrolledRatio * 100}px, 0) scale3d(1.2, 1.2, 1)`;
-        this.image.current.style.transform = `translate3d(0, ${scrolledRatio * 30}vw, 0)`;
-        this.image2.current.style.transform = `translate3d(0, ${-scrolledRatio * 1000}px, 0)`;
+        // this.image.current.style.transform = `translate3d(0, ${scrolledRatio * 50}vw, 0)`;
+        this.image.current.style.transform = `translate3d(0, ${scrolledRatio * 50}vw, 0) scale3d(1.02439, 1.02439, 1)`;
+        // this.image2.current.style.transform = 'translate3d(0,0, 0) scale3d(1, 1, 1)';
+        // this.image3.current.style.transform = 'translate3d(0,0, 0) scale3d(1, 1, 1)';
+        if (percentage2 > 1) {
+          this.image2.current.style.transform = `translate3d(0, ${
+            -scrolledRatio * 1.5
+          }vw, 0) scale3d( ${percentage2}, ${percentage2}, 1)`;
+          this.image3.current.style.transform = `translate3d(0, ${
+            -scrolledRatio * 1.3
+          }vw, 0) scale3d(${percentage2},${percentage2}, 1)`;
+        }
       }
     }
   }
@@ -83,11 +91,10 @@ export default class HeroSection extends Component {
           </div>
           <div className="mainbg_light">
             <div className="mbg_light" />
-            {/*<div ref={this.image2} className="explore-girl" />*/}
             <img className="mbg_light" ref={this.image} src="images/Mainbg_light-01.svg" />
           </div>
           <div className="mainbg_mid">
-            <img className="mbg_mid" src="/images/Mainbg_mid-01.svg" />
+            <img className="mbg_mid" ref={this.image3} src="/images/Mainbg_mid-01.svg" />
           </div>
           <div className="mainbg_high">
             <img className="mbg_high" ref={this.image2} src="/images/MainBG_high-01.svg" />
