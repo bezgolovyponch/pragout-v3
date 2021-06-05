@@ -169,15 +169,13 @@
             height: 38px;
             vertical-align: middle;
             background-color: #ffffff;
-            border: 1px solid #cccccc;
           }
           .contact-dropdown{
-            margin-top: 1vh;
+            margin-top: 1.2vh;
             margin-bottom: 1vh;
-            padding: 0px;
-            border-style: none;
-            border-width: 0px 0px 2px;
-            border-color: #000 #000 #ef799b;
+            padding-left: 1vw;
+            //padding: 2px;
+            border-bottom: 1px solid $gray-400;
             background-color: transparent;
             color: #ef799b;
             font-size: 1vw;
@@ -186,7 +184,6 @@
             height: 38px;
             line-height: 1.42857143;
             vertical-align: middle;
-            border: 1px solid #cccccc;
           }
         }
       }

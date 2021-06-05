@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Swiper, {EffectFade, Autoplay} from 'react-id-swiper';
 import Link from 'next/link';
 import commerce from '../../lib/commerce';
-import {LinkButton} from '../common/atoms/Button';
+import {Button, LinkButton} from '../common/atoms/Button';
 import {ItemPrice} from '../common/atoms/ItemPrice';
 
 const params = {
@@ -28,7 +28,6 @@ export default class HeroSection extends Component {
     this.image = React.createRef();
     this.image2 = React.createRef();
     this.image3 = React.createRef();
-
     this.handleScroll = this.handleScroll.bind(this);
     this.animate = this.animate.bind(this);
   }
@@ -41,6 +40,10 @@ export default class HeroSection extends Component {
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
   }
+  handleClick = () => {
+    console.log('hello');
+    document.getElementById('contactForm').scrollIntoView({behavior: 'smooth'});
+  };
 
   handleScroll() {
     window.requestAnimationFrame(this.animate);
@@ -106,7 +109,7 @@ export default class HeroSection extends Component {
               <h5 className="heading_05">MAKE YOUR WEEKEND IN PRAGUE</h5>
               <img className="image-7" src="/images/Title-01.svg" />
               <div className="button-hero">
-                <LinkButton className="button_contact" text="Need help?" withIcon={true} linkTo="/contacts" />
+                <Button className="button_contact" onClick={this.handleClick} text="Need help?" withIcon={true} />
               </div>
               <div className="mousescroll">
                 <img className="image-8" src="/images/Mouse_Scroll-01.svg" />

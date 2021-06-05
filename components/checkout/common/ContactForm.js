@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {appendSpreadsheet} from '../../../lib/sheets';
+import Modal from '../../common/atoms/Modal';
 
 const preferredAccommodation = [
   {code: '3star', name: '3*'},
   {code: '4star', name: '4*'},
   {code: '5star', name: '5*'},
 ];
+
+// const showModal
 
 export default class ContactForm extends Component {
   constructor(props) {
@@ -17,11 +21,13 @@ export default class ContactForm extends Component {
       phoneNumber: '',
       contactNotes: '',
       accommodation: '',
+      showOptions: false,
+      openModal: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    /*this.exploreContainer = React.createRef();*/
+    this.handleClose = this.handleClose.bind(this);
   }
   componentDidMount() {
     this.handleChange = this.handleChange.bind(this);
@@ -33,16 +39,28 @@ export default class ContactForm extends Component {
       [event.target.name]: event.target.value,
     });
   }
-
+  handleClose() {
+    this.setState({openModal: false});
+  }
   async handleSubmit(event) {
-    alert(' was submitted: ' + this.state.fullName + this.state.customerEmail + this.state.accommodation);
+    this.setState({
+      openModal: true,
+    });
     event.preventDefault();
+    const newRow = {
+      Name: this.state.fullName,
+      CustomerEmail: this.state.customerEmail,
+      PhoneNumber: this.state.phoneNumber,
+      ContactNotes: this.state.contactNotes,
+      Accommodation: this.state.accommodation,
+    };
+    await appendSpreadsheet(newRow);
   }
 
   render() {
     const {withAccommodation} = this.props;
     return (
-      <div className="contact-form-banner">
+      <div className="contact-form-banner" id="contactForm">
         <div className="contact-section">
           <div className="contact-section-text">
             <p className="top-paragraph-contact">
@@ -91,27 +109,38 @@ export default class ContactForm extends Component {
                 />
                 {withAccommodation && (
                   <div className="contact-dropdown">
-                    <p className="">Preffered accomodation</p>
-                    <img
-                      alt="Downward symbol indicating opening of a dropdown"
-                      src="/icon/arrow-bottom.svg"
-                      className="w-20"
-                    />
-                    <select value={this.state.accommodation} name="accommodation" onChange={this.handleChange}>
-                      {preferredAccommodation.map((accommodation) => (
-                        <option value={accommodation.code} key={accommodation.code}>
-                          {accommodation.name}
-                        </option>
-                      ))}
-                    </select>
+                    <p>
+                      Preferred accommodation
+                      <select
+                        style={{
+                          backgroundColor: '#150a28',
+                          borderColor: 'transparent',
+                          color: '#ef799b',
+                          paddingLeft: '9vw',
+                        }}
+                        value={this.state.accommodation}
+                        name="accommodation"
+                        onClick={() => this.setState({showOptions: true})}
+                        onChange={this.handleChange}>
+                        {this.state.showOptions &&
+                          preferredAccommodation.map((accommodation) => (
+                            <option value={accommodation.code} key={accommodation.code}>
+                              {accommodation.name}
+                            </option>
+                          ))}
+                      </select>
+                    </p>
                   </div>
                 )}
-
                 <div className="button-hero">
-                  <button className="button_contact" onClick={this.handleSubmit}>
+                  <button style={{paddingLeft: '3.5vw'}} className="button_contact" onClick={this.handleSubmit}>
                     Send
                   </button>
                 </div>
+                <Modal isOpen={this.state.openModal} onClose={this.handleClose} maxW="500px">
+                  Thank you! We will reach you out ASAP
+                </Modal>
+                }
               </div>
             </div>
           </div>

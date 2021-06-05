@@ -4,6 +4,7 @@
 // Base
 //@import "~antd/dist/antd.css";
 //@import "default.less";
+
 @import "base/vars";
 
 // Helpers
@@ -23,6 +24,7 @@
 @import "pages/login";
 @import "pages/account";
 @import "pages/stag-do-package";
+@import "pages/hen-do-package";
 
 // Components
 @import "components/cart-modal";

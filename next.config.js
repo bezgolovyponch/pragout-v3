@@ -1,9 +1,6 @@
 const withSass = require('@zeit/next-sass');
 const withVideos = require('next-videos');
 
-const CLIENT_EMAIL = process.env.CLIENT_EMAIL;
-const PRIVATE_KEY = process.env.PRIVATE_KEY;
-
 module.exports = withVideos(
   withSass({
     /* config options here */
@@ -12,10 +9,9 @@ module.exports = withVideos(
       defaultLocale: 'en',
     },
     env: {
-      SPREADSHEET_ID: '0',
-      SHEET_ID: '0',
-      CLIENT_EMAIL: CLIENT_EMAIL,
-      PRIVATE_KEY: PRIVATE_KEY,
+      SPREADSHEET_ID: process.env.SPREADSHEET_ID,
+      GOOGLE_SHEETS_CLIENT_EMAIL: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+      GOOGLE_SHEETS_PRIVATE_KEY: process.env.GOOGLE_SHEETS_PRIVATE_KEY,
     },
     webpack: (config, options) => {
       config.node = {

@@ -191,13 +191,13 @@ class Header extends Component {
               <p className="paragraph_nav2"> Stag do package</p>
             </a>
           </Link>
-          <Link href="/about">
-            <a href="/about" className="navbar_link2">
+          <Link href="/hen-do-package">
+            <a href="/hen-do-package" className="navbar_link2">
               <p className="paragraph_nav2"> Hen do package</p>
             </a>
           </Link>
-          <Link href="/about">
-            <a href="/about" className="navbar_link2">
+          <Link href="/corporate-events">
+            <a href="/corporate-events" className="navbar_link2">
               <p className="paragraph_nav2">Corporate events</p>
             </a>
           </Link>

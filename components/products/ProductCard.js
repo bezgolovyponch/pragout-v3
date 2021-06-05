@@ -1,25 +1,45 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Link from 'next/link';
+import {addToCart} from '../../store/actions/cartActions';
+import {connect} from 'react-redux';
 
-export default function ProductCard({permalink, image, name, price}) {
-  return (
-    <div className="collection-item">
-      <div className="product-image-wrap">
-        <div className="item-description">
-          <Link href="/product/[permalink]" as={`/product/${permalink}`}>
-            <a className="div-block-7">
-              <img className="product-image" src={image} />
-            </a>
-          </Link>
-          <div className="image-name-sector">
-            <div className="mobile-act-main">
-              <div className="item-name">{name}</div>
-              <div className="item-price">{price}</div>
-            </div>
-            <div className="add-button"> Add + </div>
+class ProductCard extends Component {
+  constructor(props) {
+    super(props);
+    this.handleAddToCart = this.handleAddToCart.bind(this);
+  }
+  /**
+   * Add to Cart
+   */
+  handleAddToCart(productId) {
+    this.props.dispatch(addToCart(productId, 1));
+  }
+
+  render() {
+    const {id, permalink, image, name, price} = this.props;
+
+    return (
+      <div key={id} className="list-item">
+        <Link href="/product/[permalink]" as={`/product/${permalink}`}>
+          <a
+            className="item-link"
+            style={{
+              background: `url("${image}") center center/cover`,
+            }}
+          />
+        </Link>
+        <div className="product-bottom">
+          <div className="product-name-price">
+            <p className="product-link">{name}</p>
+            <p className="product-link">{price}</p>
           </div>
+          <button className="add-to-cart" onClick={() => this.handleAddToCart(id)}>
+            + Add
+          </button>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
+
+export default connect((state) => state)(ProductCard);

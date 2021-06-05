@@ -414,6 +414,33 @@ $color: rgba(0, 0, 0, 0);
   background-color: transparent;
   display: flex;
   position: relative;
+  .div-block-7 {
+    position: relative;
+    display: block;
+    overflow: visible;
+    width: auto;
+    height: 70%;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 auto;
+    -ms-flex: 0 auto;
+    flex: 0 auto;
+    -o-object-fit: fill;
+    object-fit: fill;
+  }
 
   .products-wrapper {
     position: relative;
@@ -428,6 +455,7 @@ $color: rgba(0, 0, 0, 0);
 
     .product-dynamic-list {
       margin-top: 0;
+      display: flex;
 
       .product-list-item {
         display: flex;
@@ -464,13 +492,6 @@ $color: rgba(0, 0, 0, 0);
             cursor: pointer;
           }
 
-          .product-image-wrap {
-            position: absolute;
-/*            left: 0%;
-            top: 0%;
-            right: 0%;
-            bottom: 0%;*/
-
             .item-description {
               position: absolute;
               left: 0%;
@@ -482,13 +503,13 @@ $color: rgba(0, 0, 0, 0);
               display: -webkit-flex;
               display: -ms-flexbox;
               display: flex;
-              width: auto;
-              height: 30%;
+              width: 22.5vw;
+              height: auto;
               -webkit-box-orient: horizontal;
               -webkit-box-direction: normal;
               -webkit-flex-direction: row;
               -ms-flex-direction: row;
-              flex-direction: row;
+              flex-direction: column;
               -webkit-box-pack: start;
               -webkit-justify-content: flex-start;
               -ms-flex-pack: start;
@@ -510,53 +531,26 @@ $color: rgba(0, 0, 0, 0);
               background-color: #2f1959;
               color: #fff;
 
-              .div-block-7 {
+
+              .product-image {
                 position: relative;
                 display: block;
-                overflow: visible;
-                width: auto;
-                height: 70%;
-                -webkit-box-pack: justify;
-                -webkit-justify-content: space-between;
-                -ms-flex-pack: justify;
-                justify-content: space-between;
-                -webkit-flex-wrap: nowrap;
-                -ms-flex-wrap: nowrap;
-                flex-wrap: nowrap;
-                -webkit-box-align: stretch;
-                -webkit-align-items: stretch;
-                -ms-flex-align: stretch;
-                align-items: stretch;
+                overflow: hidden;
+                width: 22.5vw;
+                height: 25vw;
+                float: none;
+                clear: none;
                 -webkit-align-self: auto;
                 -ms-flex-item-align: auto;
                 align-self: auto;
                 -webkit-box-flex: 0;
-                -webkit-flex: 0 auto;
-                -ms-flex: 0 auto;
-                flex: 0 auto;
-                -o-object-fit: fill;
-                object-fit: fill;
-
-                .product-image {
-                  position: relative;
-                  display: block;
-                  overflow: visible;
-                  width: auto;
-                  height: 21vw;
-                  float: none;
-                  clear: none;
-                  -webkit-align-self: auto;
-                  -ms-flex-item-align: auto;
-                  align-self: auto;
-                  -webkit-box-flex: 0;
-                  -webkit-flex: 0 0 auto;
-                  -ms-flex: 0 0 auto;
-                  flex: 0 0 auto;
-                  -o-object-fit: cover;
-                  object-fit: cover;
-                  -o-object-position: 50% 50%;
-                  object-position: 50% 50%;
-                }
+                -webkit-flex: 0 0 auto;
+                -ms-flex: 0 0 auto;
+                flex: 0 0 auto;
+                -o-object-fit: cover;
+                object-fit: cover;
+                -o-object-position: 50% 50%;
+                object-position: 50% 50%;
               }
 
               .image-name-sector {
@@ -675,7 +669,6 @@ $color: rgba(0, 0, 0, 0);
                 }
               }
             }
-          }
         }
       }
     }

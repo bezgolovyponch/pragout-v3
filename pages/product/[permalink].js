@@ -119,7 +119,7 @@ class Product extends Component {
  * Use getStaticPaths() to pre-render PDP (product display page) according to page path
  */
 export async function getStaticPaths() {
-  const {data: products} = await commerce.products.list();
+  const {data: products} = await commerce.products.list({limit: 60});
 
   // Get the paths we want to pre-render based on product
   const paths = products.map((product) => ({

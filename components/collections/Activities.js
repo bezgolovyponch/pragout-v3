@@ -5,49 +5,21 @@ import Head from 'next/head';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {STORE_PRODUCTS} from '../../store/actions/actionTypes';
+import {addToCart} from '../../store/actions/cartActions';
 
 class Activities extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: 'All',
+      category: 'all',
     };
-    this.sidebar = React.createRef();
-    this.page = React.createRef();
-    this.handleScroll = this.handleScroll.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleAddToCart = this.handleAddToCart.bind(this);
   }
-  handleClick() {
-    // Changing state
-    this.setState({category: 'beer'});
-    console.log(this.state);
-  }
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-    console.log(this.state);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-    console.log(this.state);
-  }
-
-  handleScroll() {
-    const animate = () => {
-      if (!this.page.current) {
-        return;
-      }
-
-      const distance = this.page.current.getBoundingClientRect().bottom - window.innerHeight;
-
-      if (distance < 0) {
-        this.sidebar.current.style.transform = `translateY(${distance}px)`;
-      } else {
-        this.sidebar.current.style.transform = 'translateY(0px)';
-      }
-    };
-
-    window.requestAnimationFrame(animate);
+  /**
+   * Add to Cart
+   */
+  handleAddToCart(productId) {
+    this.props.dispatch(addToCart(productId, 1));
   }
 
   renderSidebar() {
@@ -57,14 +29,9 @@ class Activities extends Component {
       <>
         {sortedCategories.map((category) => (
           <div key={category.id} className="custom-container-item">
-            <Link href={`/activities#${category.slug}`}>
-              {/*              <a className="category-link" onChange={handleChange}>
-                      {category.name}
-                    </a>*/}
-              <button className="category-link" onClick={this.handleClick}>
-                {category.name}
-              </button>
-            </Link>
+            <button className="category-link" onClick={() => this.setState({category: category.slug})}>
+              {category.name}
+            </button>
           </div>
         ))}
       </>
@@ -72,43 +39,42 @@ class Activities extends Component {
   }
 
   /**
-   * Filter products by category
+   * Render collections based on categories available in data
    */
-  filterProductsByCat(catSlug) {
+  renderCollection() {
     const {categories, products} = this.props;
-
+    const catSlug = this.state.category;
     const cat = categories.find((category) => category.slug === catSlug);
     if (!cat) {
       return [];
     }
-    return products.filter((product) => product.categories.find((productCategory) => productCategory.id === cat.id));
-  }
-
-  /**
-   * Render collections based on categories available in data
-   */
-  renderCollection() {
-    const {products} = this.props;
-
+    /**
+     * Filter products by category
+     */
+    const fileteredProducts = products.filter((product) =>
+      product.categories.find((productCategory) => productCategory.id === cat.id),
+    );
     return (
-      <div className="collection">
-        {products.map((product) => (
+      <div className="activities-wrap">
+        {fileteredProducts.map((product) => (
           <div key={product.id} className="list-item">
             <Link href="/product/[permalink]" as={`/product/${product.permalink}`}>
               <a
                 className="item-link"
                 style={{
-                  background: `url("${product.media.source}")`,
-                }}>
-                <div className="product-bottom">
-                  <div className="product-name-price">
-                    <p className="product-link">{product.name}</p>
-                    <p className="product-link">{product.price.formatted_with_symbol}</p>{' '}
-                  </div>
-                  <div className="add-to-cart">+ Add</div>
-                </div>
-              </a>
+                  background: `url("${product.media.source}") center center/cover`,
+                }}
+              />
             </Link>
+            <div className="product-bottom">
+              <div className="product-name-price">
+                <p className="product-link">{product.name}</p>
+                <p className="product-link">{product.price.formatted_with_symbol}</p>
+              </div>
+              <button className="add-to-cart" onClick={() => this.handleAddToCart(product.id)}>
+                + Add
+              </button>
+            </div>
           </div>
         ))}
       </div>
