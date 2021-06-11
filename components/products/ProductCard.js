@@ -22,7 +22,7 @@ class ProductCard extends Component {
       <div key={id} className="list-item">
         <Link href="/product/[permalink]" as={`/product/${permalink}`}>
           <a
-            className="item-link"
+            className="home-item-link"
             style={{
               background: `url("${image}") center center/cover`,
             }}
@@ -31,9 +31,9 @@ class ProductCard extends Component {
         <div className="product-bottom">
           <div className="product-name-price">
             <p className="product-link">{name}</p>
-            <p className="product-link">{price}</p>
+            <p className="product-link-price">{price}</p>
           </div>
-          <button className="add-to-cart" onClick={() => this.handleAddToCart(id)}>
+          <button className="home-add-to-cart" onClick={() => this.handleAddToCart(id)}>
             + Add
           </button>
         </div>

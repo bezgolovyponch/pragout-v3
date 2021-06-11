@@ -144,17 +144,17 @@ export default class ContactForm extends Component {
               </div>
             </div>
           </div>
-          <div className="cont_img_light">
-            <img src="images/ContactsLight-01.svg" className="light" />
-          </div>
-          <div className="cont_img_mid">
-            <img src="images/ContactLow-01-01.svg" className="mid" />
-          </div>
-          <div className="cont_img_high">
-            <img src="images/ContactHigh-01-01.svg" className="high" />
-          </div>
-          <img src="images/Mainbg_light-01.svg" className="image-21" />
         </div>
+        <div className="cont_img_light">
+          <img src="images/ContactsLight-01.svg" className="light" />
+        </div>
+        <div className="cont_img_mid">
+          <img src="images/ContactLow-01-01.svg" className="mid" />
+        </div>
+        <div className="cont_img_high">
+          <img src="images/ContactHigh-01-01.svg" className="high" />
+        </div>
+        <img src="images/Mainbg_light-01.svg" className="image-21" />
       </div>
     );
   }

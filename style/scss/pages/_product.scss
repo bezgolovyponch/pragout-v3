@@ -73,6 +73,21 @@
   object-fit: fill;
   display: inline-flex;
   transition: 0.4s ease;
+  @include iphone6 {
+    width: 86vw;
+    height: 35vw;
+    margin-top: 3vw;
+    margin-right: 0vw;
+    margin-left: 0vw;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 auto;
+    -ms-flex: 0 auto;
+    flex: 0 auto;
+    border-radius: 3vw;
+  }
   .product-bottom {
     position: absolute;
     left: 0%;
@@ -89,6 +104,18 @@
     -webkit-box-align: stretch;
     align-items: stretch;
     font-size: 0.9vw;
+    background-color: #2f1959;
+    color: #fff;
+    @include iphone6 {
+      position: static;
+      width: 60%;
+      height: 100%;
+      -webkit-align-self: stretch;
+      -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+      font-size: 1.3vw;
+    }
     .product-name-price {
       position: relative;
       left: auto;
@@ -111,8 +138,86 @@
       -ms-flex: 1;
       flex: 1;
       background-color: rgba(47, 25, 89, 0.9);
+      @include iphone6 {
+        display: -webkit-box;
+        margin-top: 2vw;
+        margin-left: 3vw;
+        width: auto;
+        margin-bottom: 2vw;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        padding-left: 2vw;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        font-size: 3vw;
+      }
+      .product-link{
+        margin-bottom: 0.3vw;
+        color: #e6e6e6;
+        font-size: 0.8vw;
+        line-height: 1;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.05vw;
+        @include iphone6 {
+          -webkit-align-self: flex-start;
+          -ms-flex-item-align: start;
+          align-self: flex-start;
+          -webkit-box-flex: 0;
+          -webkit-flex: 0 auto;
+          -ms-flex: 0 auto;
+          flex: 0 auto;
+          line-height: 1.5;
+          letter-spacing: 0.08vw;
+          align-self: flex-start;
+          font-size: 3vw;
+        }
+      }
+      .product-link-price{
+        margin-bottom: 0.3vw;
+        color: #e6e6e6;
+        font-size: 0.8vw;
+        line-height: 1;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.05vw;
+        @include iphone6 {
+          -webkit-align-self: flex-start;
+          -ms-flex-item-align: start;
+          align-self: flex-start;
+          -webkit-box-flex: 0;
+          -webkit-flex: 0 auto;
+          -ms-flex: 0 auto;
+          flex: 0 auto;
+          letter-spacing: 0.05vw;
+          align-self: flex-start;
+          font-size: 3vw;
+        }
+      }
     }
-    .add-to-cart {
+    .home-add-to-cart {
       position: relative;
       color: white;
       width: auto;
@@ -122,8 +227,6 @@
       bottom: 0%;
       display: block;
       overflow: visible;;
-      margin-top: auto;
-      margin-bottom: auto;
       padding: 1.5vw 1vw;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
@@ -146,9 +249,22 @@
       letter-spacing: 0.02vw;
       transition: color 200ms ease, background-color 200ms ease;
       cursor: pointer;
+      @include iphone6 {
+        width: auto;
+        min-width: auto;
+        padding: 3vw 5vw;
+        -webkit-align-self: flex-end;
+        -ms-flex-item-align: end;
+        align-self: flex-end;
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 auto;
+        -ms-flex: 0 auto;
+        flex: 0 auto;
+        font-size: 3vw;
+      }
     }
   }
-  .item-link{
+  .home-item-link{
     display: flex;
     min-height: 20vw;
     min-width: 18vw;
@@ -172,16 +288,11 @@
     object-fit: cover;
     align-items: center;
     transition: 0.4s ease;
-
-    .product-link{
-      margin-bottom: 0.3vw;
-      color: #e6e6e6;
-      font-size: 0.8vw;
-      line-height: 1;
-      font-style: normal;
-      font-weight: 400;
-      letter-spacing: 0.05vw;
+    @include iphone6 {
+      width: 60%;
+      height: 100%;
     }
+
 
   }
   &:hover {

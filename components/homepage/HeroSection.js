@@ -3,7 +3,9 @@ import Swiper, {EffectFade, Autoplay} from 'react-id-swiper';
 import Link from 'next/link';
 import commerce from '../../lib/commerce';
 import {Button, LinkButton} from '../common/atoms/Button';
-import {ItemPrice} from '../common/atoms/ItemPrice';
+import {StagPack} from '../common/atoms/StagPack';
+import MediaQuery from 'react-responsive';
+import {motion} from 'framer-motion';
 
 const params = {
   modules: [EffectFade, Autoplay],
@@ -98,9 +100,11 @@ export default class HeroSection extends Component {
           </div>
           <div className="mainbg_mid">
             <img className="mbg_mid" ref={this.image3} src="/images/Mainbg_mid-01.svg" />
+            <img className="mbg_mid-mob" src="/images/Mainbg_mid_mob.svg" />
           </div>
           <div className="mainbg_high">
             <img className="mbg_high" ref={this.image2} src="/images/MainBG_high-01.svg" />
+            <img className="mbg_high-mob" src="/images/MainBG_high_mob.svg" />
           </div>
         </div>
         <div>
@@ -122,24 +126,24 @@ export default class HeroSection extends Component {
             </div>
           </div>
         </div>
-        <div className="section_2">
-          <div className="main-stag-package-div">
-            <div className="main-stag-package-text">
-              <p className="main-package-top-text">Getting married?</p>
-              <h1 className="main-package-mid-text">
-                PRAGOUT <br /> STAG <br />
-                PACK
-              </h1>
-              <p className="main-package-low-text">
-                Plain and simple - we created a pre-made bundle of top-rated activities for you to enjoy. Let true
-                proffesionals take care of the rest. Book your tour with a few clicks.
-              </p>
-            </div>
-            <div className="main-package-description">
-              <ItemPrice />
+        <motion.div initial="rest" whileHover="hover" animate="rest">
+          <div className="section_2">
+            <div className="main-stag-package-div">
+              <div className="main-stag-package-text">
+                <p className="main-package-top-text">Getting married?</p>
+                <h1 className="main-package-mid-text">PRAGOUT STAG PACK</h1>
+                <p className="main-package-low-text">
+                  Plain and simple - we created a pre-made bundle of top-rated activities for you to enjoy. Let true
+                  proffesionals take care of the rest. Book your tour with a few clicks.
+                </p>
+              </div>
+
+              <div className="main-package-description">
+                <StagPack />
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     );
   }

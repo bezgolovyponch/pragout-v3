@@ -4,10 +4,6 @@ const withVideos = require('next-videos');
 module.exports = withVideos(
   withSass({
     /* config options here */
-    i18n: {
-      locales: ['en', 'ms'],
-      defaultLocale: 'en',
-    },
     env: {
       SPREADSHEET_ID: process.env.SPREADSHEET_ID,
       GOOGLE_SHEETS_CLIENT_EMAIL: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,

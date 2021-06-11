@@ -13,6 +13,12 @@
   align-items: center;
   background-color: transparent;
   display: flex;
+  @include iphone6{
+    padding: 0vw 7vw;
+    display: block;
+    margin-bottom: 20vw;
+
+  }
   .corporate-event{
     display: -webkit-box;
     display: -webkit-flex;
@@ -45,6 +51,25 @@
     background-image: url("/images/Corp_Pic2.jpg");
     background-position: 0% 50%;
     background-size: 100vw;
+    z-index: 99999;
+    @include iphone6{
+      margin-right: 0vw;
+      margin-left: 0vw;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background-color: #2f1959;
+      background-image: url("/images/Corp_Pic2.jpg");
+      background-position: 50% 50%;
+      background-size: cover;
+
+    }
     .corporate-event-container {
       display: -webkit-box;
       display: -webkit-flex;
@@ -69,27 +94,36 @@
       font-size: 1vw;
       line-height: 1;
       color: #ffffff;
+      @include iphone6{
+        width: auto;
+        margin-top: 0vw;
+        margin-bottom: 0vw;
+        padding: 23vw 13vw;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        -ms-grid-row-align: auto;
+        align-self: auto;
+      }
       .paragraph-list{
-        margin-top: 1.5vw;
-        color: hsla(0, 0%, 100%, 0.75);
-        display: flex;
-        width: 15vw;
-        margin-bottom: 0px;
-        margin-left: -0.5vw;
-        padding-left: 0vw;
+        display: block;
+        width: 30vw;
+        margin-left: 0vw;
+        padding-top: 0vh;
+        padding-right: 0vw;
         -webkit-box-pack: start;
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        color: #fff;
         font-size: 1vw;
-        line-height: 1.6;
         text-align: left;
+        line-height: 1.6;
         letter-spacing: 0.05vw;
+        @include iphone6{
+          width: 60vw;
+          margin-top: 7vw;
+          padding-right: 0vw;
+          font-size: 3.5vw;
+        }
       }
 
       .text-corporate-package-container {
@@ -124,6 +158,12 @@
           margin-bottom: 0px;
           padding-bottom: 0px;
           font-weight: 700;
+          @include iphone6{
+            margin-top: 3vw;
+            font-size: 7vw;
+            line-height: 1.2;
+            letter-spacing: 0.1vw;
+          }
         }
         .paragraph-text-corporate{
           margin-bottom: 0px;
@@ -135,6 +175,11 @@
           font-weight: 500;
           text-align: left;
           letter-spacing: 0.06vw;
+          @include iphone6{
+            color: #fff;
+            font-size: 4vw;
+            font-weight: 400;
+          }
         }
       }
     }

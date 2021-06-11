@@ -16,6 +16,12 @@
    -webkit-box-pack: center;
    background-color: transparent;
   position: relative;
+  @include iphone6{
+    margin-bottom: 0vw;
+    padding-top: 0vw;
+    padding-bottom: 0vw;
+    background-color: #2f1959;
+  }
   .cont_img_light {
     position: absolute;
     left: auto;
@@ -23,6 +29,9 @@
     right: 0%;
     bottom: 0%;
     padding-right: 5vw;
+    @include iphone6{
+      display: none;
+    }
     .light {
       display: block;
       width: 75vw;
@@ -48,6 +57,9 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    @include iphone6 {
+      display: none;
+    }
     .mid {
       width: 34vw;
       -webkit-align-self: center;
@@ -78,11 +90,25 @@
     -webkit-flex: 0 auto;
     -ms-flex: 0 auto;
     flex: 0 auto;
+    @include iphone6{
+      z-index: 0;
+      display: block;
+    }
     .high {
       position: static;
       display: block;
       width: 23vw;
       margin-right: 15vw;
+      @include iphone6{
+        width: 100vw;
+        height: auto;
+        margin-top: 0vw;
+        margin-right: 0vw;
+        margin-left: -54vw;
+        -ms-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        transform: scale(1.8);
+      }
     }
   }
   .image-21 {
@@ -115,11 +141,28 @@
     -ms-flex-align: start;
     align-items: flex-start;
     box-sizing: border-box;
-
+    @include iphone6{
+      position: relative;
+      z-index: 1;
+      width: auto;
+      padding: 26vw 15vw;
+      -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      -webkit-box-align: stretch;
+      -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+    }
     .contact-form{
       position: relative;
       z-index: 999999;
       width: 25vw;
+      @include iphone6{
+        width: auto;
+        padding-right: 0vw;
+        padding-left: 0vw;
+      }
       .contact-fields-form{
         .input-fields-form{
           display: -webkit-box;
@@ -150,6 +193,9 @@
             font-weight: 500;
             letter-spacing: 1px;
             cursor: default;
+            @include iphone6{
+              display: none;
+            }
           }
           .contact_text_field{
             margin-top: 1vw;
@@ -169,6 +215,13 @@
             height: 38px;
             vertical-align: middle;
             background-color: #ffffff;
+            @include iphone6{
+              align-self: auto;
+              -webkit-box-flex: 0;
+              -webkit-flex: 0 auto;
+              flex: 0 auto;
+              font-size: 3.5vw;
+            }
           }
           .contact-dropdown{
             margin-top: 1.2vh;
@@ -208,6 +261,18 @@
       -webkit-flex: 0 auto;
       -ms-flex: 0 auto;
       flex: 0 auto;
+      @include iphone6{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        width: auto;
+        height: auto;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
       .top-paragraph-contact{
         margin-bottom: 0px;
         color: #fff;
@@ -215,6 +280,17 @@
         line-height: 1;
         font-weight: 500;
         letter-spacing: 0.06vw;
+        @include iphone6{
+          align-self: auto;
+          -webkit-box-flex: 0;
+          -webkit-flex: 0 auto;
+          -ms-flex: 0 auto;
+          flex: 0 auto;
+          font-size: 4vw;
+          line-height: 1.2;
+          font-weight: 400;
+          text-align: center;
+        }
       }
       .header-contact {
         margin-top: 1vw;
@@ -226,6 +302,12 @@
         margin-bottom: 0px;
         padding-bottom: 0px;
         font-weight: 700;
+        @include iphone6{
+          margin-top: 3vw;
+          font-size: 7vw;
+          text-align: center;
+          letter-spacing: 0.1vw;
+        }
       }
       .down-paragraph-contact{
         margin-top: 1.5vw;
@@ -233,6 +315,14 @@
         color: hsla(0, 0%, 100%, 0.75);
         font-size: 1vw;
         text-align: left;
+        @include iphone6{
+          position: static;
+          display: block;
+          width: 70vw;
+          line-height: 1.6;
+          text-align: center;
+          font-size: 3.5vw;
+        }
       }
     }
   }

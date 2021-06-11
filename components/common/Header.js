@@ -8,7 +8,7 @@ import {Transition} from 'react-transition-group';
 import {connect} from 'react-redux';
 import {clearCustomer} from '../../store/actions/authenticateActions';
 
-const duration = 300;
+const duration = 700;
 
 const defaultStyle = {
   zIndex: '-1',
@@ -25,16 +25,20 @@ const transitionStyles = {
 
 const mobileMenuLinks = [
   {
-    name: 'Home',
-    link: '/',
-  },
-  {
-    name: 'Shop',
+    name: 'Activities',
     link: '/activities',
   },
   {
-    name: 'About',
-    link: '/about',
+    name: 'Stag do package',
+    link: '/stag-do-package',
+  },
+  {
+    name: 'Hen do package',
+    link: '/hen-do-package',
+  },
+  {
+    name: 'Corporate events',
+    link: '/corporate-events',
   },
 ];
 
@@ -111,7 +115,7 @@ class Header extends Component {
     this.setState({showMobileMenu: !showMobileMenu});
 
     if (!showMobileMenu) {
-      this.header.current.classList.add('invert');
+      //this.header.current.classList.add('invert');
     } else {
       this.animate();
     }
@@ -171,75 +175,93 @@ class Header extends Component {
     const {transparent, cart} = this.props;
 
     return (
-      <header className="navbar_div1">
-        <div className="navbar-logo1">
-          <Link href="/">
-            <a>
-              <img src="/images/Pragout_Logo_1.svg" className="navbar-logo-img1" alt="Logo" />
-            </a>
-          </Link>
-        </div>
-
-        <div className="navbar_menu2">
-          <Link href="/activities">
-            <a href="/activities" className="navbar_link2">
-              <p className="paragraph_nav2">Activities</p>
-            </a>
-          </Link>
-          <Link href="/stag-do-package">
-            <a href="/stag-do-package" className="navbar_link2">
-              <p className="paragraph_nav2"> Stag do package</p>
-            </a>
-          </Link>
-          <Link href="/hen-do-package">
-            <a href="/hen-do-package" className="navbar_link2">
-              <p className="paragraph_nav2"> Hen do package</p>
-            </a>
-          </Link>
-          <Link href="/corporate-events">
-            <a href="/corporate-events" className="navbar_link2">
-              <p className="paragraph_nav2">Corporate events</p>
-            </a>
-          </Link>
-        </div>
-        <div className="planner_01_button">
-          {/*{ process.browser && this.renderLoginLogout() }*/}
-          PLANNER
-          <Cart isOpen={showCart} toggle={(value) => this.toggleCart(value)} />
-          <div className="position-relative cursor-pointer" onClick={this.toggleCart}>
-            <Animation isStopped={this.state.playAddToCartAnimation} />
+      <>
+        <header className="navbar_div1">
+          <div className="navbar-logo1">
+            <Link href="/">
+              <a>
+                <img src="/images/Pragout_Logo_1.svg" className="navbar-logo-img1" alt="Logo" />
+              </a>
+            </Link>
           </div>
-        </div>
 
-        {/* Mobile Menu */}
-        <Transition in={showMobileMenu} timeout={duration}>
-          {(state) => (
-            <div
-              className="d-sm-none position-fixed left-0 right-0 overflow-hidden"
-              style={{
-                ...defaultStyle,
-                ...transitionStyles[state],
-                // Prevent gap being shown at bottom of mobile menu
-                top: '1em',
-              }}>
-              <div
-                className="position-absolute left-0 right-0 h-100vh mobile-menu-inner bg-black700 d-flex flex-column justify-content-center"
-                style={{
-                  // Prevent mobile menu items (e.g. Home) being hidden behind navbar on small screen heights (e.g. iPhone4 landscape of 320px height)
-                  top: '4em',
-                }}>
-                {mobileMenuLinks.map((item, i) => (
-                  <a key={i} href={item.link} className="d-block mb-4 font-size-heading font-color-white text-center">
-                    {item.name}
-                  </a>
-                ))}
-              </div>
+          <div className="navbar_menu2">
+            <Link href="/activities">
+              <a href="/activities" className="navbar_link2">
+                <p className="paragraph_nav2">Activities</p>
+              </a>
+            </Link>
+            <Link href="/stag-do-package">
+              <a href="/stag-do-package" className="navbar_link2">
+                <p className="paragraph_nav2"> Stag do package</p>
+              </a>
+            </Link>
+            <Link href="/hen-do-package">
+              <a href="/hen-do-package" className="navbar_link2">
+                <p className="paragraph_nav2"> Hen do package</p>
+              </a>
+            </Link>
+            <Link href="/corporate-events">
+              <a href="/corporate-events" className="navbar_link2">
+                <p className="paragraph_nav2">Corporate events</p>
+              </a>
+            </Link>
+          </div>
+          <button className="planner_01_button" onClick={this.toggleCart}>
+            PLANNER
+          </button>
+          <Cart isOpen={showCart} toggle={(value) => this.toggleCart(value)} />
+          {/*          <div className="planner_01_button">
+            {process.browser && this.renderLoginLogout()}
+            PLANNER
+            <Cart isOpen={showCart} toggle={(value) => this.toggleCart(value)} />
+            <div className="position-relative cursor-pointer" onClick={this.toggleCart}>
+              <Animation isStopped={this.state.playAddToCartAnimation} />
             </div>
-          )}
-        </Transition>
-      </header>
+          </div>*/}
+          <div className="logo-container">
+            <img
+              src={`/icon/${showMobileMenu ? 'cross' : 'menu'}.svg`}
+              onClick={this.toggleMobileMenu}
+              className="w-32 mr-1 d-block d-sm-none"
+              alt="Menu icon"
+            />
+          </div>
+
+          {/* Mobile Menu */}
+          <Transition in={showMobileMenu} timeout={duration}>
+            {(state) => (
+              <div
+                className="d-sm-none position-fixed left-0 right-0 overflow-hidden z-index-999999"
+                style={{
+                  ...defaultStyle,
+                  ...transitionStyles[state],
+                  // Prevent gap being shown at bottom of mobile menu
+                  top: '0',
+                }}>
+                <div
+                  className="position-absolute left-0 right-0 h-100vh mobile-menu-inner bg-black700 d-flex flex-column justify-content-center"
+                  style={{
+                    // Prevent mobile menu items (e.g. Home) being hidden behind navbar on small screen heights (e.g. iPhone4 landscape of 320px height)
+                    top: '0',
+                  }}>
+                  {mobileMenuLinks.map((item, i) => (
+                    <a
+                      key={i}
+                      href={item.link}
+                      className="d-block mb-4 font-size-heading font-color-white text-right mr-4 pb-3 border-bottom border-color-black600 ml-4">
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </Transition>
+        </header>
+      </>
     );
   }
 }
 
 export default connect((state) => state, {clearCustomer})(Header);
+//rgba(98, 102, 119, 0.84);
