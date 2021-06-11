@@ -140,7 +140,6 @@ export default class ContactForm extends Component {
                 <Modal isOpen={this.state.openModal} onClose={this.handleClose} maxW="500px">
                   Thank you! We will reach you out ASAP
                 </Modal>
-                }
               </div>
             </div>
           </div>
