@@ -1,12 +1,8 @@
 import React from 'react';
 import {motion} from 'framer-motion';
 import {ButtonWrapper, slashMotion} from './Button';
-import {useMediaQuery} from 'react-responsive';
 
 export const StagPack = () => {
-  const isTabletOrMobileDevice = useMediaQuery({
-    query: '(max-device-width: 1224px)',
-  });
   return (
     <div className="package-button-container">
       <div className="text-package-button-container">
@@ -26,16 +22,12 @@ export const StagPack = () => {
           </div>
         </div>
       </div>
-      {!isTabletOrMobileDevice && (
-        <motion.div className="benjamin-button" variants={slashMotion}>
-          <ButtonWrapper linkTo="/stag-do-package" />
-        </motion.div>
-      )}
-      {isTabletOrMobileDevice && (
-        <div className="benjamin-button">
-          <ButtonWrapper linkTo="/stag-do-package" />
-        </div>
-      )}
+      <motion.div className="benjamin-button" variants={slashMotion}>
+        <ButtonWrapper linkTo="/stag-do-package" />
+      </motion.div>
+      <div className="benjamin-button-mobile">
+        <ButtonWrapper linkTo="/stag-do-package" />
+      </div>
     </div>
   );
 };

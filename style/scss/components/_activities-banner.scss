@@ -119,11 +119,11 @@
              text-transform: uppercase;
              white-space: pre-wrap;
            }
-           &:hover{
-             background-color: navajowhite;
-           }
-           &:active {
-             background-color: navajowhite;
+           &:hover, &:active, &:focus{
+             margin: 1vh 0.5vw;
+             background-color: #5f1dbb;
+             opacity: 1;
+             outline: none;
            }
          }
        }

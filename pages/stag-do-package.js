@@ -1,96 +1,43 @@
 import React from 'react';
 import Root from '../components/common/Root';
 import Footer from '../components/common/Footer';
-import ReactPlayer from 'react-player';
 import ContactForm from '../components/checkout/common/ContactForm';
+import Package from '../components/common/Package';
+import Head from 'next/head';
+const videoUrl =
+  'https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/6097d7c03d62714be62cc652_Stag BG NO music-transcode.mp4';
+const iconUrl1 = '/images/beer-logo1.svg';
+const iconUrl2 = '/images/friends.svg';
+const iconUrl3 = '/images/ajustable1.svg';
+const cardTitle1 = 'Easy peasy';
+const cardTitle2 = 'Easy peasy';
+const cardTitle3 = 'Easy peasy';
+const packageName = 'PRAGOUT STARTER PACK';
+const packagePrice = '€180';
+const activitiesLeftPartStag = ['· Return airport transfer', '· AK 47 shooting', '· Outdoor paintball'];
+const activitiesRightPartStag = ['· Steak and strip', ' · Private pub crawl', ' · VIP club entrance'];
 
-const StagDoPackage = () => (
+const StagDoPackagePage = () => (
   <Root>
-    <div className="stag-do-package-container">
-      <div className="video-container">
-        <div className="background-video">
-          <ReactPlayer
-            className="react-player"
-            playsInline
-            playing={true}
-            loop={true}
-            width="100%"
-            height="100%"
-            url="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/6097d7c03d62714be62cc652_Stag BG NO music-transcode.mp4"
-            autoPlay
-            muted
-          />
-        </div>
-      </div>
-      <div className="package-section1">
-        <div className="package-title">
-          <div className="package-name-price">
-            <h1 className="package-name">PRAGOUT STARTER PACK</h1>
-            <p className="package-text-price">Estimated price per person</p>
-            <p className="package-price">€180</p>
-          </div>
-          <div className="package-included">
-            <div className="package-included-columns">
-              <div className="package-included-activities">
-                <p className="package-activities"> · Return airport transfer</p>
-                <p className="package-activities"> · AK 47 shooting</p>
-                <p className="package-activities"> · Outdoor paintball</p>
-              </div>
-              <div className="package-included-activities">
-                <p className="package-activities"> · Steak and strip</p>
-                <p className="package-activities"> · Private pub crawl</p>
-                <p className="package-activities"> · VIP club entrance</p>
-              </div>
-            </div>
-            <p className="package-included-text">All you need is here</p>
-          </div>
-        </div>
-      </div>
-      <div className="package-section2">
-        <div className="package-cards">
-          <div className="card-icon">
-            <img className="package-icon" src="/images/beer-logo1.svg" />
-          </div>
-          <div className="icon-description">
-            <p className="icon-title">Easy peasy</p>
-            <p className="icon-text">
-              We got you covered from the arrival till departure. <br />
-              If you will need anyhting else - we are there for you <br />
-              24hrs straight.
-            </p>
-          </div>
-        </div>
-        <div className="package-cards">
-          <div className="card-icon">
-            <img className="package-icon" src="/images/friends.svg" />
-          </div>
-          <div className="icon-description">
-            <p className="icon-title">Easy peasy</p>
-            <p className="icon-text">
-              We got you covered from the arrival till departure. <br />
-              If you will need anyhting else - we are there for you <br />
-              24hrs straight.
-            </p>
-          </div>
-        </div>
-        <div className="package-cards">
-          <div className="card-icon">
-            <img className="package-icon" src="/images/ajustable1.svg" />
-          </div>
-          <div className="icon-description">
-            <p className="icon-title">Easy peasy</p>
-            <p className="icon-text">
-              We got you covered from the arrival till departure. <br />
-              If you will need anyhting else - we are there for you <br />
-              24hrs straight.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Head>
+      <title>Stag do package</title>
+    </Head>
+    <Package
+      activitiesLeftPartStag={activitiesLeftPartStag}
+      activitiesRightPartStag={activitiesRightPartStag}
+      videoUrl={videoUrl}
+      iconUrl1={iconUrl1}
+      iconUrl2={iconUrl2}
+      iconUrl3={iconUrl3}
+      cardTitle1={cardTitle1}
+      cardTitle2={cardTitle2}
+      cardTitle3={cardTitle3}
+      packageName={packageName}
+      packagePrice={packagePrice}
+    />
     <ContactForm withAccommodation={true} />
     <Footer />
   </Root>
 );
 
-export default StagDoPackage;
+export default StagDoPackagePage;

@@ -22,7 +22,7 @@ const MyApp = ({Component, pageProps}) => {
       console.error(error);
     },
   });
-  console.log('lang', lang);
+  //console.log('lang', lang);
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY) {

@@ -27,7 +27,8 @@
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
   font-size: 2vw;
-  @include iphone6{
+  outline: none;
+  @include iphone6 {
     width: 100%;
     margin-top: 15vw;
     -webkit-box-pack: end;
@@ -35,6 +36,7 @@
     -ms-flex-pack: end;
     justify-content: flex-end;
   }
+
   .arrowdown {
     position: relative;
     left: 0%;
@@ -56,6 +58,7 @@
     border: 0;
     transition: 0.3s;
   }
+
   .arrowdown:hover {
     transform: translate(0, 10px);
   }
@@ -81,19 +84,28 @@
     font-size: 1vw;
     font-weight: 500;
     letter-spacing: 0.05vw;
-    padding-left: 18%;
-    @include iphone6{
+    outline: none;
+    @include iphone6 {
       width: auto;
       padding: 4vw 8vw;
       border-radius: 25vw;
       color: #fff;
-      font-size: 3.5vw;
     }
   }
 
   .button_contact:hover {
     background-color: #fff;
     color: #ec4622;
+  }
+
+  .button_contact-text {
+    width: 10.5vw;
+    height: auto;
+    min-height: auto;
+    color: white;
+    @include iphone6 {
+      font-size: 3.5vw;
+    }
   }
 }
 
@@ -119,7 +131,7 @@
   align-items: center;
   background-color: rgba(47, 25, 89, 0.75);
   color: #fff;
-  @include iphone6{
+  @include iphone6 {
     width: 100vw;
     height: 50%;
     -webkit-box-pack: justify;
@@ -161,9 +173,8 @@
     transition-property: none;
     text-align: center;
     text-decoration: none;
-    @include iphone6{
-      width: 25vw;
-      height: 100%;
+    @include iphone6 {
+      display: none;
     }
 
     .main-package-price {
@@ -190,180 +201,248 @@
       -ms-flex-item-align: auto;
       align-self: auto;
       background-color: #ec4622;
-      @include iphone6{
+    }
+
+    .benjamin-button-image {
+      position: relative;
+      left: 0%;
+      top: 0%;
+      right: auto;
+      bottom: auto;
+      display: block;
+      width: 7vw;
+    }
+  }
+
+  .benjamin-button-mobile {
+    display: none;
+    @include iphone6 {
+      position: relative;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      min-height: auto;
+      clear: none;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background-color: transparent;
+      -webkit-transition-property: none;
+      transition-property: none;
+      text-align: center;
+      text-decoration: none;
+      width: 25vw;
+      height: 100%;
+    }
+
+    .main-package-price-mobile {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+      align-self: auto;
+      background-color: #ec4622;
+      @include iphone6 {
         width: 25vw;
         -webkit-box-pack: center;
         -webkit-justify-content: center;
         -ms-flex-pack: center;
         justify-content: center;
       }
-      }
+    }
 
-      .benjamin-button-image {
+    .benjamin-button-image-mobile {
+      position: relative;
+      left: 0%;
+      top: 0%;
+      right: auto;
+      bottom: auto;
+      display: block;
+      width: 7vw;
+      @include iphone6 {
         position: relative;
         left: 0%;
         top: 0%;
         right: auto;
         bottom: auto;
-        display: block;
-        width: 7vw;
-        @include iphone6{
-          position: relative;
-          left: 0%;
-          top: 0%;
-          right: auto;
-          bottom: auto;
-          width: 15vw;
-          -webkit-align-self: auto;
-          -ms-flex-item-align: auto;
-          -ms-grid-row-align: auto;
-          align-self: auto;
-        }
+        width: 15vw;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        -ms-grid-row-align: auto;
+        align-self: auto;
       }
     }
-
   }
 
-  .text-package-button-container {
+}
+
+.text-package-button-container {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: visible;
+  width: auto;
+  height: auto;
+  margin-left: 4.5vw;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  text-align: left;
+  @include iphone6 {
+    width: auto;
+    margin-left: 0vw;
+    padding-right: 0vw;
+    padding-left: 0;
+  }
+
+
+  .hero-package-description {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+    height: auto;
+    margin-top: 1vw;
+    margin-right: 0vw;
+    margin-left: 0vw;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    font-size: 1vw;
+    @include iphone6 {
+      width: auto;
+      margin-left: 0vw;
+      padding-right: 0vw;
+      padding-left: 3vw;
+    }
+
+
+    .paragraph-hero-package {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      width: 15vw;
+      margin-bottom: 0px;
+      margin-left: -0.5vw;
+      padding-left: 0vw;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      color: #fff;
+      font-size: 1vw;
+      line-height: 1.6;
+      text-align: left;
+      letter-spacing: 0.05vw;
+      @include iphone6 {
+        display: block;
+        width: auto;
+        margin-right: 3vw;
+        padding-top: 0vh;
+        padding-right: 0vw;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        font-size: 3.5vw;
+        text-align: left
+      }
+    }
+  }
+
+  .stag-pack {
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    overflow: visible;
-    width: auto;
-    height: auto;
-    margin-left: 4.5vw;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    overflow: hidden;
+    min-width: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
-    text-align: left;
-    @include iphone6{
-      width: auto;
-      margin-left: 0vw;
-      padding-right: 0vw;
-      padding-left: 0;
-    }
-
-
-
-    .hero-package-description {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      width: auto;
-      height: auto;
-      margin-top: 1vw;
-      margin-right: 0vw;
-      margin-left: 0vw;
-      padding-right: 0px;
-      padding-bottom: 0px;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -webkit-box-pack: start;
-      -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-      justify-content: flex-start;
-      -webkit-box-align: start;
-      -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-      align-items: flex-start;
-      -webkit-align-self: flex-start;
-      -ms-flex-item-align: start;
-      align-self: flex-start;
-      font-size: 1vw;
-      @include iphone6{
-        width: auto;
-        margin-left: 0vw;
-        padding-right: 0vw;
-        padding-left: 3vw;
-      }
-
-
-      .paragraph-hero-package {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        width: 15vw;
-        margin-bottom: 0px;
-        margin-left: -0.5vw;
-        padding-left: 0vw;
-        -webkit-box-pack: start;
-        -webkit-justify-content: flex-start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        color: #fff;
-        font-size: 1vw;
-        line-height: 1.6;
-        text-align: left;
-        letter-spacing: 0.05vw;
-        @include iphone6{
-          display: block;
-          width: auto;
-          margin-right: 3vw;
-          padding-top: 0vh;
-          padding-right: 0vw;
-          -webkit-box-pack: start;
-          -webkit-justify-content: flex-start;
-          -ms-flex-pack: start;
-          justify-content: flex-start;
-          font-size: 3.5vw;
-          text-align: left
-        }
-      }
-    }
-
-    .stag-pack {
-      position: relative;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      overflow: hidden;
-      min-width: auto;
-      margin-top: 0px;
-      margin-bottom: 0px;
-      -webkit-box-pack: start;
-      -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-      justify-content: flex-start;
-      -webkit-box-align: start;
-      -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-      align-items: flex-start;
-      -webkit-align-self: flex-start;
-      -ms-flex-item-align: start;
-      align-self: flex-start;
-      font-size: 1.5vw;
-      line-height: 1.21;
-      font-weight: 600;
-      letter-spacing: 0.1vw;
-      @include iphone6{
-        display: none;
-      }
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    font-size: 1.5vw;
+    line-height: 1.21;
+    font-weight: 600;
+    letter-spacing: 0.1vw;
+    @include iphone6 {
+      display: none;
     }
   }
+}

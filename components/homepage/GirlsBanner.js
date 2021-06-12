@@ -1,12 +1,8 @@
 import React from 'react';
 import {motion} from 'framer-motion';
-import {ButtonWrapper, slashMotion} from '../common/atoms/Button';
-import {useMediaQuery} from 'react-responsive';
+import {ButtonWrapper, ButtonWrapperMobile, slashMotion} from '../common/atoms/Button';
 
 export function GirlsBanner() {
-  const isTabletOrMobileDevice = useMediaQuery({
-    query: '(max-device-width: 1224px)',
-  });
   return (
     <motion.div initial="rest" whileHover="hover" animate="rest">
       <div className="section-girls">
@@ -38,16 +34,12 @@ export function GirlsBanner() {
                   </div>
                 </div>
               </div>
-              {!isTabletOrMobileDevice && (
-                <motion.div className="benjamin-button" variants={slashMotion}>
-                  <ButtonWrapper linkTo="/hen-do-package" />
-                </motion.div>
-              )}
-              {isTabletOrMobileDevice && (
-                <div className="benjamin-button">
-                  <ButtonWrapper linkTo="/hen-do-package" />
-                </div>
-              )}
+              <motion.div className="benjamin-button" variants={slashMotion}>
+                <ButtonWrapper linkTo="/hen-do-package" />
+              </motion.div>
+              <div className="benjamin-button-mobile">
+                <ButtonWrapperMobile linkTo="/hen-do-package" />
+              </div>
             </div>
           </div>
         </div>

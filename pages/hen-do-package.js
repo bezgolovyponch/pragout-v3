@@ -1,80 +1,43 @@
-import React, {useRef, useState} from 'react';
+import React from 'react';
 import Root from '../components/common/Root';
 import ContactForm from '../components/checkout/common/ContactForm';
 import Footer from '../components/common/Footer';
-import {motion, useElementScroll, useTransform} from 'framer-motion';
+import Package from '../components/common/Package';
+import Head from 'next/head';
+const videoUrl =
+  'https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/6097d7c03d62714be62cc652_Stag BG NO music-transcode.mp4';
+const iconUrl1 = '/images/beer-logo1.svg';
+const iconUrl2 = '/images/friends.svg';
+const iconUrl3 = '/images/ajustable1.svg';
+const cardTitle1 = 'Easy peasy';
+const cardTitle2 = 'Easy peasy';
+const cardTitle3 = 'Easy peasy';
+const packageName = 'PRAGOUT STARTER PACK';
+const packagePrice = '€180';
+const activitiesLeftPartStag = ['· Return airport transfer', '· AK 47 shooting', '· Outdoor paintball'];
+const activitiesRightPartStag = ['· Steak and strip', ' · Private pub crawl', ' · VIP club entrance'];
 
-export function MyComponent2() {
-  const ref = useRef(null);
-  const [progress, setProgress] = useState(0);
-  const {scrollYProgress, scrollXProgress} = useElementScroll(ref);
-  const scaleHigh = useTransform(scrollYProgress, [0, 0.15, 1, 1], [1, 2, 2, 2]);
-  const scaleMid = useTransform(scrollYProgress, [0, 0.3, 1, 1], [1, 3, 3, 3]);
-  const scaleLight = useTransform(scrollYProgress, [0, 0.3, 1, 1], [1, 1.2, 1.2, 1.2]);
-  const transform = useTransform(scrollYProgress, [0, 0.2, 0.3], ['0%', '0%', '-100%']);
-  const transformLight = useTransform(scrollYProgress, [0, 0.2, 0.45], ['0', '30vw', '75vw']);
-  // const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
-  scrollYProgress.onChange(setProgress);
-  return (
-    <>
-      <div ref={ref} style={{height: '200vh', overflow: 'auto'}}>
-        <motion.div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '25vh',
-            height: '25vh',
-            //overflow: 'auto',
-            fontSize: 32,
-            backgroundImage: 'url("images/Mainbg_light-01.svg")',
-            scale: scaleLight,
-            y: transformLight,
-          }}
-        />
-
-        <motion.div
-          style={{
-            /*            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',*/
-            width: '25vh',
-            height: '25vh',
-            // overflow: 'auto',
-            fontSize: 32,
-            backgroundImage: 'url("/images/Mainbg_mid-01.svg")',
-            scale: scaleMid,
-            y: transform,
-            //transform3d,
-          }}
-        />
-
-        <motion.div
-          style={{
-            /*            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',*/
-            width: '25vh',
-            height: '25vh',
-            // overflow: 'auto',
-            fontSize: 32,
-            backgroundImage: 'url("/images/MainBG_high-01.svg")',
-            scale: scaleHigh,
-            y: transform,
-            //transform3d,
-          }}
-        />
-      </div>
-    </>
-  );
-}
-
-const HenDoPackage = () => (
+const HenDoPackagePage = () => (
   <Root>
-    <MyComponent2 />
+    <Head>
+      <title>Hen do package</title>
+    </Head>
+    <Package
+      activitiesLeftPartStag={activitiesLeftPartStag}
+      activitiesRightPartStag={activitiesRightPartStag}
+      videoUrl={videoUrl}
+      iconUrl1={iconUrl1}
+      iconUrl2={iconUrl2}
+      iconUrl3={iconUrl3}
+      cardTitle1={cardTitle1}
+      cardTitle2={cardTitle2}
+      cardTitle3={cardTitle3}
+      packageName={packageName}
+      packagePrice={packagePrice}
+    />
     <ContactForm withAccommodation={true} />
     <Footer />
   </Root>
 );
 
-export default HenDoPackage;
+export default HenDoPackagePage;

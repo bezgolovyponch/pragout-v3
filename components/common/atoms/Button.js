@@ -12,13 +12,14 @@ export const slashMotion = {
     },
   },
 };
-export const LinkButton = ({className, linkTo, text, withIcon}) => {
+export const LinkButton = ({text}) => {
   return (
     <div className="button-hero">
-      {withIcon && <img className="arrowdown" src="/images/Mainbg_arrow-01.svg" />}
-      <Link href={linkTo || '/checkout'}>
-        <a className={className}>{text}</a>
-      </Link>
+      <button className="button_contact">
+        <Link href="/corporate-events">
+          <a className="button_contact-text">{text}</a>
+        </Link>
+      </button>
     </div>
   );
 };
@@ -28,7 +29,7 @@ export const Button = ({text, withIcon, onClick}) => {
     <div className="button-hero">
       {withIcon && <img className="arrowdown" src="/images/Mainbg_arrow-01.svg" />}
       <button className="button_contact" onClick={onClick}>
-        {text}
+        <a className="button_contact-text">{text}</a>
       </button>
     </div>
   );
@@ -40,6 +41,18 @@ export const ButtonWrapper = ({linkTo}) => {
       <Link href={linkTo}>
         <a>
           <img className="benjamin-button-image" src="/images/Pack_price-01.svg" />
+        </a>
+      </Link>
+    </div>
+  );
+};
+
+export const ButtonWrapperMobile = ({linkTo}) => {
+  return (
+    <div className="main-package-price-mobile">
+      <Link href={linkTo}>
+        <a>
+          <img className="benjamin-button-image-mobile" src="/images/Pack_price-01.svg" />
         </a>
       </Link>
     </div>

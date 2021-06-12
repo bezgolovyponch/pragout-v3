@@ -5,6 +5,9 @@
     overflow: hidden;
     height: 25vw;
     color: white;
+    @include iphone6 {
+      display: none;
+    }
 
     .background-video {
       position: relative;
@@ -35,6 +38,17 @@
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
+    @include iphone6 {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
 
     .package-title {
       display: -webkit-box;
@@ -49,6 +63,20 @@
       -webkit-align-items: flex-start;
       -ms-flex-align: start;
       align-items: flex-start;
+      @include iphone6 {
+        position: relative;
+        display: block;
+        width: auto;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        font-size: 5vw;
+        text-align: center;
+        white-space: normal;
+      }
 
       .package-name-price {
         display: block;
@@ -60,6 +88,14 @@
         align-items: flex-end;
         background-image: none;
         background-size: auto;
+        @include iphone6 {
+          width: auto;
+          -webkit-align-self: stretch;
+          -ms-flex-item-align: stretch;
+          -ms-grid-row-align: stretch;
+          align-self: stretch;
+        }
+
 
         .package-name {
           margin-top: 0vw;
@@ -70,6 +106,20 @@
           line-height: 1.2;
           font-weight: 700;
           letter-spacing: 0.1vw;
+          @include iphone6 {
+            position: relative;
+            display: block;
+            width: auto;
+            margin-top: 1vw;
+            margin-bottom: 1vw;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            font-size: 5vw;
+            text-align: center;
+            white-space: normal;
+          }
         }
 
         .package-text-price {
@@ -79,6 +129,12 @@
           font-size: 1.1vw;
           line-height: 1.6;
           letter-spacing: 0.05vw;
+          @include iphone6 {
+            position: relative;
+            float: none;
+            font-size: 2.5vw;
+            text-align: center;
+          }
         }
 
         .package-price {
@@ -93,6 +149,9 @@
           font-weight: 500;
           text-align: left;
           letter-spacing: 0vw;
+          @include iphone6 {
+            font-size: 3vw;
+          }
         }
       }
 
@@ -106,6 +165,10 @@
         -webkit-align-items: flex-start;
         align-items: flex-start;
         flex-direction: column;
+        @include iphone6 {
+          margin-top: 3vw;
+          font-size: 3vw;
+        }
 
         .package-included-columns {
           display: flex;
@@ -127,6 +190,10 @@
           -ms-flex-item-align: start;
           align-self: flex-start;
           font-size: 1vw;
+          @include iphone6 {
+            margin-top: 2vw;
+            align-items: flex-start;
+          }
 
           .package-included-activities {
             margin-right: 3vw;
@@ -142,6 +209,10 @@
               font-weight: 500;
               white-space: nowrap;
               color: white;
+              @include iphone6 {
+                font-size: 3vw;
+                text-align: left;
+              }
             }
           }
         }
@@ -152,6 +223,9 @@
         margin-top: 2vw;
         color: hsla(0, 0%, 100%, 0.75);
         font-size: 1vw;
+        @include iphone6 {
+          font-size: 3vw;
+        }
       }
     }
   }
@@ -168,6 +242,20 @@
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+    @include iphone6 {
+      height: auto;
+      margin-top: 0vw;
+      margin-bottom: 5vw;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
 
     .package-cards {
       display: flex;
@@ -181,16 +269,42 @@
       justify-content: flex-start;
       -webkit-box-align: center;
       align-items: center;
+      @include iphone6 {
+        width: auto;
+        margin: 2vw 0vw;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        font-size: 2.5vw;
+      }
+
+
 
       .card-icon {
         width: 12vw;
         height: 12vw;
+        @include iphone6 {
+          width: 25vw;
+          height: auto;
+          margin-right: 5vw;
+        }
 
         .package-icon {
           display: block;
           margin-top: 0vw;
           max-width: 100%;
           vertical-align: middle;
+          @include iphone6 {
+            width: 25vw;
+            height: auto;
+            margin-right: 5vw;
+          }
         }
       }
       .icon-description {
@@ -209,6 +323,12 @@
         align-self: auto;
         text-align: left;
         letter-spacing: 0.15vw;
+        @include iphone6 {
+          width: 40vw;
+          margin-right: 0vw;
+          margin-left: 0vw;
+          font-size: 3vw;
+        }
         .icon-title {
           align-self: auto;
           font-size: 1.4vw;
@@ -220,6 +340,9 @@
           -webkit-align-self: auto;
           color: #fff;
           text-align: center;
+          @include iphone6 {
+            font-size: 3vw;
+          }
         }
         .icon-text {
           margin-top: 1vw;
@@ -231,7 +354,26 @@
           font-weight: 400;
           text-align: center;
           letter-spacing: normal;
+          @include iphone6 {
+            font-size: 3vw;
+          }
         }
+      }
+    }
+    .package-cards:nth-child(2) {
+      @include iphone6 {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        font-size: 2.5vw;
+        width: auto;
+        margin: 2vw 0vw;
       }
     }
   }

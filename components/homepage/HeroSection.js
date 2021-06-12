@@ -4,7 +4,6 @@ import Link from 'next/link';
 import commerce from '../../lib/commerce';
 import {Button, LinkButton} from '../common/atoms/Button';
 import {StagPack} from '../common/atoms/StagPack';
-import MediaQuery from 'react-responsive';
 import {motion} from 'framer-motion';
 
 const params = {

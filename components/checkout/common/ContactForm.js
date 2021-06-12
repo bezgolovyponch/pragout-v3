@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {appendSpreadsheet} from '../../../lib/sheets';
 import Modal from '../../common/atoms/Modal';
+import {Button} from '../../common/atoms/Button';
 
 const preferredAccommodation = [
   {code: '3star', name: '3*'},
@@ -105,7 +106,7 @@ export default class ContactForm extends Component {
                   value={this.state.contactNotes}
                   onChange={this.handleChange}
                   className="contact_text_field"
-                  placeholder="Your message"
+                  placeholder="Your ideas"
                 />
                 {withAccommodation && (
                   <div className="contact-dropdown">
@@ -133,9 +134,7 @@ export default class ContactForm extends Component {
                   </div>
                 )}
                 <div className="button-hero">
-                  <button style={{paddingLeft: '3.5vw'}} className="button_contact" onClick={this.handleSubmit}>
-                    Send
-                  </button>
+                  <Button className="button_contact" onClick={this.handleSubmit} text="Send" withIcon={false} />
                 </div>
                 <Modal isOpen={this.state.openModal} onClose={this.handleClose} maxW="500px">
                   Thank you! We will reach you out ASAP
