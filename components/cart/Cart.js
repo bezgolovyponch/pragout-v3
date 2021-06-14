@@ -83,7 +83,7 @@ class Cart extends Component {
               {/* Cart Header */}
               <div className="px-4 px-md-5">
                 <div className="pt-4 pb-3 borderbottom border-color-black d-flex justify-content-between align-items-center">
-                  <p className="font-family-secondary font-size-subheader">Shopping Cart</p>
+                  <p className="font-family-secondary font-size-subheader">Your plan</p>
                   <button className="bg-transparent p-0" onClick={() => toggle(false)}>
                     <img src="/icon/cross.svg" title="Times icon" alt="" />
                   </button>
@@ -113,7 +113,7 @@ class Cart extends Component {
                       <div className="col-12 col-md-6">
                         <Link href="/checkout">
                           <a className="h-56 d-flex align-items-center justify-content-center bg-black w-100 flex-grow-1 font-weight-medium font-color-white px-3">
-                            Checkout
+                            Send an inquiry
                           </a>
                         </Link>
                       </div>

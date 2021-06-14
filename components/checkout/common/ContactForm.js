@@ -133,7 +133,7 @@ export default class ContactForm extends Component {
                     </p>
                   </div>
                 )}
-                <div className="button-hero">
+                <div className="button-hero-contact">
                   <Button className="button_contact" onClick={this.handleSubmit} text="Send" withIcon={false} />
                 </div>
                 <Modal isOpen={this.state.openModal} onClose={this.handleClose} maxW="500px">

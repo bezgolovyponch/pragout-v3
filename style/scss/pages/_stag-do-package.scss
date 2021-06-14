@@ -67,8 +67,8 @@
         position: relative;
         display: block;
         width: auto;
-        margin-top: 1vw;
-        margin-bottom: 1vw;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
         -webkit-box-pack: justify;
         -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
@@ -191,7 +191,7 @@
           align-self: flex-start;
           font-size: 1vw;
           @include iphone6 {
-            margin-top: 2vw;
+            margin-top: 4vw;
             align-items: flex-start;
           }
 

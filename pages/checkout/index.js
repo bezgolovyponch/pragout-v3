@@ -552,17 +552,17 @@ class CheckoutPage extends Component {
           <div className="row mt-4">
             <div className="col-12 col-md-10 col-lg-6 offset-md-1 offset-lg-0">
               {/* Breadcrumbs */}
-              <div className="d-flex pb-4 breadcrumb-container">
+              {/*<div className="d-flex pb-4 breadcrumb-container">
                 <Link href="/activities">
                   <div className="font-size-caption text-decoration-underline cursor-pointer">Cart</div>
                 </Link>
                 <img src="/icon/arrow-right.svg" className="w-16 mx-1" alt="Arrow icon" />
                 <div className="font-size-caption font-weight-bold cursor-pointer">Checkout</div>
-              </div>
+              </div>*/}
               {checkout && (
                 <form onChange={this.handleChangeForm}>
                   {/* ShippingDetails */}
-                  <p className="font-size-subheader font-weight-semibold mb-4">Customer and shipping details</p>
+                  {/*<p className="font-size-subheader font-weight-semibold mb-4">Customer and shipping details</p>*/}
                   <div className="mb-5">
                     <ShippingForm
                       firstName={this.state.firstName}
@@ -583,18 +583,18 @@ class CheckoutPage extends Component {
                     />
                   </div>
 
-                  {this.renderPaymentDetails()}
+                  {/*                  {this.renderPaymentDetails()}*/}
 
                   {/* Billing Address */}
                   {checkout.collects && checkout.collects.billing_address && <BillingDetails />}
 
-                  <p className="checkout-error">{!selectedShippingOption ? 'Select a shipping option!' : ''}</p>
+                  {/*<p className="checkout-error">{!selectedShippingOption ? 'Select a shipping option!' : ''}</p>*/}
                   <button
                     type="submit"
                     className="bg-black font-color-white w-100 border-none h-56 font-weight-semibold d-none d-lg-block checkout-btn"
                     // disabled={!selectedShippingOption}
                     onClick={this.captureOrder}>
-                    Make payment
+                    Get it started!
                   </button>
                 </form>
               )}
@@ -634,7 +634,7 @@ class CheckoutPage extends Component {
                     );
                   })}
                 </div>
-                <form className="row py-3 borderbottom border-color-gray400">
+                {/*<form className="row py-3 borderbottom border-color-gray400">
                   <input
                     name="discountCode"
                     onChange={this.handleFormChanges}
@@ -648,14 +648,14 @@ class CheckoutPage extends Component {
                     onClick={this.handleDiscountChange}>
                     Apply
                   </button>
-                </form>
+                </form>*/}
                 <div className="py-3 borderbottom border-color-black">
                   {[
-                    {
+                    ,/*{
                       name: 'Subtotal',
                       amount: checkout.live ? checkout.live.subtotal.formatted_with_symbol : '',
-                    },
-                    {
+                    }*/
+                    /* {
                       name: 'Tax',
                       amount: checkout.live ? checkout.live.tax.amount.formatted_with_symbol : '',
                     },
@@ -671,7 +671,7 @@ class CheckoutPage extends Component {
                         checkout.live && checkout.live.discount && checkout.live.discount.code
                           ? `Saved ${checkout.live.discount.amount_saved.formatted_with_symbol}`
                           : 'No discount code applied',
-                    },
+                    },*/
                   ].map((item, i) => (
                     <div key={i} className="d-flex justify-content-between align-items-center mb-2">
                       <p>{item.name}</p>

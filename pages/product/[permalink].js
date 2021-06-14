@@ -43,66 +43,67 @@ class Product extends Component {
     const {product} = this.props;
 
     const images = reduceProductImages(product);
-
+    const image = product.media.source;
     return (
       <Root>
         <Head>
           <title>{product.name} | commerce</title>
         </Head>
-
-        <div className="py-5 my-5">
-          <div className="main-product-content">
-            {/* Sidebar */}
-            <div className="product-sidebar">
-              <CategoryList
-                className="product-left-aside__category-list"
-                current={product.categories[0] && product.categories[0].id}
-              />
-              <CarouselImages images={images} />
-            </div>
-
-            <div className="product-images">
-              <div className="flex-grow-1">
-                {Array.isArray(images)
-                  ? images.map((image, i) => <img key={i} src={image} className="w-100 mb-3 carousel-main-images" />)
-                  : ''}
-              </div>
-            </div>
-
-            {/* Right Section - Product Details */}
+        <div className="product-section">
+          <div className="product-details-image">
+            <img src={image} />
+          </div>
+          <div className="product-details">
             <div className="product-detail">
               <ProductDetail product={product} />
-
-              <div
-                onClick={this.toggleShipping}
-                className="d-flex cursor-pointer py-3 justify-content-between font-weight-medium">
-                Shipping and returns
-                <img src="/icon/plus.svg" />
-              </div>
-              <Collapse isOpened={showShipping}>
-                <div className="pb-4 font-color-medium">
-                  Arrives in 5 to 7 days, returns accepted within 30 days. For more information, click here.
-                </div>
-              </Collapse>
-              <div className="h-1 border-bottom border-color-black" />
-              <div
-                onClick={this.toggleDetails}
-                className="d-flex cursor-pointer py-3 justify-content-between font-weight-medium">
-                Details
-                <img src="/icon/plus.svg" />
-              </div>
-              <Collapse isOpened={showDetails}>
-                <div
-                  className="pb-4 font-color-medium"
-                  dangerouslySetInnerHTML={{
-                    __html: detailView,
-                  }}
-                />
-              </Collapse>
-              <div className="h-1 borderbottom border-color-black" />
+              <div className="product-title-price"></div>
+              <div className="product-included"></div>
             </div>
           </div>
         </div>
+
+        {/* <div className="py-5 my-5">
+          <div className="main-product-content">
+            <CarouselImages images={images} />
+          </div>
+
+          <div className="product-images">
+            <div className="flex-grow-1">
+              {Array.isArray(images)
+                ? images.map((image, i) => <img key={i} src={image} className="w-100 mb-3 carousel-main-images" />)
+                : ''}
+            </div>
+          </div>*/}
+
+        {/* Right Section - Product Details */}
+
+        {/*<div
+            onClick={this.toggleShipping}
+            className="d-flex cursor-pointer py-3 justify-content-between font-weight-medium">
+            Shipping and returns
+            <img src="/icon/plus.svg" />
+          </div>
+          <Collapse isOpened={showShipping}>
+            <div className="pb-4 font-color-medium">
+              Arrives in 5 to 7 days, returns accepted within 30 days. For more information, click here.
+            </div>
+          </Collapse>
+          <div className="h-1 border-bottom border-color-black" />
+          <div
+            onClick={this.toggleDetails}
+            className="d-flex cursor-pointer py-3 justify-content-between font-weight-medium">
+            Details
+            <img src="/icon/plus.svg" />
+          </div>
+          <Collapse isOpened={showDetails}>
+            <div
+              className="pb-4 font-color-medium"
+              dangerouslySetInnerHTML={{
+                __html: detailView,
+              }}
+            />
+          </Collapse>
+          <div className="h-1 borderbottom border-color-black" />*/}
         <SuggestedProducts />
         <Footer />
       </Root>

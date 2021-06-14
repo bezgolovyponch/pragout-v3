@@ -327,6 +327,33 @@
           font-size: 3.5vw;
         }
       }
+      .button-hero-contact {
+        top: auto;
+        bottom: auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        height: auto;
+        margin-top: 4.5vw;
+        margin-bottom: 0px;
+        padding-bottom: 0vh;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        font-size: 2vw;
+        outline: none;
+        @include iphone6 {
+          width: 60vw;
+          margin-top: 15vw;
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          justify-content: center;
+        }
+      }
     }
   }
 }

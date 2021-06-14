@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from '../../common/atoms/Checkbox';
 import Dropdown from '../../common/atoms/Dropdown';
@@ -9,7 +9,7 @@ export default class ShippingForm extends Component {
 
     this.state = {
       receiveNewsletter: true,
-      saveInfo: true
+      saveInfo: true,
     };
 
     this.toggleNewsletter = this.toggleNewsletter.bind(this);
@@ -22,7 +22,7 @@ export default class ShippingForm extends Component {
   }
 
   render() {
-    const { receiveNewsletter } = this.state;
+    const {receiveNewsletter} = this.state;
     const {
       shippingOptions,
       countries = {},
@@ -45,47 +45,35 @@ export default class ShippingForm extends Component {
         <div className="row">
           <div className="col-12 col-sm-4 mb-3">
             <label className="w-100">
-              <p className="mb-1 font-size-caption font-color-light">
-                First name*
-              </p>
+              <p className="mb-1 font-size-caption font-color-light">First name*</p>
               <input name="firstName" value={firstName} className="rounded-0 w-100" />
             </label>
           </div>
-          <div className="col-12 col-sm-4 mb-3">
+          {/* <div className="col-12 col-sm-4 mb-3">
             <label className="w-100">
               <p className="mb-1 font-size-caption font-color-light">
                 Middle name (optional)
               </p>
               <input className="rounded-0 w-100" />
             </label>
-          </div>
+          </div>*/}
           <div className="col-12 col-sm-4 mb-3">
             <label className="w-100">
-              <p className="mb-1 font-size-caption font-color-light">
-                Last name*
-              </p>
+              <p className="mb-1 font-size-caption font-color-light">Last name*</p>
               <input name="lastName" value={lastName} className="rounded-0 w-100" />
             </label>
           </div>
         </div>
-        <div className="row">
+        {/*<div className="row">
           <div className="col-12 col-sm-6 mb-3">
             <label className="w-100">
-              <p className="mb-1 font-size-caption font-color-light">
-                Country*
-              </p>
-              <Dropdown
-                name="deliveryCountry"
-                placeholder="Select a country"
-                value={deliveryCountry}
-              >
-                {
-                  Object.entries(countries).map(([code, name]) => (
-                    <option value={code} key={code}>
-                      { name }
-                    </option>
-                  ))
-                }
+              <p className="mb-1 font-size-caption font-color-light">Country*</p>
+              <Dropdown name="deliveryCountry" placeholder="Select a country" value={deliveryCountry}>
+                {Object.entries(countries).map(([code, name]) => (
+                  <option value={code} key={code}>
+                    {name}
+                  </option>
+                ))}
               </Dropdown>
             </label>
           </div>
@@ -95,8 +83,8 @@ export default class ShippingForm extends Component {
               <input name="shipping[town_city]" value={shippingTownCity} className="rounded-0 w-100" />
             </label>
           </div>
-        </div>
-        <div className="row">
+        </div>*/}
+        {/*<div className="row">
           <div className="col-12 col-sm-6 mb-3">
             <label className="w-100">
               <p className="mb-1 font-size-caption font-color-light">
@@ -157,74 +145,49 @@ export default class ShippingForm extends Component {
               />
             </label>
           </div>
-        </div>
+        </div>*/}
         <div className="row">
           <div className="col-12 col-sm-6 mb-3">
             <label className="w-100">
-              <p className="mb-1 font-size-caption font-color-light">
-                Telephone
-              </p>
+              <p className="mb-1 font-size-caption font-color-light">Telephone</p>
               <input className="rounded-0 w-100" />
             </label>
           </div>
           <div className="col-12 col-sm-6 mb-3">
             <label className="w-100">
-              <p className="mb-1 font-size-caption font-color-light">
-                Email address*
-              </p>
-              <input
-                name="customer[email]"
-                value={customerEmail}
-                className="rounded-0 w-100"
-              />
+              <p className="mb-1 font-size-caption font-color-light">Email address*</p>
+              <input name="customer[email]" value={customerEmail} className="rounded-0 w-100" />
             </label>
           </div>
         </div>
-        <div className="row">
+        {/* <div className="row">
           <div className="col-12 mb-3">
             <label className="w-100">
-              <p className="mb-1 font-size-caption font-color-light">
-                Shipping method*
-              </p>
+              <p className="mb-1 font-size-caption font-color-light">Shipping method*</p>
               <Dropdown
                 name="fulfillment[shipping_method]"
                 value={
                   selectedShippingOption
-                  ? (`${selectedShippingOption.description} - ${selectedShippingOption.price.formatted_with_code}`)
-                  : ''
+                    ? `${selectedShippingOption.description} - ${selectedShippingOption.price.formatted_with_code}`
+                    : ''
                 }
-                placeholder="Select a shipping method"
-              >
-                {
-                  shippingOptions && shippingOptions.map(option => (
+                placeholder="Select a shipping method">
+                {shippingOptions &&
+                  shippingOptions.map((option) => (
                     <option key={option.id} value={option.id}>
-                    { `${option.description} - $${option.price.formatted_with_code}` }
+                      {`${option.description} - $${option.price.formatted_with_code}`}
                     </option>
-                  ))
-                }
+                  ))}
               </Dropdown>
             </label>
           </div>
-        </div>
-        <div
-          onClick={this.toggleNewsletter}
-          className="d-flex mb-4 flex-nowrap cursor-pointer"
-        >
-          <Checkbox
-            onClick={this.toggleNewsletter}
-            checked={receiveNewsletter}
-            className="mr-3"
-          />
-          <p>
-            Receive our news, restocking, good plans and news in your mailbox!
-            Rest assured, you will not be flooded, we only send one newsletter
-            per month approximately 🙂
-          </p>
+        </div>*/}
+        <div onClick={this.toggleNewsletter} className="d-flex mb-4 flex-nowrap cursor-pointer">
+          <Checkbox onClick={this.toggleNewsletter} checked={receiveNewsletter} className="mr-3" />
+          <p>Receive our news and good plans and news in your mailbox!</p>
         </div>
         <label className="w-100 mb-3">
-          <p className="mb-1 font-size-caption font-color-light">
-            Order notes (optional)
-          </p>
+          <p className="mb-1 font-size-caption font-color-light">Order notes (optional)</p>
           <textarea name="orderNotes" value={orderNotes} className="rounded-0 w-100" />
         </label>
       </>
@@ -248,4 +211,4 @@ ShippingForm.propTypes = {
   shippingPostalZipCode: PropTypes.string,
   customerEmail: PropTypes.string,
   orderNotes: PropTypes.string,
-}
+};

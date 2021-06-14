@@ -37,77 +37,78 @@
     justify-content: flex-end;
   }
 
-  .arrowdown {
-    position: relative;
-    left: 0%;
-    top: 0%;
-    right: auto;
-    bottom: auto;
-    z-index: 0;
-    width: auto;
-    height: 0.8vw;
-    margin-left: 2vw;
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center;
-    display: block;
-    margin-top: 0vw;
-    max-width: 100%;
-    vertical-align: middle;
-    border: 0;
-    transition: 0.3s;
-  }
-
-  .arrowdown:hover {
-    transform: translate(0, 10px);
-  }
-
-  .button_contact {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    width: 10.5vw;
-    height: auto;
-    min-height: auto;
-    padding-top: 1.3vw;
-    padding-bottom: 1.3vw;
-    border-width: 0vw;
-    border-color: rgba(14, 51, 201, 0.43);
-    border-radius: 2vw;
-    background-color: #ec4622;
-    -webkit-transition: background-color 200ms ease, color 200ms cubic-bezier(.673, .173, .012, .985);
-    transition: background-color 200ms ease, color 200ms cubic-bezier(.673, .173, .012, .985);
-    font-family: Rubik, sans-serif;
-    color: #fff;
-    font-size: 1vw;
-    font-weight: 500;
-    letter-spacing: 0.05vw;
-    outline: none;
-    @include iphone6 {
+    .arrowdown {
+      position: relative;
+      left: 0%;
+      top: 0%;
+      right: auto;
+      bottom: auto;
+      z-index: 0;
       width: auto;
-      padding: 4vw 8vw;
-      border-radius: 25vw;
+      height: 0.8vw;
+      margin-left: 2vw;
+      -webkit-align-self: center;
+      -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+      display: block;
+      margin-top: 0vw;
+      max-width: 100%;
+      vertical-align: middle;
+      border: 0;
+      transition: 0.3s;
+    }
+
+    .arrowdown:hover {
+      transform: translate(0, 10px);
+    }
+
+    .button_contact {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      width: 10.5vw;
+      height: auto;
+      min-height: auto;
+      padding-top: 1.3vw;
+      padding-bottom: 1.3vw;
+      border-width: 0vw;
+      border-color: rgba(14, 51, 201, 0.43);
+      border-radius: 2vw;
+      background-color: #ec4622;
+      -webkit-transition: background-color 200ms ease, color 200ms cubic-bezier(.673, .173, .012, .985);
+      transition: background-color 200ms ease, color 200ms cubic-bezier(.673, .173, .012, .985);
+      font-family: Rubik, sans-serif;
       color: #fff;
+      font-size: 1vw;
+      font-weight: 500;
+      letter-spacing: 0.05vw;
+      outline: none;
+      @include iphone6 {
+        width: auto;
+        padding: 4vw 8vw;
+        border-radius: 25vw;
+        color: #fff;
+        align-self: center;
+      }
+    }
+
+    .button_contact:hover {
+      background-color: #fff;
+      color: #ec4622;
+    }
+
+    .button_contact-text {
+      width: 10.5vw;
+      height: auto;
+      min-height: auto;
+      color: white;
+      @include iphone6 {
+        font-size: 3.5vw;
+      }
     }
   }
-
-  .button_contact:hover {
-    background-color: #fff;
-    color: #ec4622;
-  }
-
-  .button_contact-text {
-    width: 10.5vw;
-    height: auto;
-    min-height: auto;
-    color: white;
-    @include iphone6 {
-      font-size: 3.5vw;
-    }
-  }
-}
 
 .package-button-container {
   position: relative;
