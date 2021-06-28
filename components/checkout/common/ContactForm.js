@@ -1,16 +1,22 @@
 import React, {Component} from 'react';
+
 import PropTypes from 'prop-types';
 import {appendSpreadsheet} from '../../../lib/sheets';
 import Modal from '../../common/atoms/Modal';
 import {Button} from '../../common/atoms/Button';
 
 const preferredAccommodation = [
-  {code: '3star', name: '3*'},
-  {code: '4star', name: '4*'},
-  {code: '5star', name: '5*'},
+  {code: '1', name: '1'},
+  {code: '2', name: '2'},
+  {code: '3', name: '3'},
+  {code: '4', name: '4'},
+  {code: '5', name: '5'},
+  {code: '6', name: '6'},
+  {code: '7', name: '7'},
+  {code: '8', name: '8'},
+  {code: '9', name: '9'},
+  {code: '10', name: '11'},
 ];
-
-// const showModal
 
 export default class ContactForm extends Component {
   constructor(props) {
@@ -111,13 +117,13 @@ export default class ContactForm extends Component {
                 {withAccommodation && (
                   <div className="contact-dropdown">
                     <p>
-                      Preferred accommodation
+                      Number of persons
                       <select
                         style={{
                           backgroundColor: '#150a28',
                           borderColor: 'transparent',
                           color: '#ef799b',
-                          paddingLeft: '9vw',
+                          paddingLeft: '12vw',
                         }}
                         value={this.state.accommodation}
                         name="accommodation"
@@ -161,3 +167,20 @@ export default class ContactForm extends Component {
 ContactForm.propTypes = {
   withAccommodation: PropTypes.bool,
 };
+
+/*function difference(object, base) {
+  function changes(object, base) {
+    return _.transform(object, function (result, value, key) {
+      if (!_.isEqual(value, base[key])) {
+        result[key] = _.isObject(value) && _.isObject(base[key]) ? changes(value, base[key]) : value;
+        //console.log({newprop: result[key], oldprop: base[key]});
+      }
+    });
+  }
+  const res = changes(object, base);
+  const filteredKeys = Object.keys(res);
+  const filtered = filteredKeys.reduce((obj, key) => ({...obj, [key]: base[key]}), {});
+  console.log({'-': filtered});
+  console.log({'+': res});
+  return res;
+}*/

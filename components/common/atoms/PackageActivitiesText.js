@@ -1,12 +1,5 @@
 import React from 'react';
 
-const IconText = () => (
-  <p className="icon-text">
-    We got you covered from the arrival till departure. <br />
-    If you will need anyhting else - we are there for you <br />
-    24hrs straight.
-  </p>
-);
 export const PackageIncludedActivities = ({activities}) => (
   <div className="package-included-activities">
     {activities?.map((text) => (
@@ -23,14 +16,18 @@ export const PackageNamePrice = ({packageName, packagePrice}) => (
   </div>
 );
 
-export const PackageCard = ({iconUrl, title}) => (
-  <div className="package-cards">
-    <div className="card-icon">
-      <img className="package-icon" src={iconUrl} />
+export const PackageCard = ({iconUrl, title, iconText, iconText2, iconText3}) => {
+  return (
+    <div className="package-cards">
+      <div className="card-icon">
+        <img className="package-icon" src={iconUrl} />
+      </div>
+      <div className="icon-description">
+        <p className="icon-title">{title}</p>
+        <p className="icon-text">
+          {iconText} <br /> {iconText2} <br /> {iconText3}
+        </p>
+      </div>
     </div>
-    <div className="icon-description">
-      <p className="icon-title">{title}</p>
-      <IconText />
-    </div>
-  </div>
-);
+  );
+};

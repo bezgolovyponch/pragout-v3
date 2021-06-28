@@ -139,6 +139,7 @@
         color: hsla(0, 0%, 100%, 0.75);
         font-size: 1vw;
         text-align: left;
+        line-height: 1.2;
         @include iphone6{
           display: none;
         }

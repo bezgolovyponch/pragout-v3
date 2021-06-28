@@ -14,6 +14,16 @@ export const Package = ({
   cardTitle3,
   packageName,
   packagePrice,
+  packageIncludedText,
+  iconText,
+  iconText2,
+  iconText3,
+  iconText4,
+  iconText5,
+  iconText6,
+  iconText7,
+  iconText8,
+  iconText9,
 }) => (
   <div className="stag-do-package-container">
     <div className="video-container">
@@ -39,14 +49,32 @@ export const Package = ({
             <PackageIncludedActivities activities={activitiesLeftPartStag} />
             <PackageIncludedActivities activities={activitiesRightPartStag} />
           </div>
-          <p className="package-included-text">All you need is here.</p>
+          <p className="package-included-text">{packageIncludedText}</p>
         </div>
       </div>
     </div>
     <div className="package-section2">
-      <PackageCard iconUrl={iconUrl1} title={cardTitle1} />
-      <PackageCard iconUrl={iconUrl2} title={cardTitle2} />
-      <PackageCard iconUrl={iconUrl3} title={cardTitle3} />
+      <PackageCard
+        iconUrl={iconUrl1}
+        title={cardTitle1}
+        iconText={iconText}
+        iconText2={iconText2}
+        iconText3={iconText3}
+      />
+      <PackageCard
+        iconUrl={iconUrl2}
+        title={cardTitle2}
+        iconText={iconText4}
+        iconText2={iconText5}
+        iconText3={iconText6}
+      />
+      <PackageCard
+        iconUrl={iconUrl3}
+        title={cardTitle3}
+        iconText={iconText7}
+        iconText2={iconText8}
+        iconText3={iconText9}
+      />
     </div>
   </div>
 );

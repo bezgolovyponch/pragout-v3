@@ -65,7 +65,7 @@ class CheckoutPage extends Component {
 
       discountCode: 'CUSTOMCOMMERCE',
 
-      selectedGateway: 'test_gateway',
+      selectedGateway: 'manual',
       loading: false,
       // Optional if using Stripe, used to track steps of checkout using Stripe.js
       stripe: {
@@ -379,6 +379,9 @@ class CheckoutPage extends Component {
       },
       payment: {
         gateway: this.state.selectedGateway,
+        manual: {
+          id: 'gway_J5aeqrBO0QyP5E',
+        },
       },
     };
 

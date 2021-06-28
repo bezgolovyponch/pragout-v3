@@ -89,7 +89,10 @@ export default class HeroSection extends Component {
             <img className="image-23" src="/images/GirlLight-01.svg" />
           </div>
           <img className="image-22" src="/images/Mainbg_girl.svg" />
-          <img className="mbg_img" src="/images/Mainbg_img-01.jpg" />
+          <img
+            className="mbg_img"
+            src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/602d531b8c10e7da93046b58_Mainbg_img-01.jpg"
+          />
           <div className="mainbg_low">
             <img className="mbg_low" src="images/Mainbg_low-01.svg" />
           </div>
@@ -129,8 +132,8 @@ export default class HeroSection extends Component {
           <div className="section_2">
             <div className="main-stag-package-div">
               <div className="main-stag-package-text">
-                <p className="main-package-top-text">Getting married?</p>
-                <h1 className="main-package-mid-text">PRAGOUT STAG PACK</h1>
+                <p className="main-package-top-text">Gentlemen, take a look</p>
+                <h1 className="main-package-mid-text">PRAGOUT ESSENTIALS</h1>
                 <p className="main-package-low-text">
                   Plain and simple - we created a pre-made bundle of top-rated activities for you to enjoy. Let true
                   proffesionals take care of the rest. Book your tour with a few clicks.
