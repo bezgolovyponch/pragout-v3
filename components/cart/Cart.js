@@ -79,6 +79,7 @@ class Cart extends Component {
               style={{
                 ...defaultStyle,
                 ...transitionStyles[state],
+                color: 'black',
               }}>
               {/* Cart Header */}
               <div className="px-4 px-md-5">

@@ -23,22 +23,7 @@ export default class ShippingForm extends Component {
 
   render() {
     const {receiveNewsletter} = this.state;
-    const {
-      shippingOptions,
-      countries = {},
-      subdivisions = {},
-      deliveryCountry,
-      deliveryRegion,
-      selectedShippingOption,
-      firstName,
-      lastName,
-      shippingTownCity,
-      shippingStreet,
-      shippingStreet2,
-      shippingPostalZipCode,
-      customerEmail,
-      orderNotes,
-    } = this.props;
+    const {firstName, lastName, customerEmail, orderNotes} = this.props;
 
     return (
       <>
@@ -196,19 +181,8 @@ export default class ShippingForm extends Component {
 }
 
 ShippingForm.propTypes = {
-  shippingOptions: PropTypes.array,
-  countries: PropTypes.object,
-  subdivisions: PropTypes.object,
-  deliveryCountry: PropTypes.string,
-  deliveryRegion: PropTypes.string,
   firstName: PropTypes.string,
   lastName: PropTypes.string,
-  selectedShippingOptionId: PropTypes.string,
-  selectedShippingOption: PropTypes.object,
-  shippingTownCity: PropTypes.string,
-  shippingStreet: PropTypes.string,
-  shippingStreet2: PropTypes.string,
-  shippingPostalZipCode: PropTypes.string,
   customerEmail: PropTypes.string,
   orderNotes: PropTypes.string,
 };
