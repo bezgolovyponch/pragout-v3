@@ -217,7 +217,11 @@
     font-size: 2.5vw;
     padding: 2vw 4.5vw;
   }
-
+  &:hover, &:active, &:focus{
+    background-color: #5f1dbb;
+    opacity: 1;
+    outline: none;
+  }
 }
   .logo-container{
     @include iphone6 {

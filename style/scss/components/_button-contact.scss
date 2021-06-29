@@ -106,6 +106,7 @@
       color: white;
       @include iphone6 {
         font-size: 3.5vw;
+        width: auto;
       }
     }
   }

@@ -6,7 +6,7 @@ import Package from '../components/common/Package';
 import Head from 'next/head';
 const videoUrl =
   'https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/6097d7c03d62714be62cc652_Stag BG NO music-transcode.mp4';
-const iconUrl1 = '/images/champaigne-glass.svg';
+const iconUrl1 = '/images/champaigne-glass (2).svg';
 const iconUrl2 = '/images/girls-group.svg';
 const iconUrl3 = '/images/ajustable1.svg';
 const cardTitle1 = 'Perfect girls night';

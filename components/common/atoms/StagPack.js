@@ -1,6 +1,6 @@
 import React from 'react';
 import {motion} from 'framer-motion';
-import {ButtonWrapper, slashMotion} from './Button';
+import {ButtonWrapper, ButtonWrapperMobile, slashMotion} from './Button';
 
 export const StagPack = () => {
   return (
@@ -26,7 +26,7 @@ export const StagPack = () => {
         <ButtonWrapper linkTo="/stag-do-package" />
       </motion.div>
       <div className="benjamin-button-mobile">
-        <ButtonWrapper linkTo="/stag-do-package" />
+        <ButtonWrapperMobile linkTo="/stag-do-package" />
       </div>
     </div>
   );

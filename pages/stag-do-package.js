@@ -18,9 +18,15 @@ const activitiesLeftPartStag = ['· Return airport transfer', '· AK 47 shooting
 const activitiesRightPartStag = ['· Steak and strip', ' · Private pub crawl', ' · VIP club entrance'];
 const packageIncludedText =
   ' Boys, here we are! Thats the heart of Europe,the land of vice and beer. Welcome to Prague!';
-const iconText = 'We got you covered from the arrival till departure.';
-const iconText2 = 'If you will need anything else - we are there for you';
-const iconText3 = '24hrs straight.';
+const iconText = 'Nice places, loads of beer and food, and best parties!.';
+const iconText2 = ' All come with a perfect schedule and execution tailored to your needs.';
+const iconText3 = 'We got you covered from the arrival till departure, 24hrs straight.';
+const iconText4 = ' Simplicity, safety , local tips and tricks - ';
+const iconText5 = ' You are provided with!';
+const iconText6 = 'We really know the city at its best and we will make you love it!  ';
+const iconText7 = '  Want to change it a bit? More beer, less walk?';
+const iconText8 = ' Or literally anything?';
+const iconText9 = ' Your tour manager will provide the best solution! We are open to any ideas!';
 
 const StagDoPackagePage = () => (
   <Root>
@@ -40,6 +46,12 @@ const StagDoPackagePage = () => (
       iconText={iconText}
       iconText2={iconText2}
       iconText3={iconText3}
+      iconText4={iconText4}
+      iconText5={iconText5}
+      iconText6={iconText6}
+      iconText7={iconText7}
+      iconText8={iconText8}
+      iconText9={iconText9}
       packageName={packageName}
       packagePrice={packagePrice}
       packageIncludedText={packageIncludedText}

@@ -125,19 +125,22 @@ class Header extends Component {
    * Toggle add to cart animation to true
    */
   toggleAddToCartAnimation() {
-    const {playAddToCartAnimation} = this.state;
+    /*    const {playAddToCartAnimation} = this.state;
 
-    this.setState({playAddToCartAnimation: !playAddToCartAnimation});
+    this.setState({playAddToCartAnimation: !playAddToCartAnimation});*/
   }
 
   /**
    * Call toggle of add to cart animation and set time out to false
    */
   handleAddToCartToggle() {
-    this.toggleAddToCartAnimation();
-    setTimeout(() => {
+    this.setState({
+      showCart: true,
+    });
+    //this.toggleAddToCartAnimation();
+    /*    setTimeout(() => {
       this.toggleAddToCartAnimation();
-    }, 3000);
+    }, 3000);*/
   }
 
   renderLoginLogout() {
@@ -211,6 +214,9 @@ class Header extends Component {
             PLANNER
           </button>
           <Cart isOpen={showCart} toggle={(value) => this.toggleCart(value)} />
+          {/*  <div className="position-relative cursor-pointer" onClick={this.toggleCart}>
+            <Animation isStopped={this.state.playAddToCartAnimation} />
+          </div>*/}
           {/*          <div className="planner_01_button">
             {process.browser && this.renderLoginLogout()}
             PLANNER
@@ -264,4 +270,3 @@ class Header extends Component {
 }
 
 export default connect((state) => state, {clearCustomer})(Header);
-//rgba(98, 102, 119, 0.84);

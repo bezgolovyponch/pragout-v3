@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 // Cart redux action creators
 import {retrieveCart as dispatchRetreiveCart} from '../../store/actions/cartActions';
 
-const duration = 300;
+const duration = 100;
 
 const defaultStyle = {
   transition: `transform ${duration}ms ease-in-out`,

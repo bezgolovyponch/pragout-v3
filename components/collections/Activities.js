@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
-import {useDispatch} from 'react-redux';
 import Link from 'next/link';
 import Head from 'next/head';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import {STORE_PRODUCTS} from '../../store/actions/actionTypes';
 import {addToCart} from '../../store/actions/cartActions';
 
 class Activities extends Component {
@@ -15,6 +12,7 @@ class Activities extends Component {
     };
     this.handleAddToCart = this.handleAddToCart.bind(this);
   }
+
   /**
    * Add to Cart
    */
@@ -71,7 +69,11 @@ class Activities extends Component {
                 <p className="product-link">{product.name}</p>
                 <p className="product-link">{product.price.formatted_with_symbol}</p>
               </div>
-              <button className="add-to-cart" onClick={() => this.handleAddToCart(product.id)}>
+              <button
+                className="add-to-cart"
+                onClick={() => {
+                  this.handleAddToCart(product.id);
+                }}>
                 + Add
               </button>
             </div>
