@@ -1,31 +1,15 @@
 import React, {Component} from 'react';
-import {EffectFade, Autoplay} from 'react-id-swiper';
 import {Button} from '../common/atoms/Button';
 import {StagPack} from '../common/atoms/StagPack';
 import {motion} from 'framer-motion';
 
-const params = {
-  modules: [EffectFade, Autoplay],
-  slidesPerView: 1,
-  watchOverflow: false,
-  autoplay: {
-    delay: 5000,
-  },
-  loop: true,
-  allowTouchMove: false,
-  speed: 1000,
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true,
-  },
-};
 const duration = 200;
 
 const defaultStyle = {
   //transition: `transform ${duration}ms ease-out`,
   //transition: `transform ${duration}ms ease-in-out`,
   // transition: `transform ${duration}ms ease`,
-  transition: 'all 0.3s ease-out',
+  transition: 'all 0.5s ease-out',
 };
 
 export default class HeroSection extends Component {
@@ -71,14 +55,14 @@ export default class HeroSection extends Component {
         this.imageLow.current.style.transform = `translate3d(0, ${scrolledRatio * 50}vw, 0) scale3d(${
           percentage2 * 1.2
         },${percentage2 * 1.2}, 1)`;
-        if (percentage2 > 1) {
+        /*        if (percentage2 > 1) {
           this.image2.current.style.transform = `translate3d(0, ${
             -scrolledRatio * 1.5
           }vw, 0) scale3d( ${percentage2}, ${percentage2}, 1)`;
           this.image3.current.style.transform = `translate3d(0, ${
             -scrolledRatio * 1.3
           }vw, 0) scale3d(${percentage2},${percentage2}, 1)`;
-        }
+        }*/
       }
     }
   }
