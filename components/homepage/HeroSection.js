@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import Swiper, {EffectFade, Autoplay} from 'react-id-swiper';
-import Link from 'next/link';
-import commerce from '../../lib/commerce';
-import {Button, LinkButton} from '../common/atoms/Button';
+import {EffectFade, Autoplay} from 'react-id-swiper';
+import {Button} from '../common/atoms/Button';
 import {StagPack} from '../common/atoms/StagPack';
 import {motion} from 'framer-motion';
 
@@ -21,6 +19,14 @@ const params = {
     crossFade: true,
   },
 };
+const duration = 200;
+
+const defaultStyle = {
+  //transition: `transform ${duration}ms ease-out`,
+  //transition: `transform ${duration}ms ease-in-out`,
+  // transition: `transform ${duration}ms ease`,
+  transition: 'all 0.3s ease-out',
+};
 
 export default class HeroSection extends Component {
   constructor(props) {
@@ -29,6 +35,7 @@ export default class HeroSection extends Component {
     this.image = React.createRef();
     this.image2 = React.createRef();
     this.image3 = React.createRef();
+    this.imageLow = React.createRef();
     this.handleScroll = this.handleScroll.bind(this);
     this.animate = this.animate.bind(this);
   }
@@ -42,7 +49,6 @@ export default class HeroSection extends Component {
     window.removeEventListener('scroll', this.handleScroll);
   }
   handleClick = () => {
-    console.log('hello');
     document.getElementById('contactForm').scrollIntoView({behavior: 'smooth'});
   };
 
@@ -56,19 +62,15 @@ export default class HeroSection extends Component {
     }
     const dimensions = this.exploreContainer.current.getBoundingClientRect();
     const x = window.matchMedia('(min-width: 768px)');
-
     if (x.matches) {
       if (dimensions.top - window.innerHeight < 0 && dimensions.bottom > 0) {
         const scrolledRatio = (window.innerHeight - dimensions.top) / window.innerHeight - 1;
         const percentage = Math.round((window.innerHeight - dimensions.top) / window.innerHeight);
         const percentage2 = (window.innerHeight - dimensions.top) / window.innerHeight;
-        // this.image.current.style.transform = `translateY(${-scrolledRatio * 100}px)`;
-        // this.image.current.style.transform = `translate3d(0, ${scrolledRatio * 100}px, 0) scale3d(2, 0.7, 0.1)`;
-        //this.image2.current.style.transform = `translate3d(0, ${scrolledRatio * 100}px, 0) scale3d(1.2, 1.2, 1)`;
-        // this.image.current.style.transform = `translate3d(0, ${scrolledRatio * 50}vw, 0)`;
         this.image.current.style.transform = `translate3d(0, ${scrolledRatio * 50}vw, 0) scale3d(1.02439, 1.02439, 1)`;
-        // this.image2.current.style.transform = 'translate3d(0,0, 0) scale3d(1, 1, 1)';
-        // this.image3.current.style.transform = 'translate3d(0,0, 0) scale3d(1, 1, 1)';
+        this.imageLow.current.style.transform = `translate3d(0, ${scrolledRatio * 50}vw, 0) scale3d(${
+          percentage2 * 1.2
+        },${percentage2 * 1.2}, 1)`;
         if (percentage2 > 1) {
           this.image2.current.style.transform = `translate3d(0, ${
             -scrolledRatio * 1.5
@@ -86,27 +88,70 @@ export default class HeroSection extends Component {
       <div ref={this.exploreContainer}>
         <div className="section_bg">
           <div className="div-block-19">
-            <img className="image-23" src="/images/GirlLight-01.svg" />
+            <img
+              className="image-23"
+              src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/603665996a08397167c90568_GirlLight-01.svg"
+            />
           </div>
-          <img className="image-22" src="/images/Mainbg_girl.svg" />
+          <img
+            className="image-22"
+            src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/6036635cf4add3878d523acb_Mainbg_girl.svg"
+          />
           <img
             className="mbg_img"
             src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/602d531b8c10e7da93046b58_Mainbg_img-01.jpg"
           />
-          <div className="mainbg_low">
-            <img className="mbg_low" src="images/Mainbg_low-01.svg" />
+          <div
+            className="mainbg_low"
+            style={{
+              ...defaultStyle,
+            }}>
+            <img
+              className="mbg_low"
+              ref={this.imageLow}
+              src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/602d538633575e4012e40681_Mainbg_low-01.svg"
+            />
           </div>
           <div className="mainbg_light">
             <div className="mbg_light" />
-            <img className="mbg_light" ref={this.image} src="images/Mainbg_light-01.svg" />
+            <img
+              className="mbg_light"
+              ref={this.image}
+              style={{
+                ...defaultStyle,
+              }}
+              src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/602d53867ad04e8d2dac1aeb_Mainbg_light-01.svg"
+            />
           </div>
-          <div className="mainbg_mid">
-            <img className="mbg_mid" ref={this.image3} src="/images/Mainbg_mid-01.svg" />
-            <img className="mbg_mid-mob" src="/images/Mainbg_mid_mob.svg" />
+          <div
+            className="mainbg_mid"
+            style={{
+              ...defaultStyle,
+            }}>
+            <img
+              className="mbg_mid"
+              ref={this.image3}
+              src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/602d5386be64ee1beb5cdcfe_Mainbg_mid-01.svg"
+            />
+            <img
+              className="mbg_mid-mob"
+              src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/602ef6ed74f2e556a7487a3c_Mainbg_mid_mob.svg"
+            />
           </div>
-          <div className="mainbg_high">
-            <img className="mbg_high" ref={this.image2} src="/images/MainBG_high-01.svg" />
-            <img className="mbg_high-mob" src="/images/MainBG_high_mob.svg" />
+          <div
+            className="mainbg_high"
+            style={{
+              ...defaultStyle,
+            }}>
+            <img
+              className="mbg_high"
+              ref={this.image2}
+              src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/602d5386f72a9602e7c27c0e_Mainbg_high-01.svg"
+            />
+            <img
+              className="mbg_high-mob"
+              src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/602ef6ec9587252cde78c83b_MainBG_high_mob.svg"
+            />
           </div>
         </div>
         <div>
