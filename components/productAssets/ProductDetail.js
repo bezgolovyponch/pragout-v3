@@ -125,19 +125,14 @@ class ProductDetail extends Component {
     const priceSymbol = this.getCurrencySymbol(price.formatted_with_symbol);
     const {selectedOptions} = this.state;
     const reg = /(<([^>]+)>)/gi;
-    console.log(description);
-    console.log((description || '').replace('a', '<br>'));
-    console.log((description || '').replace(reg, '/n'));
     return (
-      <div>
-        {/* Product Summary */}
-        {/* <div onClick={this.handleReviewClick} className="cursor-pointer">
-          <ReviewStars count={4.5} />
-        </div>*/}
-        <p className="font-size-display3 font-family-secondary mt-2 mb-2">{name}</p>
+      <div className="product-details">
+        {/*        <p className="font-size-display3">{name}</p>*/}
+        <h1>{name}</h1>
         <div
           style={{
             whiteSpace: 'pre',
+            listStyleType: 'square',
           }}>
           {(description || '').replace(reg, '\n')}
         </div>
@@ -153,12 +148,12 @@ class ProductDetail extends Component {
         </div>
 
         {/* Add to Cart & Price */}
-        <div className="d-flex py-4">
+        <div className="add-to-cart">
           <button
             onClick={this.handleAddToCart}
-            className="h-56 bg-black font-color-white pl-3 pr-4 d-flex align-items-center flex-grow-1"
+            className="h-56 bg-black font-color-white pl-3 pr-4 d-flex align-items-center"
             type="button">
-            <span className="flex-grow-1 mr-3 text-center">Add to cart</span>
+            <span className="flex-grow-1 mr-3 text-right font-size-display 2">Add to your plan</span>
             <span className="border-left border-color-white pl-3">
               {priceSymbol}
               {this.getPrice()}

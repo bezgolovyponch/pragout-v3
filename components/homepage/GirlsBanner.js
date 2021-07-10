@@ -9,7 +9,7 @@ export function GirlsBanner() {
         <div className="stag-package-girls">
           <div className="text-package-girls-container">
             <p className="top-text-ladies">Ladies , this one is for you!</p>
-            <h1 className="text-header">FABULOUS HEN WEEKEND</h1>
+            <h1 className="text-header">FABULOUS GIRLS WEEKEND</h1>
             <p className="paragraph-text">
               Girls just wanna have fun! And we know it. Let us introduce you to hen do classics. Ladies only!
             </p>
@@ -18,7 +18,7 @@ export function GirlsBanner() {
             <div className="package-button-container">
               <div className="text-package-button-container">
                 <div>
-                  <h2 className="stag-pack">HEN WEEKEND</h2>
+                  <h2 className="stag-pack">BACHELORETTE ESSSENTIALS</h2>
 
                   <div className="hero-package-description">
                     <p className="paragraph-hero-package">
@@ -26,7 +26,7 @@ export function GirlsBanner() {
                       - Champagne limo drive <br />
                     </p>
                     <p className="paragraph-hero-package">
-                      - Luxury dinner <br />
+                      - Instagram tour <br />
                       - VIP club entrance <br />
                     </p>
                   </div>

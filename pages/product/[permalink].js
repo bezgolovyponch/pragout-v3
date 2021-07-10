@@ -51,22 +51,17 @@ class Product extends Component {
         </Head>
         <div className="product-section">
           <div className="product-details-image">
-            <img src={image} />
+            <img className="product-image" src={image} />
           </div>
-          <div className="product-details">
-            <div className="product-detail">
-              <ProductDetail product={product} />
-              <div className="product-title-price"></div>
-              <div className="product-included"></div>
-            </div>
-          </div>
+          <div />
+          <ProductDetail product={product} />
         </div>
 
         {/* <div className="py-5 my-5">
           <div className="main-product-content">
             <CarouselImages images={images} />
           </div>
-
+            <div className="product-detail">
           <div className="product-images">
             <div className="flex-grow-1">
               {Array.isArray(images)

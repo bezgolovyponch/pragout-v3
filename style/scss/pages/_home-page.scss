@@ -301,7 +301,7 @@ $color: rgba(0, 0, 0, 0);
       width: 33vw;
       height: auto;
       margin-right: 3.2vw;
-      margin-left: -3.2vw;
+      margin-left: -3.45vw;
       padding-left: 0px;
       @include iphone6{
         width: 75vw;
@@ -482,7 +482,8 @@ $color: rgba(0, 0, 0, 0);
         color: hsla(0, 0%, 100%, 0.75);
         font-size: 1vw;
         text-align: left;
-        line-height: 1.2;
+        line-height: 1.5;
+
         @include iphone6{
           display: none;
         }

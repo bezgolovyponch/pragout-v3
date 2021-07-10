@@ -30,6 +30,7 @@ export default class ContactForm extends Component {
       accommodation: '',
       showOptions: false,
       openModal: false,
+      gdpr: true,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -139,6 +140,16 @@ export default class ContactForm extends Component {
                     </p>
                   </div>
                 )}
+                {/*                <p>
+                  I agree with terms and conditions
+                  <input
+                    name="gdpr"
+                    type="checkbox"
+                    placeholder="I agree with terms and conditions"
+                    checked={this.state.gdpr}
+                    onChange={this.handleChange}
+                  />
+                </p>*/}
                 <div className="button-hero-contact">
                   <Button className="button_contact" onClick={this.handleSubmit} text="Send" withIcon={false} />
                 </div>

@@ -7,17 +7,17 @@ export const StagPack = () => {
     <div className="package-button-container">
       <div className="text-package-button-container">
         <div>
-          <h2 className="stag-pack">PRAGOUT STAG PACK</h2>
+          <h2 className="stag-pack">GENTLEMEN ESSENTIALS</h2>
           <div className="hero-package-description">
             <p className="paragraph-hero-package">
-              - Apartments <br />
-              - Transfer <br />
-              - AK47 Shooting <br />
+              - Return airport transfer <br />
+              - Outdoor paintball <br />
+              - AK 47 shooting <br />
             </p>
             <p className="paragraph-hero-package">
-              - Paintball Outdoor <br />
-              - Pragout Night Crawl <br />
-              - Local Guide <br />
+              - Steak and strip <br />
+              - Private pub crawl <br />
+              - VIP club entrance <br />
             </p>
           </div>
         </div>

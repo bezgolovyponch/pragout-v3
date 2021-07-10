@@ -1,23 +1,114 @@
 .product-section {
-  display: flex;
+  display: -ms-grid;
+  display: grid;
   height: 70vh;
   margin-right: 4vw;
   margin-left: 4vw;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.1fr 0.5fr;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+  @include iphone6{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
+    margin: auto 3vw;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    justify-items: stretch;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
 
   .product-details-image {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    height: 50vh;
-    width: 50%;
-    align-content:center;
+    width: auto;
+    height: auto;
+    margin-bottom: 0px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: transparent;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    -ms-grid-row-align: auto;
+    align-self: auto;
+    -ms-grid-column-align: auto;
+    justify-self: auto;
+    .product-image {
+      max-width: 100%;
+      vertical-align: middle;
+      border: 0;
+      display: block;
+      margin-top: 0vw;
+      width: auto;
+      height: auto;
+      @include iphone6{
+        width: auto;
+        height: auto;
+        margin-bottom: 0px;
+
+      }
+    }
   }
 
   .product-details {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    height: auto;
-    width: 50%;
+    width: auto;
+    max-width: none;
+    min-width: auto;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
-    align-content: center;
-    text-align: center;
+    color: #fff;
+    @include iphone6{
+      width: 100%;
+      max-width: none;
+      margin-right: auto;
+      margin-bottom: 80px;
+      margin-left: auto;
+      text-align: center;
+    }
+    .add-to-cart {
+      display: flex;
+      padding-top: 4em;
+      padding-bottom: 1em;
+      @include iphone6{
+        justify-content: center;
+      }
+    }
+
+    }
     .product-title-price {
       display: flex;
       height: auto;
@@ -28,10 +119,11 @@
       display: flex;
       height: auto;
       width: auto;
+      align-content: space-between;
     }
 
   }
-}
+
 
 .main-product-content {
   max-width: 50vw;
