@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Button} from '../common/atoms/Button';
 import {StagPack} from '../common/atoms/StagPack';
 import {motion} from 'framer-motion';
-
+import {withTranslation} from 'react-i18next';
 const duration = 200;
 
 const defaultStyle = {
@@ -12,7 +12,7 @@ const defaultStyle = {
   transition: 'all 0.5s ease-out',
 };
 
-export default class HeroSection extends Component {
+class HeroSection extends Component {
   constructor(props) {
     super(props);
     this.exploreContainer = React.createRef();
@@ -68,6 +68,7 @@ export default class HeroSection extends Component {
   }
 
   render() {
+    const {t, i18n} = this.props;
     return (
       <div ref={this.exploreContainer}>
         <div className="section_bg">
@@ -144,7 +145,7 @@ export default class HeroSection extends Component {
               <h5 className="heading_05">MAKE YOUR WEEKEND IN PRAGUE</h5>
               <img className="image-7" src="/images/Title-01.svg" />
               <div className="button-hero">
-                <Button className="button_contact" onClick={this.handleClick} text="Need help?" withIcon={true} />
+                <Button className="button_contact" onClick={this.handleClick} text={t('Need help?')} withIcon={true} />
               </div>
               <div className="mousescroll">
                 <img className="image-8" src="/images/Mouse_Scroll-01.svg" />
@@ -179,3 +180,5 @@ export default class HeroSection extends Component {
     );
   }
 }
+
+export default withTranslation()(HeroSection);

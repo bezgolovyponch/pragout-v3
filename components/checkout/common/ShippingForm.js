@@ -8,22 +8,12 @@ export default class ShippingForm extends Component {
     super(props);
 
     this.state = {
-      receiveNewsletter: true,
       saveInfo: true,
     };
-
-    this.toggleNewsletter = this.toggleNewsletter.bind(this);
-  }
-
-  toggleNewsletter() {
-    this.setState({
-      receiveNewsletter: !this.state.receiveNewsletter,
-    });
   }
 
   render() {
-    const {receiveNewsletter} = this.state;
-    const {firstName, lastName, customerEmail, orderNotes} = this.props;
+    const {firstName, lastName, customerEmail, orderNotes, phoneNumber} = this.props;
 
     return (
       <>
@@ -135,13 +125,13 @@ export default class ShippingForm extends Component {
           <div className="col-12 col-sm-6 mb-3">
             <label className="w-100">
               <p className="mb-1 font-size-caption font-color-light">Telephone</p>
-              <input className="rounded-0 w-100" />
+              <input className="rounded-0 w-100" name="phoneNumber" value={phoneNumber} />
             </label>
           </div>
           <div className="col-12 col-sm-6 mb-3">
             <label className="w-100">
               <p className="mb-1 font-size-caption font-color-light">Email address*</p>
-              <input name="customer[email]" value={customerEmail} className="rounded-0 w-100" />
+              <input name="customerEmail" value={customerEmail} className="rounded-0 w-100" />
             </label>
           </div>
         </div>
@@ -167,10 +157,6 @@ export default class ShippingForm extends Component {
             </label>
           </div>
         </div>*/}
-        <div onClick={this.toggleNewsletter} className="d-flex mb-4 flex-nowrap cursor-pointer">
-          <Checkbox onClick={this.toggleNewsletter} checked={receiveNewsletter} className="mr-3" />
-          <p>Receive our news and good plans and news in your mailbox!</p>
-        </div>
         <label className="w-100 mb-3">
           <p className="mb-1 font-size-caption font-color-light">Order notes (optional)</p>
           <textarea name="orderNotes" value={orderNotes} className="rounded-0 w-100" />
@@ -185,4 +171,5 @@ ShippingForm.propTypes = {
   lastName: PropTypes.string,
   customerEmail: PropTypes.string,
   orderNotes: PropTypes.string,
+  phoneNumber: PropTypes.string,
 };

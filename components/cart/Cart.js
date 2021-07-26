@@ -99,19 +99,19 @@ class Cart extends Component {
                   </div>
                   {/* Cart Footer */}
                   <div className="cart-footer">
-                    <div className="mb-3 d-flex">
+                    <div className="mb-3 d-flex justify-content-center">
                       <p className="font-color-light mr-2 font-weight-regular">Subtotal:</p>
                       <p>{cart.subtotal.formatted_with_symbol}</p>
                     </div>
-                    <div className="row">
-                      <div className="col-6 d-none d-md-block">
+                    <div className="row d-flex justify-content-center">
+                      {/*<div className="col-6 d-none d-md-block ">
                         <Link href="/activities">
                           <a className="h-56 d-flex align-items-center justify-content-center border border-color-black bg-white w-100 flex-grow-1 font-weight-medium font-color-black px-3">
                             Continue Shopping
                           </a>
                         </Link>
-                      </div>
-                      <div className="col-12 col-md-6">
+                      </div>*/}
+                      <div className="col-12 col-md-6   ">
                         <Link href="/checkout">
                           <a className="h-56 d-flex align-items-center justify-content-center bg-black w-100 flex-grow-1 font-weight-medium font-color-white px-3">
                             Send an inquiry

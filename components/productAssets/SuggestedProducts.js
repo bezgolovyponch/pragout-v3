@@ -5,17 +5,15 @@ import {connect} from 'react-redux';
 
 class SuggestedProducts extends Component {
   render() {
-    const {products} = this.props;
-
+    const {products, currentProduct} = this.props;
+    const filteredProducts = products.filter((product) => product.id !== currentProduct.id);
     return (
-      <div className="custom-container py-5 my-5">
-        <div className="d-flex flex-column align-items-center mb-5 pb-4">
-          {/*          <p className="font-color-medium mb-4">Suggested products</p>*/}
-          <p className="text-center font-size-display1 mb-3 font-weight-medium" style={{maxWidth: '32rem'}}>
-            You may also like to check out these products.
-          </p>
-          <ProductRow products={products.slice(0, 4)} />
-        </div>
+      <div className="d-flex flex-column align-items-center mb-5 pb-4">
+        {/*        <p className="font-color-medium mb-4">Suggested products</p>*/}
+        <p className="text-center font-size-display1 mt-4 py-4 font-weight-medium" style={{maxWidth: '32rem'}}>
+          You may also like to check out these products:
+        </p>
+        <ProductRow products={filteredProducts.slice(0, 4)} />
       </div>
     );
   }
@@ -23,10 +21,12 @@ class SuggestedProducts extends Component {
 
 SuggestedProducts.propTypes = {
   products: PropTypes.arrayOf(PropTypes.object),
+  currentProduct: PropTypes.object,
 };
 
 SuggestedProducts.defaultProps = {
   products: [],
+  currentProduct: {},
 };
 
 export default connect((state) => state)(SuggestedProducts);

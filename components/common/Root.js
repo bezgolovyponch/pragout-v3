@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './Header';
+import Header, {CovidPopUp} from './Header';
 
-export default function Root({ transparentHeader, children }) {
+export default function Root({transparentHeader, children}) {
   return (
     <>
       <Header transparent={transparentHeader} />

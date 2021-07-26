@@ -11,7 +11,7 @@
 
     .background-video {
       position: relative;
-      padding-top: 56.25%;
+      padding-top: 25%;
       //padding-top: 30%;
       //padding-bottom: 20%;
       overflow: hidden;;
@@ -236,7 +236,7 @@
     display: -ms-flexbox;
     display: flex;
     height: auto;
-    margin-top: 5vw;
+    margin-top: 0;
     margin-bottom: 5vw;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -270,7 +270,7 @@
       -webkit-box-align: center;
       align-items: center;
       @include iphone6 {
-        width: auto;
+        width: 80vw;
         margin: 2vw 0vw;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;

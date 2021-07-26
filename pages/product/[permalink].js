@@ -99,7 +99,7 @@ class Product extends Component {
             />
           </Collapse>
           <div className="h-1 borderbottom border-color-black" />*/}
-        <SuggestedProducts />
+        <SuggestedProducts currentProduct={product} />
         <Footer />
       </Root>
     );

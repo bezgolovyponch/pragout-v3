@@ -31,6 +31,7 @@ export default class ContactForm extends Component {
       showOptions: false,
       openModal: false,
       gdpr: true,
+      numberOfPersons: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -60,24 +61,28 @@ export default class ContactForm extends Component {
       CustomerEmail: this.state.customerEmail,
       PhoneNumber: this.state.phoneNumber,
       ContactNotes: this.state.contactNotes,
-      Accommodation: this.state.accommodation,
+      NumberOfPersons: this.state.numberOfPersons,
     };
     await appendSpreadsheet(newRow);
   }
 
   render() {
-    const {withAccommodation} = this.props;
+    const {withAccommodation, onMainPage} = this.props;
     return (
       <div className="contact-form-banner" id="contactForm">
         <div className="contact-section">
           <div className="contact-section-text">
             <p className="top-paragraph-contact">
-              It doesn't end just here
+              {onMainPage ? 'It does not end just here' : 'Is that what you need?'}
+
               <br />
             </p>
-            <h1 className="header-contact">CONTACT US</h1>
+            <h1 className="header-contact"> {onMainPage ? 'CONTACT US' : 'Enquire now'} </h1>
             <p className="down-paragraph-contact">
-              Drop us a line about the ideas you have on your mind and we will make it happen.
+              {onMainPage
+                ? 'Drop us a line about the ideas you have on your mind and we will make it happen'
+                : 'Or drop us a line about the ideas you have on your mind and we will make it happen'}
+              .
             </p>
           </div>
           <div className="contact-form">
@@ -115,10 +120,18 @@ export default class ContactForm extends Component {
                   className="contact_text_field"
                   placeholder="Your ideas"
                 />
+                <input
+                  name="numberOfPersons"
+                  type="text"
+                  value={this.state.numberOfPersons}
+                  onChange={this.handleChange}
+                  className="contact_text_field"
+                  placeholder=" Number of persons"
+                />
                 {withAccommodation && (
                   <div className="contact-dropdown">
                     <p>
-                      Number of persons
+                      Accommodation
                       <select
                         style={{
                           backgroundColor: '#150a28',
@@ -177,21 +190,5 @@ export default class ContactForm extends Component {
 
 ContactForm.propTypes = {
   withAccommodation: PropTypes.bool,
+  onMainPage: PropTypes.bool,
 };
-
-/*function difference(object, base) {
-  function changes(object, base) {
-    return _.transform(object, function (result, value, key) {
-      if (!_.isEqual(value, base[key])) {
-        result[key] = _.isObject(value) && _.isObject(base[key]) ? changes(value, base[key]) : value;
-        //console.log({newprop: result[key], oldprop: base[key]});
-      }
-    });
-  }
-  const res = changes(object, base);
-  const filteredKeys = Object.keys(res);
-  const filtered = filteredKeys.reduce((obj, key) => ({...obj, [key]: base[key]}), {});
-  console.log({'-': filtered});
-  console.log({'+': res});
-  return res;
-}*/

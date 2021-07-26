@@ -43,6 +43,7 @@
     "react": "16.12.0",
     "react-collapse": "^5.0.1",
     "react-dom": "16.12.0",
+    "react-i18next": "^11.11.1",
     "react-id-swiper": "^2.4.0",
     "react-lottie": "^1.2.3",
     "react-player": "^2.9.0",
@@ -53,7 +54,8 @@
     "redux-thunk": "^2.3.0",
     "swiper": "^6.5.1",
     "typeface-rubik": "^1.1.13",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "yaml": "^1.10.2"
   },
   "devDependencies": {
     "@chec/seeder": "^1.1.0",
@@ -66,6 +68,8 @@
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-react": "7.x",
-    "eslint-plugin-react-hooks": "2.x"
+    "eslint-plugin-react-hooks": "2.x",
+    "i18next-browser-languagedetector": "^6.1.2",
+    "luxon": "^1.28.0"
   }
 }

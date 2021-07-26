@@ -56,7 +56,7 @@ const HenDoPackagePage = () => (
       packagePrice={packagePrice}
       packageIncludedText={packageIncludedText}
     />
-    <ContactForm withAccommodation={true} />
+    <ContactForm withAccommodation={true} onMainPage={false} />
     <Footer />
   </Root>
 );

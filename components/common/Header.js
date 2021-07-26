@@ -7,6 +7,7 @@ import Animation from '../cart/Animation';
 import {Transition} from 'react-transition-group';
 import {connect} from 'react-redux';
 import {clearCustomer} from '../../store/actions/authenticateActions';
+import DropdownLanguage from '../checkout/common/DropdownLanguage';
 
 const duration = 700;
 
@@ -40,8 +41,24 @@ const mobileMenuLinks = [
     name: 'Corporate events',
     link: '/corporate-events',
   },
+  {
+    name: 'Covid package',
+    link: '/covid-package',
+  },
 ];
-
+const lngs = {
+  en: {nativeName: 'English'},
+  de: {nativeName: 'Deutsch'},
+};
+export const CovidPopUp = () => {
+  return (
+    <Link href="/covid-package">
+      <a href="/covid-package" className="navbar_link2">
+        <p>COVID-19 PACKAGE!!!!</p>
+      </a>
+    </Link>
+  );
+};
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -187,7 +204,6 @@ class Header extends Component {
               </a>
             </Link>
           </div>
-
           <div className="navbar_menu2">
             <Link href="/activities">
               <a href="/activities" className="navbar_link2">
@@ -210,10 +226,12 @@ class Header extends Component {
               </a>
             </Link>
           </div>
+
           <button className="planner_01_button" onClick={this.toggleCart}>
             PLANNER
           </button>
           <Cart isOpen={showCart} toggle={(value) => this.toggleCart(value)} />
+          <DropdownLanguage />
           {/*  <div className="position-relative cursor-pointer" onClick={this.toggleCart}>
             <Animation isStopped={this.state.playAddToCartAnimation} />
           </div>*/}
