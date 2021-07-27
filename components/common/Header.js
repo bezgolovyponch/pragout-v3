@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import Link from 'next/link';
 import Cart from '../cart/Cart';
-import Router from 'next/router';
 import commerce from '../../lib/commerce';
-import Animation from '../cart/Animation';
 import {Transition} from 'react-transition-group';
 import {connect} from 'react-redux';
 import {clearCustomer} from '../../store/actions/authenticateActions';
