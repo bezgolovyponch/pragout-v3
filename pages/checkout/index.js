@@ -15,7 +15,6 @@ import {
 } from '../../store/actions/checkoutActions';
 import {connect} from 'react-redux';
 import {withRouter} from 'next/router';
-import {Elements, ElementsConsumer} from '@stripe/react-stripe-js';
 import {appendSpreadsheet} from '../../lib/sheets';
 import YAML from 'yaml';
 /**
@@ -33,7 +32,7 @@ class CheckoutPage extends Component {
       customerEmail: '',
       'customer[id]': null,
       orderNotes: '',
-      phoneNumber: null,
+      phoneNumber: '',
 
       errors: {
         'fulfillment[shipping_method]': null,
@@ -334,7 +333,7 @@ class CheckoutPage extends Component {
                   Your order
                 </div>
                 <div className="pt-3 borderbottom border-color-gray400">
-                  {(checkout ? cart?.line_items : []).map((item, index, items) => {
+                  {(checkout && cart.line_items ? cart.line_items : []).map((item, index, items) => {
                     return (
                       <div key={item.id} className="d-flex mb-2">
                         {item && item.media && (
@@ -431,18 +430,6 @@ CheckoutPage.propTypes = {
   dispatchSetDiscountCodeInCheckout: PropTypes.func,
 };
 
-// If using Stripe, this provides context to the page so we can use `stripe` and
-// `elements` as props.
-const InjectedCheckoutPage = (passProps) => {
-  return (
-    <Elements stripe={passProps.stripe}>
-      <ElementsConsumer>
-        {({elements, stripe}) => <CheckoutPage {...passProps} stripe={stripe} elements={elements} />}
-      </ElementsConsumer>
-    </Elements>
-  );
-};
-
 export default withRouter(
   connect(
     ({checkout: {checkoutTokenObject, shippingOptions}, cart, customer, orderReceipt}) => ({
@@ -459,5 +446,5 @@ export default withRouter(
       dispatchSetDiscountCodeInCheckout,
       dispatchCaptureOrder,
     },
-  )(InjectedCheckoutPage),
+  )(CheckoutPage),
 );
