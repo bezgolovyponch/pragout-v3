@@ -1,6 +1,6 @@
 {
-  "name": "commercejs-nextjs-demo-store",
-  "license": "BSD-3-Clause",
+  "name": "pragout",
+  "license": "MIT",
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
