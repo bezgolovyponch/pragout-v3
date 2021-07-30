@@ -25,25 +25,27 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
             rel="stylesheet"
           />
-          <script src="https://unpkg.com/react-id-swiper@2.4.0/lib/react-id-swiper.min.js"></script>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css" />
-          <meta property="og:title" content="Commerce.js | Demo storefront" />
+          <script dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TQC4X45');`,
+          }}>
+          </script>
+          <meta property="og:title" content="Pragout" />
           <meta property="og:image" content="https://cdn.chec.io/email/assets/marketing/demo-preview.png" />
           <meta
             property="og:description"
-            content="A custom, open source demo storefront built with Next.js and Commerce.js. Take a look!"
+            content="Your best weekend in Prague!"
           />
-          <meta property="og:url" content="https://commercejs-demo-store.netlify.app" />
-          <meta property="twitter:title" content="Commerce.js | Demo storefront" />
-          <meta name="twitter:creator" content="@commercejs" />
-          <meta property="twitter:image" content="https://cdn.chec.io/email/assets/marketing/demo-preview.png" />
-          <meta
-            property="twitter:description"
-            content="A custom, open source demo storefront built with Next.js and Commerce.js. Take a look!"
-          />
-          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="og:url" content="https://pragout.netlify.app" />
         </Head>
         <body>
+        <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQC4X45"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+        }}
+        />
           <Main />
           <NextScript />
         </body>
