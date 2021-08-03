@@ -68,7 +68,7 @@ class HeroSection extends Component {
   }
 
   render() {
-    const {t, i18n} = this.props;
+    const {t} = this.props;
     return (
       <div ref={this.exploreContainer}>
         <div className="section_bg">
@@ -142,7 +142,7 @@ class HeroSection extends Component {
         <div>
           <div className="section_1">
             <div className="main">
-              <h5 className="heading_05">MAKE YOUR WEEKEND IN PRAGUE</h5>
+              <h5 className="heading_05">{t('MAKE YOUR WEEKEND IN PRAGUE')}</h5>
               <img className="image-7" src="/images/Title-01.svg" />
               <div className="button-hero">
                 <Button className="button_contact" onClick={this.handleClick} text={t('Need help?')} withIcon={true} />

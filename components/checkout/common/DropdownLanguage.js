@@ -3,13 +3,12 @@ import {useTranslation} from 'react-i18next';
 
 const DropdownLanguage = () => {
   const {i18n} = useTranslation();
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState(i18n.language);
 
   const handleLangChange = (evt) => {
     const lang = evt.target.value;
-    console.log(lang);
-    setLanguage(lang);
     i18n.changeLanguage(lang);
+    setLanguage(lang);
   };
 
   return (

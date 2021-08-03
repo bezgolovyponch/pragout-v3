@@ -23,7 +23,7 @@ const MyApp = ({Component, pageProps}) => {
   useEffect(() => {
     setCustomer();
 
-    commerce.products.list({limit: 60}).then((res) => {
+    commerce.products.list({limit: 50}).then((res) => {
       store.dispatch({
         type: 'STORE_PRODUCTS',
         payload: res.data,

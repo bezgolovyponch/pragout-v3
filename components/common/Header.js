@@ -158,36 +158,6 @@ class Header extends Component {
     }, 3000);*/
   }
 
-  renderLoginLogout() {
-    const {customer} = this.props;
-    const {loggedIn} = this.state;
-
-    if (loggedIn) {
-      return (
-        <div className="d-flex align-items-center">
-          {customer && customer.firstname && (
-            <span className="mr-2 font-weight-regular">Hi, {customer.firstname}!</span>
-          )}
-          <Link href="/account">
-            <a className="font-color-black mx-2">My account</a>
-          </Link>
-          <button
-            className="bg-transparent mr-2 font-color-black font-weight-semibold"
-            type="button"
-            onClick={this.handleLogout}>
-            Logout
-          </button>
-        </div>
-      );
-    }
-
-    return (
-      <Link href="/login">
-        <a className="font-color-black login">Login</a>
-      </Link>
-    );
-  }
-
   render() {
     const {showMobileMenu, showCart} = this.state;
     const {transparent, cart} = this.props;
