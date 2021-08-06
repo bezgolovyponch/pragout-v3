@@ -14,11 +14,11 @@ module.exports = withVideos(
       defaultLocale: 'en',
       domains: [
         {
-          domain: 'cz',
+          domain: 'pragout.cz',
           defaultLocale: 'en',
         },
         {
-          domain: 'de',
+          domain: 'pragout.de',
           defaultLocale: 'de',
         },
         ]
