@@ -150,9 +150,9 @@ class HeroSection extends Component {
               <div className="mousescroll">
                 <img className="image-8" src="/images/Mouse_Scroll-01.svg" />
                 <h1 className="heading-scroll">
-                  scroll
+                  {t('scroll')}
                   <br />
-                  down
+                    {t('down')}
                 </h1>
               </div>
             </div>
@@ -162,16 +162,15 @@ class HeroSection extends Component {
           <div className="section_2">
             <div className="main-stag-package-div">
               <div className="main-stag-package-text">
-                <p className="main-package-top-text">Gentlemen, take a look</p>
-                <h1 className="main-package-mid-text">PRAGOUT ESSENTIALS</h1>
+                <p className="main-package-top-text">{t('Gentlemen, take a look')}</p>
+                <h1 className="main-package-mid-text">{t('PRAGOUT ESSENTIALS')}</h1>
                 <p className="main-package-low-text">
-                  Plain and simple - we created a pre-made bundle of top-rated activities for you to enjoy. Let true
-                  proffesionals take care of the rest. Book your tour with a few clicks.
+                  {t('Plain and simple - we created a pre-made bundle of top-rated activities for you to enjoy. Let true professionals take care of the rest. Book your tour with a few clicks.')}
                 </p>
               </div>
 
               <div className="main-package-description">
-                <StagPack />
+                <StagPack t={t}/>
               </div>
             </div>
           </div>

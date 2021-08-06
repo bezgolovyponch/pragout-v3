@@ -7,8 +7,8 @@ const DropdownLanguage = () => {
 
   const handleLangChange = (evt) => {
     const lang = evt.target.value;
-    i18n.changeLanguage(lang);
     setLanguage(lang);
+    i18n.changeLanguage(lang);
   };
 
   return (

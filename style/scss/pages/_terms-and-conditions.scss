@@ -1,0 +1,23 @@
+.terms-text{
+  margin-left: 5vw;
+  margin-right: 5vw;
+  .terms-all-text{
+    display: block;
+    color: white;
+    font-size: 1.5vw;
+    font-weight: 400;
+    line-height: 1.6;
+    pre {
+      display: block;
+      color: white;
+      font-size: 1.5vw;
+      font-weight: 400;
+      line-height: 1.6;
+      box-sizing: border-box;
+      padding-right: 1vw;
+      @include iphone6 {
+        font-size: 3vw;
+      }
+    }
+  }
+}

@@ -74,7 +74,7 @@ export default class Modal extends Component {
             <div
               role="dialog"
               tabIndex="-1"
-              className={`bg-white my-2 mx-2 mx-sm-auto modal--content overflow-auto ${className}`}
+              className={`bg-black my-2 mx-2 mx-sm-auto modal--content overflow-auto ${className}`}
               style={{ width: maxW, maxHeight: 'calc(100vh - 1rem)' }}
             >
               {children}

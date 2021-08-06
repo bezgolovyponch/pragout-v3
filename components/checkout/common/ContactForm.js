@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import {appendSpreadsheet} from '../../../lib/sheets';
 import Modal from '../../common/atoms/Modal';
 import {Button} from '../../common/atoms/Button';
+import {withTranslation} from 'react-i18next';
+import {connect} from 'react-redux';
 
 const preferredAccommodation = [
   {code: '1', name: '1'},
@@ -18,7 +20,7 @@ const preferredAccommodation = [
   {code: '10', name: '11'},
 ];
 
-export default class ContactForm extends Component {
+class ContactForm extends Component {
   constructor(props) {
     super(props);
 
@@ -44,44 +46,55 @@ export default class ContactForm extends Component {
   }
 
   handleChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
     this.setState({
-      [event.target.name]: event.target.value,
+      [name]: value
     });
   }
   handleClose() {
     this.setState({openModal: false});
   }
   async handleSubmit(event) {
-    this.setState({
-      openModal: true,
-    });
     event.preventDefault();
-    const newRow = {
-      Name: this.state.fullName,
-      CustomerEmail: this.state.customerEmail,
-      PhoneNumber: this.state.phoneNumber,
-      ContactNotes: this.state.contactNotes,
-      NumberOfPersons: this.state.numberOfPersons,
-    };
-    await appendSpreadsheet(newRow);
+    if (!this.state.gdpr) {
+      alert('You need to accept terms and conditions first!');
+    }
+    if (!this.state.customerEmail || !this.state.phoneNumber) {
+      alert('Please fulfill your email or phone number with country code!');
+    }
+    if (this.state.customerEmail && this.state.phoneNumber && this.state.gdpr) {
+      this.setState({
+        openModal: true,
+      });
+      const newRow = {
+        Name: this.state.fullName,
+        CustomerEmail: this.state.customerEmail,
+        PhoneNumber: this.state.phoneNumber,
+        ContactNotes: this.state.contactNotes,
+        NumberOfPersons: this.state.numberOfPersons,
+      };
+      await appendSpreadsheet(newRow);
+    }
   }
-
   render() {
-    const {withAccommodation, onMainPage} = this.props;
+    const {withAccommodation, onMainPage,t} = this.props;
     return (
       <div className="contact-form-banner" id="contactForm">
         <div className="contact-section">
           <div className="contact-section-text">
             <p className="top-paragraph-contact">
-              {onMainPage ? 'It does not end just here' : 'Is that what you need?'}
+              { onMainPage ? t('It does not end just here') :  t('Is that what you need?')
+              }
 
               <br />
             </p>
-            <h1 className="header-contact"> {onMainPage ? 'CONTACT US' : 'Enquire now'} </h1>
+            <h1 className="header-contact"> {onMainPage ? t('CONTACT US'): t('Enquire now')} </h1>
             <p className="down-paragraph-contact">
               {onMainPage
-                ? 'Drop us a line about the ideas you have on your mind and we will make it happen'
-                : 'Or drop us a line about the ideas you have on your mind and we will make it happen'}
+                ? t('Drop us a line about the ideas you have on your mind and we will make it happen')
+                : t('Or drop us a line about the ideas you have on your mind and we will make it happen')}
               .
             </p>
           </div>
@@ -94,7 +107,7 @@ export default class ContactForm extends Component {
                   value={this.state.fullName}
                   onChange={this.handleChange}
                   className="contact_text_field"
-                  placeholder="Name"
+                  placeholder={t('Name')}
                 />
                 <input
                   name="phoneNumber"
@@ -102,7 +115,7 @@ export default class ContactForm extends Component {
                   type="text"
                   value={this.state.phoneNumber}
                   onChange={this.handleChange}
-                  placeholder="Phone number"
+                  placeholder={t('Phone number')}
                 />
                 <input
                   name="customerEmail"
@@ -118,7 +131,7 @@ export default class ContactForm extends Component {
                   value={this.state.contactNotes}
                   onChange={this.handleChange}
                   className="contact_text_field"
-                  placeholder="Your ideas"
+                  placeholder={t('Your ideas')}
                 />
                 <input
                   name="numberOfPersons"
@@ -128,7 +141,7 @@ export default class ContactForm extends Component {
                   className="contact_text_field"
                   placeholder=" Number of persons"
                 />
-                {withAccommodation && (
+{/*                {withAccommodation && (
                   <div className="contact-dropdown">
                     <p>
                       Accommodation
@@ -152,7 +165,7 @@ export default class ContactForm extends Component {
                       </select>
                     </p>
                   </div>
-                )}
+                )}*/}
                 {/*                <p>
                   I agree with terms and conditions
                   <input
@@ -163,8 +176,16 @@ export default class ContactForm extends Component {
                     onChange={this.handleChange}
                   />
                 </p>*/}
+                <div className="gdpr-checkbox">
+                  <input
+                    name="gdpr"
+                    type="checkbox"
+                    checked={this.state.gdpr}
+                    onChange={this.handleChange} />
+                  I agree with terms and conditions
+                </div>
                 <div className="button-hero-contact">
-                  <Button className="button_contact" onClick={this.handleSubmit} text="Send" withIcon={false} />
+                  <Button className="button_contact" onClick={this.handleSubmit} text={t('Send')} withIcon={false} />
                 </div>
                 <Modal isOpen={this.state.openModal} onClose={this.handleClose} maxW="500px">
                   Thank you! We will reach you out ASAP
@@ -192,3 +213,5 @@ ContactForm.propTypes = {
   withAccommodation: PropTypes.bool,
   onMainPage: PropTypes.bool,
 };
+
+export default withTranslation()(connect((state) => state)(ContactForm));

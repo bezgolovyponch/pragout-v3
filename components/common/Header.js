@@ -39,10 +39,7 @@ const mobileMenuLinks = [
     name: 'Corporate events',
     link: '/corporate-events',
   },
-  {
-    name: 'Covid package',
-    link: '/covid-package',
-  },
+
 ];
 const lngs = {
   en: {nativeName: 'English'},

@@ -7,7 +7,7 @@ import {GirlsBanner} from '../components/homepage/GirlsBanner';
 import ProductsBanner from '../components/homepage/ProductsBanner';
 import CorporateBanner from '../components/homepage/CorporateBanner';
 import ContactForm from '../components/checkout/common/ContactForm';
-import '../lib/i18n';
+
 
 const Home = () => (
   <Root transparentHeader={true}>
