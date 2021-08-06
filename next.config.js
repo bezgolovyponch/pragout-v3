@@ -12,16 +12,6 @@ module.exports = withVideos(
     i18n: {
       locales: ['en', 'de'],
       defaultLocale: 'en',
-      domains: [
-        {
-          domain: 'pragout.cz',
-          defaultLocale: 'en',
-        },
-        {
-          domain: 'pragout.de',
-          defaultLocale: 'de',
-        },
-        ]
     },
     webpack: (config, options) => {
       config.node = {

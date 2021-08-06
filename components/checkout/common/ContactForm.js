@@ -80,6 +80,9 @@ class ContactForm extends Component {
   }
   render() {
     const {withAccommodation, onMainPage,t} = this.props;
+    const name = t('Name');
+    const phoneNumber = t('Phone number');
+    const ideas = t('Your ideas');
     return (
       <div className="contact-form-banner" id="contactForm">
         <div className="contact-section">
@@ -107,7 +110,7 @@ class ContactForm extends Component {
                   value={this.state.fullName}
                   onChange={this.handleChange}
                   className="contact_text_field"
-                  placeholder={t('Name')}
+                  placeholder={name}
                 />
                 <input
                   name="phoneNumber"
@@ -115,7 +118,7 @@ class ContactForm extends Component {
                   type="text"
                   value={this.state.phoneNumber}
                   onChange={this.handleChange}
-                  placeholder={t('Phone number')}
+                  placeholder={phoneNumber}
                 />
                 <input
                   name="customerEmail"
@@ -131,7 +134,7 @@ class ContactForm extends Component {
                   value={this.state.contactNotes}
                   onChange={this.handleChange}
                   className="contact_text_field"
-                  placeholder={t('Your ideas')}
+                  placeholder={ideas}
                 />
                 <input
                   name="numberOfPersons"
