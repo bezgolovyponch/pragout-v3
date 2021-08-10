@@ -35,6 +35,12 @@ return (
   <Root>
     <Head>
       <title>Stag do package</title>
+      <meta charSet="utf-8"/>
+      <meta name="author" content="Pragout Joy"/>
+      <meta name="description" content="PRAGOUT GENTLEMEN ESSENTIALS"/>
+      <meta name="generator" content="Pragout"/>
+      <meta className="swiftype" name="meta-description" data-type="text"
+            content="Best places and best parties! All come with a flexible schedule and service tailored to your needs."/>
     </Head>
     <Package
       activitiesLeftPartStag={activitiesLeftPartStag}

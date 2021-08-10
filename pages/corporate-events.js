@@ -32,8 +32,14 @@ const iconText9 = ' Your tour manager will provide the best solution! We are ope
 const CorporateEvents = () => (
   <Root>
     <Head>
-      <title>Corporate Events</title>
-    </Head>
+        <title>Corporate Events</title>
+        <meta charSet="utf-8"/>
+        <meta name="author" content="Pragout Joy"/>
+        <meta name="description" content="High-quality service from team building to full-scale presentations and conferences."/>
+        <meta name="generator" content="Pragout"/>
+        <meta className="swiftype" name="meta-description" data-type="text"
+              content="Pragout team collaborates with stakeholders and vendors, working to create meaningful opportunities for attendee engagement and interaction."/>
+      </Head>
     <Package
       activitiesLeftPartStag={activitiesLeftPartStag}
       activitiesRightPartStag={activitiesRightPartStag}

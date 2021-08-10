@@ -35,6 +35,12 @@ const HenDoPackagePage = () => {
   <Root>
     <Head>
       <title>Girls night out</title>
+      <meta charSet="utf-8"/>
+      <meta name="author" content="Pragout Joy"/>
+      <meta name="description" content="A fairytale city in the very heart of Europe."/>
+      <meta name="generator" content="Pragout"/>
+      <meta className="swiftype" name="meta-description" data-type="text"
+            content="Nice places, loads of memories, and unique experience."/>
     </Head>
     <Package
       activitiesLeftPartStag={activitiesLeftPartStag}

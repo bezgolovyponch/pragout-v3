@@ -13,6 +13,12 @@ const Home = () => (
   <Root transparentHeader={true}>
     <Head>
       <title>Pragout</title>
+      <meta charSet="utf-8"/>
+        <meta name="author" content="Pragout Joy"/>
+          <meta name="description" content="Your best weekend in Prague."/>
+            <meta name="generator" content="Pragout"/>
+              <meta className="swiftype" name="meta-description" data-type="text"
+                    content="Plain and simple — we created a pre-made bundle of top-rated activities for you to enjoy. Lay on experience of true experts of entertainment industry. Book your tour with a few clicks and we take care on the rest."/>
     </Head>
 
     <HeroSection />
