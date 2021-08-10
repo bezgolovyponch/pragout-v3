@@ -284,6 +284,9 @@
     appearance: none;
     border-width: thin;
     margin-left: 2.5vw;
+    @include iphone6 {
+      height: 9vw;
+    }
     &:hover, &:active, &:focus{
       background-color: #5f1dbb;
       opacity: 1;
@@ -300,7 +303,7 @@
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      width: 20vw;
+      width: auto;
       -webkit-box-pack: center;
       -webkit-justify-content: center;
       -ms-flex-pack: center;

@@ -5,7 +5,7 @@ import commerce from '../../lib/commerce';
 import {Transition} from 'react-transition-group';
 import {connect} from 'react-redux';
 import {clearCustomer} from '../../store/actions/authenticateActions';
-import DropdownLanguage from '../checkout/common/DropdownLanguage';
+import LanguageButton from './atoms/LanguageButton';
 
 const duration = 700;
 
@@ -196,7 +196,7 @@ class Header extends Component {
             PLANNER
           </button>
           <Cart isOpen={showCart} toggle={(value) => this.toggleCart(value)} />
-          <DropdownLanguage />
+          <LanguageButton />
           {/*  <div className="position-relative cursor-pointer" onClick={this.toggleCart}>
             <Animation isStopped={this.state.playAddToCartAnimation} />
           </div>*/}

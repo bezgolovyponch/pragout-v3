@@ -221,6 +221,7 @@
               -webkit-flex: 0 auto;
               flex: 0 auto;
               font-size: 3.5vw;
+              line-height: 1.5;
             }
           }
           .contact-dropdown{
@@ -246,9 +247,10 @@
             background-color: transparent;
             color: #ef799b;
             display: flex;
-            line-height: 50px;
+            flex-direction: row;
+            align-items: stretch;
             @include iphone6 {
-              font-size: 1vw;
+              font-size: 3vw;
             }
           }
         }

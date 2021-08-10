@@ -38,6 +38,9 @@ input,
   border-color: transparent  !important;
   border-bottom: 1px solid $gray-400 !important;
   transition: border-color 0.3s ease-in-out;
+  @include iphone6{
+    height: 8vw !important;
+  }
 
 
 
