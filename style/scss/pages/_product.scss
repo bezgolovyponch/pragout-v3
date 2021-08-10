@@ -231,11 +231,10 @@
     justify-content: space-around;
     -webkit-box-align: stretch;
     align-items: stretch;
-    font-size: 0.9vw;
+    font-size: 0.8vw;
     background-color: #2f1959;
     color: #fff;
     height: 6vw;
-    opacity: 0.9;
     @include iphone6 {
       position: static;
       width: 60%;
@@ -267,7 +266,7 @@
       -webkit-flex: 1;
       -ms-flex: 1;
       flex: 1;
-      background-color: rgba(47, 25, 89, 0.9);
+      background-color: rgb(47, 25, 89);
       @include iphone6 {
         display: -webkit-box;
         margin-top: 2vw;
@@ -306,7 +305,7 @@
       .product-link{
         margin-bottom: 0.3vw;
         color: white;
-        font-size: 1vw;
+        font-size: 0.8vw;
         line-height: 1;
         font-style: normal;
         font-weight: 400;
