@@ -198,7 +198,7 @@
             }
           }
           .contact_text_field{
-            margin-top: 1vw;
+            /*margin-top: 1vw;*/
             margin-bottom: 0px;
             padding: 0px;
             border-style: solid;
@@ -212,7 +212,7 @@
             letter-spacing: 0.05vw;
             display: block;
             width: 100%;
-            height: 38px;
+            height: auto;
             vertical-align: middle;
             background-color: #ffffff;
             @include iphone6{
@@ -234,8 +234,8 @@
             font-size: 1vw;
             display: block;
             width: 100%;
-            height: 38px;
-            line-height: 1.42857143;
+            height: auto;
+            line-height: 1;
             vertical-align: middle;
             @include iphone6 {
               font-size: 3vw;

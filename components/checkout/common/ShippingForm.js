@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from '../../common/atoms/Checkbox';
 import Dropdown from '../../common/atoms/Dropdown';
+import {withTranslation} from 'react-i18next';
+import {connect} from 'react-redux';
 
-export default class ShippingForm extends Component {
+class ShippingForm extends Component {
   constructor(props) {
     super(props);
 
@@ -13,14 +15,14 @@ export default class ShippingForm extends Component {
   }
 
   render() {
-    const {firstName, lastName, customerEmail, orderNotes, phoneNumber} = this.props;
+    const {firstName, lastName, customerEmail, orderNotes, phoneNumber, t} = this.props;
 
     return (
       <>
         <div className="row">
           <div className="col-12 col-sm-4 mb-3">
             <label className="w-100">
-              <p className="mb-1 font-size-caption font-color-light">First name*</p>
+              <p className="mb-1 font-size-caption font-color-light">{t('First name')}*</p>
               <input name="firstName" value={firstName} className="rounded-0 w-100" />
             </label>
           </div>
@@ -173,3 +175,5 @@ ShippingForm.propTypes = {
   orderNotes: PropTypes.string,
   phoneNumber: PropTypes.string,
 };
+
+export default withTranslation()(ShippingForm);

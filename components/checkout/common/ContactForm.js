@@ -7,6 +7,7 @@ import {Button} from '../../common/atoms/Button';
 import {withTranslation} from 'react-i18next';
 import {connect} from 'react-redux';
 
+
 const preferredAccommodation = [
   {code: '1', name: '1'},
   {code: '2', name: '2'},
@@ -118,7 +119,7 @@ class ContactForm extends Component {
                   type="text"
                   value={this.state.phoneNumber}
                   onChange={this.handleChange}
-                  placeholder={phoneNumber}
+                  placeholder= {t('Phone number')}
                 />
                 <input
                   name="customerEmail"
@@ -185,7 +186,7 @@ class ContactForm extends Component {
                     type="checkbox"
                     checked={this.state.gdpr}
                     onChange={this.handleChange} />
-                  I agree with terms and conditions
+                  {t('I agree with terms and conditions')}
                 </div>
                 <div className="button-hero-contact">
                   <Button className="button_contact" onClick={this.handleSubmit} text={t('Send')} withIcon={false} />

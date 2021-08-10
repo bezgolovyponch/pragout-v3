@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import {connect} from 'react-redux';
 import {addToCart} from '../../store/actions/cartActions';
+import {withTranslation} from 'react-i18next';
 
 class Activities extends Component {
   constructor(props) {
@@ -21,14 +22,14 @@ class Activities extends Component {
   }
 
   renderSidebar() {
-    const {categories} = this.props;
+    const {categories, t} = this.props;
     const sortedCategories = categories.sort((a, b) => a.slug.localeCompare(b.slug));
     return (
       <>
         {sortedCategories.map((category) => (
           <div key={category.id} className="custom-container-item">
             <button className="category-link" onClick={() => this.setState({category: category.slug})}>
-              {category.name}
+              {t(category.name)}
             </button>
           </div>
         ))}
@@ -40,7 +41,7 @@ class Activities extends Component {
    * Render collections based on categories available in data
    */
   renderCollection() {
-    const {categories, products} = this.props;
+    const {categories, products, t} = this.props;
     const catSlug = this.state.category;
     const cat = categories.find((category) => category.slug === catSlug);
     if (!cat) {
@@ -66,7 +67,7 @@ class Activities extends Component {
             </Link>
             <div className="product-bottom">
               <div className="product-name-price">
-                <p className="product-link">{product.name}</p>
+                <p className="product-link">{t(product.name)}</p>
                 <p className="product-link">{product.price.formatted_with_symbol}</p>
               </div>
               <button
@@ -102,4 +103,4 @@ class Activities extends Component {
   }
 }
 
-export default connect((state) => state)(Activities);
+export default  withTranslation()(connect((state) => state)(Activities));
