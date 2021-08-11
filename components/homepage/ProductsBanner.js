@@ -8,7 +8,7 @@ import {withTranslation} from 'react-i18next';
 class ProductsBanner extends Component {
   render() {
     const {products, t} = this.props;
-
+    const hottestProducts = ['AKgzxn', 'zsn22D', 'I8cIaL'] ;
     return (
       <div className="section-third">
         <div className="activities-text">
@@ -28,7 +28,7 @@ class ProductsBanner extends Component {
         </div>
         <div className="products-wrapper">
           <div className="product-dynamic-list">
-            <ProductRow products={products.slice(0, 3)} />
+            <ProductRow products={products.filter((product) => hottestProducts.includes(product.permalink))} />
           </div>
         </div>
       </div>

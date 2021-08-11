@@ -39,7 +39,7 @@ class MyDocument extends Document {
             property="og:description"
             content="Your best weekend in Prague!"
           />
-          <meta property="og:url" content="https://pragout.netlify.app" />
+          <meta property="og:url" content="https://pragout.cz" />
         </Head>
         <body>
         <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQC4X45"
