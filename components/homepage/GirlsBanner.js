@@ -1,6 +1,10 @@
 import React from 'react';
 import {motion} from 'framer-motion';
-import {ButtonWrapper, ButtonWrapperMobile, slashMotion} from '../common/atoms/Button';
+import {
+  ButtonWrapperHen,
+  ButtonWrapperMobile, ButtonWrapperMobileHen,
+  slashMotion,
+} from '../common/atoms/Button';
 import { useTranslation } from 'react-i18next';
 
 export function GirlsBanner() {
@@ -35,10 +39,10 @@ export function GirlsBanner() {
                 </div>
               </div>
               <motion.div className="benjamin-button" variants={slashMotion}>
-                <ButtonWrapper linkTo="/hen-do-package" />
+                <ButtonWrapperHen linkTo="/hen-do-package" />
               </motion.div>
               <div className="benjamin-button-mobile">
-                <ButtonWrapperMobile linkTo="/hen-do-package" />
+                <ButtonWrapperMobileHen linkTo="/hen-do-package" />
               </div>
             </div>
           </div>

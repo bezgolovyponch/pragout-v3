@@ -4,8 +4,6 @@ import ContactForm from '../components/checkout/common/ContactForm';
 import Footer from '../components/common/Footer';
 import Package from '../components/common/Package';
 import Head from 'next/head';
-const videoUrl =
-  'https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/6097d7c03d62714be62cc652_Stag BG NO music-transcode.mp4';
 const iconUrl1 = '/images/shake-hands.svg';
 const iconUrl2 = '/images/friends.svg';
 const iconUrl3 = '/images/ajustable1.svg';
@@ -41,9 +39,6 @@ const CorporateEvents = () => (
               content="Pragout team collaborates with stakeholders and vendors, working to create meaningful opportunities for attendee engagement and interaction."/>
       </Head>
     <Package
-      activitiesLeftPartStag={activitiesLeftPartStag}
-      activitiesRightPartStag={activitiesRightPartStag}
-      videoUrl={videoUrl}
       iconUrl1={iconUrl1}
       iconUrl2={iconUrl2}
       iconUrl3={iconUrl3}

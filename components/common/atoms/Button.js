@@ -40,7 +40,19 @@ export const ButtonWrapper = ({linkTo}) => {
     <div className="main-package-price">
       <Link href={linkTo}>
         <a>
-          <img className="benjamin-button-image" src="/images/Pack_price-01.svg" />
+          <img className="benjamin-button-image" src="/images/stag2.svg" />
+        </a>
+      </Link>
+    </div>
+  );
+};
+
+export const ButtonWrapperHen = ({linkTo}) => {
+  return (
+    <div className="main-package-price">
+      <Link href={linkTo}>
+        <a>
+          <img className="benjamin-button-image" src="/images/hen2.svg" />
         </a>
       </Link>
     </div>
@@ -52,7 +64,19 @@ export const ButtonWrapperMobile = ({linkTo}) => {
     <div className="main-package-price-mobile">
       <Link href={linkTo}>
         <a>
-          <img className="benjamin-button-image-mobile" src="/images/Pack_price-01.svg" />
+          <img className="benjamin-button-image-mobile" src="/images/stag2.svg" />
+        </a>
+      </Link>
+    </div>
+  );
+};
+
+export const ButtonWrapperMobileHen = ({linkTo}) => {
+  return (
+    <div className="main-package-price-mobile">
+      <Link href={linkTo}>
+        <a>
+          <img className="benjamin-button-image-mobile" rc="/images/hen2.svg" />
         </a>
       </Link>
     </div>
