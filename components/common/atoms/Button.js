@@ -76,7 +76,7 @@ export const ButtonWrapperMobileHen = ({linkTo}) => {
     <div className="main-package-price-mobile">
       <Link href={linkTo}>
         <a>
-          <img className="benjamin-button-image-mobile" rc="/images/hen2.svg" />
+          <img className="benjamin-button-image-mobile" src="/images/hen2.svg" />
         </a>
       </Link>
     </div>
