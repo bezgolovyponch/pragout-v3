@@ -13,12 +13,16 @@ module.exports = withVideos(
       locales: ['en', 'de'],
       defaultLocale: 'en',
     },
+    webpack5: false,
     webpack: (config, options) => {
       config.node = {
         // Some libraries import Node modules but don't use them in the browser.
         // Tell Webpack to provide empty mocks for them so importing them works.
         ...config.node,
+        dns: 'mock',
         fs: 'empty',
+        path: true,
+        url: false,
         child_process: 'empty',
         net: 'empty',
         tls: 'empty',
