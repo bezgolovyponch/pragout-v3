@@ -9,10 +9,6 @@ module.exports = withVideos(
       GOOGLE_SHEETS_CLIENT_EMAIL: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
       GOOGLE_SHEETS_PRIVATE_KEY: process.env.GOOGLE_SHEETS_PRIVATE_KEY,
     },
-    i18n: {
-      locales: ['en', 'de'],
-      defaultLocale: 'en',
-    },
     webpack5: false,
     webpack: (config, options) => {
       config.node = {
