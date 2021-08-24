@@ -5,5 +5,11 @@
 [[plugins]]
   package = "netlify-plugin-onboarding"
 
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+
+[plugins.inputs]
+buildDir = "public"
+
 [template.environment]
   NEXT_PUBLIC_CHEC_PUBLIC_KEY = "Chec Public Key (under Setup > Developer)"

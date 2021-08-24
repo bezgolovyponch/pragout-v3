@@ -2,9 +2,10 @@ import React from 'react';
 import {motion} from 'framer-motion';
 import {
   ButtonWrapperHen,
-  ButtonWrapperMobile, ButtonWrapperMobileHen,
+  ButtonWrapperMobileHen,
   slashMotion,
 } from '../common/atoms/Button';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 export function GirlsBanner() {
@@ -21,6 +22,8 @@ export function GirlsBanner() {
             </p>
           </div>
           <div className="girls-container">
+            <Link href="/hen-do-package">
+              <a>
             <div className="package-button-container">
               <div className="text-package-button-container">
                 <div>
@@ -45,6 +48,8 @@ export function GirlsBanner() {
                 <ButtonWrapperMobileHen linkTo="/hen-do-package" />
               </div>
             </div>
+              </a>
+            </Link>
           </div>
         </div>
       </div>

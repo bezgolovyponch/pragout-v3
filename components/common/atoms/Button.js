@@ -37,6 +37,7 @@ export const Button = ({text, withIcon, onClick}) => {
 
 export const ButtonWrapper = ({linkTo}) => {
   return (
+
     <div className="main-package-price">
       <Link href={linkTo}>
         <a>
@@ -49,13 +50,13 @@ export const ButtonWrapper = ({linkTo}) => {
 
 export const ButtonWrapperHen = ({linkTo}) => {
   return (
+    <Link href={linkTo}>
     <div className="main-package-price">
-      <Link href={linkTo}>
         <a>
           <img className="benjamin-button-image" src="/images/hen2.svg" />
         </a>
-      </Link>
     </div>
+    </Link>
   );
 };
 

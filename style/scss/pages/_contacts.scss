@@ -1,0 +1,15 @@
+.contacts-section{
+  margin-left: 5vw;
+  height: 30vw;
+  .contacts-text {
+  display: flex;
+  flex-direction: column;
+    font-size: 1.5vw;
+    line-height: 1.2;
+
+  .contacts-heading {
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+  }
+}
+}
