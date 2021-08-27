@@ -393,6 +393,9 @@
         flex: 0 auto;
         font-size: 3vw;
       }
+      &:hover, &:active, &:focus{
+        outline: none;
+      }
     }
   }
   .home-item-link{

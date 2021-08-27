@@ -6,7 +6,7 @@ import Package from '../components/common/Package';
 import Head from 'next/head';
 import {useTranslation} from 'react-i18next';
 const videoUrl =
-  'https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/6126683ce406f41f5e1f18e5_Hen BG No Music (838x210) (1)-transcode.mp4';
+  'https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/612667ef85c251e1214d6e7d_Stag BG No Music (838x210) (2)-transcode.mp4';
 const iconUrl1 = '/images/champaigne-glass (2).svg';
 const iconUrl2 = '/images/girls-group.svg';
 const iconUrl3 = '/images/ajustable1.svg';
@@ -43,6 +43,7 @@ const HenDoPackagePage = () => {
             content="Nice places, loads of memories, and unique experience."/>
     </Head>
     <Package
+      t={t}
       activitiesLeftPartStag={activitiesLeftPartStag}
       activitiesRightPartStag={activitiesRightPartStag}
       videoUrl={videoUrl}

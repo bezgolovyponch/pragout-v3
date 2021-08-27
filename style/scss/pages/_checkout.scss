@@ -32,6 +32,11 @@
       align-self: center;
       font-size: 4vw;
     }
+    &:hover, &:active, &:focus{
+      background-color: #5f1dbb;
+      opacity: 1;
+      outline: none;
+    }
   }
 }
 

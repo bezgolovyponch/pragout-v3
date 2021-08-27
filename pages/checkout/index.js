@@ -19,7 +19,7 @@ import {withRouter} from 'next/router';
 import {appendSpreadsheet} from '../../lib/sheets';
 import YAML from 'yaml';
 import moment from 'moment';
-import {Button} from '../../components/common/atoms/Button';
+
 /**
  * Render the checkout page
  */
@@ -31,7 +31,7 @@ class CheckoutPage extends Component {
       // string property names to conveniently identify inputs related to commerce.js validation errors
       // e.g error { param: "shipping[name]"}
       firstName: '',
-      lastName: '',
+      numberOfPersons: '',
       customerEmail: '',
       'customer[id]': null,
       orderNotes: '',
@@ -96,10 +96,6 @@ class CheckoutPage extends Component {
 
     if (customer.firstname) {
       newState.firstName = customer.firstname;
-    }
-
-    if (customer.lastname) {
-      newState.lastName = customer.lastname;
     }
 
     this.setState(newState);
@@ -225,10 +221,11 @@ class CheckoutPage extends Component {
       return;
     }
     const newRow = {
-      Name: this.state.firstName + ' ' + this.state.lastName,
+      Name: this.state.firstName,
       Email: this.state.customerEmail,
       Phone: this.state.phoneNumber,
       Notes: this.state.orderNotes,
+      NumberOfPersons: this.state.numberOfPersons,
       Activities: YAML.stringify(
         this.props.cart.line_items?.map((item) => ({
           name: item.name,
@@ -314,7 +311,7 @@ class CheckoutPage extends Component {
                   <div className="mb-1">
                     <ShippingForm
                       firstName={this.state.firstName}
-                      lastName={this.state.lastName}
+                      numberOfPersons={this.state.numberOfPersons}
                       customerEmail={this.state.customerEmail}
                       orderNotes={this.state.orderNotes}
                       phoneNumber={this.state.phoneNumber}

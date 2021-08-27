@@ -12,7 +12,9 @@ export const PackageIncludedActivities = ({activities, t}) => (
 export const PackageNamePrice = ({packageName, packagePrice, t}) => (
   <div className="package-name-price">
     <h1 className="package-name">{t(packageName)}</h1>
-    <p className="package-text-price">{t('Estimated price per person')}</p>
+    {packageName !== 'CORPORATE EVENTS' ? (
+    <p className="package-text-price"> {t('Estimated price per person')} </p>
+      ) : ''}
     <p className="package-price">{packagePrice}</p>
   </div>
 );
@@ -32,3 +34,4 @@ export const PackageCard = ({iconUrl, title, iconText, iconText2, iconText3}) =>
     </div>
   );
 };
+

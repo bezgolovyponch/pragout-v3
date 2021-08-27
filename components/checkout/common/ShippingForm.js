@@ -15,7 +15,7 @@ class ShippingForm extends Component {
   }
 
   render() {
-    const {firstName, lastName, customerEmail, orderNotes, phoneNumber, t} = this.props;
+    const {firstName, numberOfPersons, customerEmail, orderNotes, phoneNumber, t} = this.props;
 
     return (
       <>
@@ -24,6 +24,12 @@ class ShippingForm extends Component {
             <label className="w-100">
               <p className="mb-1 font-size-caption font-color-light">{t('Name')}*</p>
               <input name="firstName" value={firstName} className="rounded-0 w-100" />
+            </label>
+          </div>
+          <div className="col-12 col-sm-4 mb-3">
+            <label className="w-100">
+              <p className="mb-1 font-size-caption font-color-light">Number of persons</p>
+              <input name="numberOfPersons" value={numberOfPersons} className="rounded-0 w-100" />
             </label>
           </div>
           {/* <div className="col-12 col-sm-4 mb-3">
@@ -164,7 +170,7 @@ class ShippingForm extends Component {
 
 ShippingForm.propTypes = {
   firstName: PropTypes.string,
-  lastName: PropTypes.string,
+  numberOfPersons: PropTypes.string,
   customerEmail: PropTypes.string,
   orderNotes: PropTypes.string,
   phoneNumber: PropTypes.string,

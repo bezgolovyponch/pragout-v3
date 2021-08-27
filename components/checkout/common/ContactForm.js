@@ -129,7 +129,7 @@ class ContactForm extends Component {
                   value={this.state.numberOfPersons}
                   onChange={this.handleChange}
                   className="contact_text_field"
-                  placeholder=" Number of persons"
+                  placeholder="Number of persons"
                 />
 {/*                {withAccommodation && (
                   <div className="contact-dropdown">
@@ -156,23 +156,14 @@ class ContactForm extends Component {
                     </p>
                   </div>
                 )}*/}
-                {/*                <p>
-                  I agree with terms and conditions
-                  <input
-                    name="gdpr"
-                    type="checkbox"
-                    placeholder="I agree with terms and conditions"
-                    checked={this.state.gdpr}
-                    onChange={this.handleChange}
-                  />
-                </p>*/}
                 <div className="gdpr-checkbox">
                   <input
+                    className="gdpr"
                     name="gdpr"
                     type="checkbox"
                     checked={this.state.gdpr}
                     onChange={this.handleChange} />
-                  {t('I agree with terms and conditions')}
+                  <p className="gdpr-text">{t('I agree with terms and conditions')}</p>
                 </div>
                 <div className="button-hero-contact">
                   <Button className="button_contact" onClick={this.handleSubmit} text={t('Send')} withIcon={false} />

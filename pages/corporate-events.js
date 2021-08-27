@@ -4,6 +4,9 @@ import ContactForm from '../components/checkout/common/ContactForm';
 import Footer from '../components/common/Footer';
 import Package from '../components/common/Package';
 import Head from 'next/head';
+import {useTranslation} from 'react-i18next';
+const videoUrl =
+  'https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/612667ef85c251e1214d6e7d_Stag BG No Music (838x210) (2)-transcode.mp4';
 const iconUrl1 = '/images/shake-hands.svg';
 const iconUrl2 = '/images/friends.svg';
 const iconUrl3 = '/images/ajustable1.svg';
@@ -11,7 +14,6 @@ const cardTitle1 = 'Local professionals';
 const cardTitle2 = 'All in one';
 const cardTitle3 = 'We are very flexible';
 const packageName = 'CORPORATE EVENTS';
-const packagePrice = 'depends';
 const activitiesLeftPartStag = ['· Seminars and Conferences', '· Trade Shows', '· Appreciation Events'];
 const activitiesRightPartStag = ['· Team-Building Events', ' · Product Launch Events', ' · Conferences and even more'];
 const packageIncludedText =
@@ -27,7 +29,10 @@ const iconText4 =
 const iconText7 = ' We are ready to adjust to all your company needs and ';
 const iconText8 = ' Or literally anything?';
 const iconText9 = ' We are exceeding expectations. Guaranteed!';
-const CorporateEvents = () => (
+
+const CorporateEvents = () => {
+const {t} = useTranslation();
+return (
   <Root>
     <Head>
         <title>Corporate Events</title>
@@ -39,8 +44,10 @@ const CorporateEvents = () => (
               content="Pragout team collaborates with stakeholders and vendors, working to create meaningful opportunities for attendee engagement and interaction."/>
       </Head>
     <Package
+      t={t}
       activitiesLeftPartStag={activitiesLeftPartStag}
       activitiesRightPartStag={activitiesRightPartStag}
+      videoUrl={videoUrl}
       iconUrl1={iconUrl1}
       iconUrl2={iconUrl2}
       iconUrl3={iconUrl3}
@@ -57,12 +64,13 @@ const CorporateEvents = () => (
       iconText8={iconText8}
       iconText9={iconText9}
       packageName={packageName}
-      packagePrice={packagePrice}
+      packagePrice={''}
       packageIncludedText={packageIncludedText}
     />
     <ContactForm withAccommodation={true} onMainPage={false} />
     <Footer />
   </Root>
-);
+)};
+
 
 export default CorporateEvents;

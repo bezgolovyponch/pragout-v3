@@ -248,10 +248,11 @@
             color: #ef799b;
             display: flex;
             flex-direction: row;
-            align-items: stretch;
+            align-items: center;
             @include iphone6 {
               font-size: 3vw;
             }
+            .gdpr-text{padding: 10px;}
           }
         }
       }
