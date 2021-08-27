@@ -6,7 +6,7 @@ import Package from '../components/common/Package';
 import Head from 'next/head';
 import {useTranslation} from 'react-i18next';
 const videoUrl =
-  'https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/6097d7c03d62714be62cc652_Stag BG NO music-transcode.mp4';
+  'https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/6126683ce406f41f5e1f18e5_Hen BG No Music (838x210) (1)-transcode.mp4';
 const iconUrl1 = '/images/champaigne-glass (2).svg';
 const iconUrl2 = '/images/girls-group.svg';
 const iconUrl3 = '/images/ajustable1.svg';
@@ -15,8 +15,8 @@ const cardTitle2 = 'Everyone gets satisfied';
 const cardTitle3 = 'Fully adjustable';
 const packageName = 'PRAGOUT BACHELORETTE ESSSENTIALS';
 const packagePrice = '€74';
-const activitiesLeftPartStag = ['· Return airport transfer', '· Champagne limo drive '];
-const activitiesRightPartStag = [' · Instagram tour', ' · VIP club entrance'];
+const activitiesLeftPartStag = ['- Return airport transfer', '- Champagne limo drive '];
+const activitiesRightPartStag = [' - Instagram tour', ' - VIP club entrance'];
 const packageIncludedText =
   'A fairytale city in the very heart of Europe. It shines during the day and burns bright by night!';
 const iconText = ' Nice places, loads of memories, and unique experience!';

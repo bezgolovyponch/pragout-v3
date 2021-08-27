@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {removeFromCart, updateCartItem} from '../../store/actions/cartActions';
+import {withTranslation} from 'react-i18next';
 
 class CartItem extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class CartItem extends Component {
   }
 
   render() {
-    const {item} = this.props;
+    const {item,t} = this.props;
 
     return (
       <div className="px-4 px-md-5 mb-2">
@@ -33,7 +34,7 @@ class CartItem extends Component {
           <div className="cart-item--image mr-4" style={{backgroundImage: `url("${item.media?.source}")`}} />
           <div className="flex-grow-1 borderbottom border-color-gray400 h-100">
             <div className="d-flex justify-content-between mb-2">
-              <p>{item.name}</p>
+              <p>{t(item.name)}</p>
               <p className="text-right font-weight-medium">{item.line_total.formatted_with_symbol}</p>
             </div>
             <div className="d-flex justify-content-between mb-2">
@@ -54,7 +55,7 @@ class CartItem extends Component {
                   }>
                   <img src="/icon/minus.svg" className="w-16" title="Minus icon" alt="" />
                 </button>
-                <p className="text-center px-3">{item.quantity}</p>
+                <p className="text-center px-3">{t(item.quantity)}</p>
                 <button
                   className="p-0 bg-transparent"
                   onClick={() => this.handleUpdateCartItem(item.id, item.quantity + 1)}>
@@ -74,4 +75,4 @@ class CartItem extends Component {
   }
 }
 
-export default connect((state) => state)(CartItem);
+export default withTranslation()(connect((state) => state)(CartItem));

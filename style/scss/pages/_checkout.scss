@@ -1,8 +1,40 @@
+
 .checkout {
   &__line-item-image {
     @extend .w-56, .h-64, .object-cover;
   }
 }
+.checkout-button-contain {
+  display: flex;
+  justify-content: center;
+  margin-top: 3vw;
+  @include iphone6 {
+    margin-top: 0vw;
+  }
+  .checkout-button {
+    width: 100%;
+    background-color: #ec4622;
+    border-color: rgba(14, 51, 201, 0.43);
+    border-radius: 2vw;
+    color: #fff;
+    padding-top: 1.3vw;
+    padding-bottom: 1.3vw;
+    font-family: Rubik, sans-serif;
+    color: #fff;
+    font-size: 1vw;
+    font-weight: 500;
+    letter-spacing: 0.05vw;
+    @include iphone6 {
+      width: 80vw;
+      padding: 4vw 8vw;
+      border-radius: 25vw;
+      color: #fff;
+      align-self: center;
+      font-size: 4vw;
+    }
+  }
+}
+
 
 .custom-container {
 

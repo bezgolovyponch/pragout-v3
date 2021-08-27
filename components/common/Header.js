@@ -6,6 +6,8 @@ import {Transition} from 'react-transition-group';
 import {connect} from 'react-redux';
 import {clearCustomer} from '../../store/actions/authenticateActions';
 import LanguageButton from './atoms/LanguageButton';
+import {withTranslation} from 'react-i18next';
+
 
 const duration = 700;
 
@@ -41,10 +43,7 @@ const mobileMenuLinks = [
   },
 
 ];
-const lngs = {
-  en: {nativeName: 'English'},
-  de: {nativeName: 'Deutsch'},
-};
+
 export const CovidPopUp = () => {
   return (
     <Link href="/covid-package">
@@ -112,13 +111,7 @@ class Header extends Component {
     const {transparent} = this.props;
 
     if (!transparent) {
-      return;
-    }
 
-    if (window.scrollY > 10) {
-      // this.header.current.classList.add('invert');
-    } else {
-      // this.header.current.classList.remove('invert');
     }
   }
 
@@ -157,7 +150,7 @@ class Header extends Component {
 
   render() {
     const {showMobileMenu, showCart} = this.state;
-    const {transparent, cart} = this.props;
+    const {t} = this.props;
 
     return (
       <>
@@ -172,22 +165,22 @@ class Header extends Component {
           <div className="navbar_menu2">
             <Link href="/activities">
               <a href="/activities" className="navbar_link2">
-                <p className="paragraph_nav2">Activities</p>
+                <p className="paragraph_nav2">{t('Activities')}</p>
               </a>
             </Link>
             <Link href="/stag-do-package">
               <a href="/stag-do-package" className="navbar_link2">
-                <p className="paragraph_nav2"> Stag do package</p>
+                <p className="paragraph_nav2"> {t('Stag do package')}</p>
               </a>
             </Link>
             <Link href="/hen-do-package">
               <a href="/hen-do-package" className="navbar_link2">
-                <p className="paragraph_nav2"> Hen do package</p>
+                <p className="paragraph_nav2">{t('Hen do package')}</p>
               </a>
             </Link>
             <Link href="/corporate-events">
               <a href="/corporate-events" className="navbar_link2">
-                <p className="paragraph_nav2">Corporate events</p>
+                <p className="paragraph_nav2">{t('Corporate events')}</p>
               </a>
             </Link>
           </div>
@@ -252,4 +245,4 @@ class Header extends Component {
   }
 }
 
-export default connect((state) => state, {clearCustomer})(Header);
+export default withTranslation()(connect((state) => state, {clearCustomer})(Header));

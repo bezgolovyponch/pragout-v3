@@ -24,6 +24,7 @@ export const Package = ({
   iconText7,
   iconText8,
   iconText9,
+  t
 }) => (
   <div className="stag-do-package-container">
     <div className="video-container">
@@ -43,11 +44,11 @@ export const Package = ({
     </div>
     <div className="package-section1">
       <div className="package-title">
-        <PackageNamePrice packageName={packageName} packagePrice={packagePrice} />
+        <PackageNamePrice t={t} packageName={packageName} packagePrice={packagePrice} />
         <div className="package-included">
           <div className="package-included-columns">
-            <PackageIncludedActivities activities={activitiesLeftPartStag} />
-            <PackageIncludedActivities activities={activitiesRightPartStag} />
+            <PackageIncludedActivities t={t} activities={activitiesLeftPartStag} />
+            <PackageIncludedActivities t={t} activities={activitiesRightPartStag} />
           </div>
           <p className="package-included-text">{packageIncludedText}</p>
         </div>

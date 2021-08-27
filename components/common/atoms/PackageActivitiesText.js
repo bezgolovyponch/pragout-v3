@@ -1,17 +1,18 @@
 import React from 'react';
 
-export const PackageIncludedActivities = ({activities}) => (
+
+export const PackageIncludedActivities = ({activities, t}) => (
   <div className="package-included-activities">
     {activities?.map((text) => (
-      <p className="package-activities">{text}</p>
+      <p className="package-activities">{t(text)}</p>
     ))}
   </div>
 );
 
-export const PackageNamePrice = ({packageName, packagePrice}) => (
+export const PackageNamePrice = ({packageName, packagePrice, t}) => (
   <div className="package-name-price">
-    <h1 className="package-name">{packageName}</h1>
-    <p className="package-text-price">Estimated price per person</p>
+    <h1 className="package-name">{t(packageName)}</h1>
+    <p className="package-text-price">{t('Estimated price per person')}</p>
     <p className="package-price">{packagePrice}</p>
   </div>
 );

@@ -6,6 +6,7 @@ import ccFormat from '../../utils/ccFormat';
 import Root from '../../components/common/Root';
 import ShippingForm from '../../components/checkout/common/ShippingForm';
 import Loader from '../../components/checkout/Loader';
+import {withTranslation} from 'react-i18next';
 import {
   generateCheckoutTokenFromCart as dispatchGenerateCheckout,
   getShippingOptionsForCheckout as dispatchGetShippingOptions,
@@ -17,6 +18,8 @@ import {connect} from 'react-redux';
 import {withRouter} from 'next/router';
 import {appendSpreadsheet} from '../../lib/sheets';
 import YAML from 'yaml';
+import moment from 'moment';
+import {Button} from '../../components/common/atoms/Button';
 /**
  * Render the checkout page
  */
@@ -216,18 +219,24 @@ class CheckoutPage extends Component {
    */
   async captureOrder(e) {
     e.preventDefault();
+
+    if (!this.state.customerEmail || !this.state.phoneNumber) {
+      alert('Please fulfill your email or phone number with country code!');
+      return;
+    }
     const newRow = {
       Name: this.state.firstName + ' ' + this.state.lastName,
       Email: this.state.customerEmail,
       Phone: this.state.phoneNumber,
-      ContactNotes: this.state.contactNotes,
+      Notes: this.state.orderNotes,
       Activities: YAML.stringify(
-        this.props.cart.line_items.map((item) => ({
+        this.props.cart.line_items?.map((item) => ({
           name: item.name,
           quantity: item.quantity,
-          price: item.price,
+          price: item.price.formatted_with_code,
         })),
       ),
+      DateCreated: moment().format('MMMM Do YYYY, h:mm:ss a')
     };
     await appendSpreadsheet(newRow);
 
@@ -275,7 +284,7 @@ class CheckoutPage extends Component {
   }
 
   render() {
-    const {checkout, cart} = this.props;
+    const {checkout, cart, t } = this.props;
     if (this.state.loading) {
       return <Loader />;
     }
@@ -302,7 +311,7 @@ class CheckoutPage extends Component {
                 <form onChange={this.handleChangeForm}>
                   {/* ShippingDetails */}
                   {/*<p className="font-size-subheader font-weight-semibold mb-4">Customer and shipping details</p>*/}
-                  <div className="mb-5">
+                  <div className="mb-1">
                     <ShippingForm
                       firstName={this.state.firstName}
                       lastName={this.state.lastName}
@@ -311,13 +320,15 @@ class CheckoutPage extends Component {
                       phoneNumber={this.state.phoneNumber}
                     />
                   </div>
+                  <div className="checkout-button-contain">
                   <button
                     type="submit"
-                    className="bg-black font-color-white w-100 border-none h-56 font-weight-semibold d-none d-lg-block checkout-btn"
-                    disabled={!this.state['customer[email]'] && !this.state.phoneNumber}
+                    className="checkout-button"
+                    //disabled={!this.state['customer[email]']}
                     onClick={this.captureOrder}>
-                    Get it started!
+                    {t('Get it started!')}
                   </button>
+                  </div>
                 </form>
               )}
             </div>
@@ -328,9 +339,9 @@ class CheckoutPage extends Component {
                 color: 'black',
               }}>
               >
-              <div className="bg-brand200 p-5 checkout-summary">
-                <div className="borderbottom font-size-subheader border-color-gray400 pb-2 font-weight-medium">
-                  Your order
+              <div className="bg-brand200 p-4 checkout-summary">
+                <div className="borderbottom font-size-subheader border-color-gray400 p-2 font-weight-medium">
+                  {t('Your order')}
                 </div>
                 <div className="pt-3 borderbottom border-color-gray400">
                   {(checkout && cart.line_items ? cart.line_items : []).map((item, index, items) => {
@@ -345,8 +356,8 @@ class CheckoutPage extends Component {
                         )}
                         <div className="d-flex flex-grow-1">
                           <div className="flex-grow-1">
-                            <p className="font-weight-medium">{item.product_name}</p>
-                            <p className="font-color-light">Quantity: {item.quantity}</p>
+                            <p className="font-weight-medium">{t(item.product_name)}</p>
+                            <p className="font-color-light"> {t('Person')} {item.quantity}</p>
                             <div className="d-flex justify-content-between mb-2">
                               {item.selected_options.map((option) => (
                                 <p key={option.group_id} className="font-color-light font-weight-small">
@@ -355,7 +366,7 @@ class CheckoutPage extends Component {
                               ))}
                             </div>
                           </div>
-                          <div className="text-right font-weight-semibold">${item.line_total.formatted_with_code}</div>
+                          <div className="text-right font-weight-semibold">{item.line_total.formatted_with_code}</div>
                         </div>
                       </div>
                     );
@@ -407,9 +418,9 @@ class CheckoutPage extends Component {
                   ))}
                 </div>
                 <div className="d-flex justify-content-between align-items-center mb-2 pt-3">
-                  <p className="font-size-title font-weight-semibold">Total amount</p>
+                  <p className="font-size-title font-weight-semibold">{t('Total amount')}</p>
                   <p className="text-right font-weight-semibold font-size-title">
-                    $ {cart.subtotal ? cart.subtotal.formatted_with_code : ''}
+                     {cart.subtotal ? cart.subtotal.formatted_with_code : ''}
                   </p>
                 </div>
               </div>
@@ -431,7 +442,7 @@ CheckoutPage.propTypes = {
 };
 
 export default withRouter(
-  connect(
+  withTranslation()(connect(
     ({checkout: {checkoutTokenObject, shippingOptions}, cart, customer, orderReceipt}) => ({
       checkout: checkoutTokenObject,
       customer,
@@ -447,4 +458,4 @@ export default withRouter(
       dispatchCaptureOrder,
     },
   )(CheckoutPage),
-);
+));

@@ -4,6 +4,7 @@ import {Transition} from 'react-transition-group';
 import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock';
 import CartItem from '../cart/CartItem';
 import {connect} from 'react-redux';
+import {withTranslation} from 'react-i18next';
 // Cart redux action creators
 import {retrieveCart as dispatchRetreiveCart} from '../../store/actions/cartActions';
 
@@ -58,7 +59,7 @@ class Cart extends Component {
 
   render() {
     const {isOpen, toggle} = this.props;
-    const {cart} = this.props;
+    const {cart, t} = this.props;
 
     return (
       <Transition in={isOpen} timeout={duration} unmountOnExit onEntering={this.onEntering} onExiting={this.onExiting}>
@@ -84,7 +85,7 @@ class Cart extends Component {
               {/* Cart Header */}
               <div className="px-4 px-md-5">
                 <div className="pt-4 pb-3 borderbottom border-color-black d-flex justify-content-between align-items-center">
-                  <p className="font-family-secondary font-size-subheader">Your plan</p>
+                  <p className="font-family-secondary font-size-subheader">{t('Your plan')}</p>
                   <button className="bg-transparent p-0" onClick={() => toggle(false)}>
                     <img src="/icon/cross.svg" title="Times icon" alt="" />
                   </button>
@@ -100,7 +101,7 @@ class Cart extends Component {
                   {/* Cart Footer */}
                   <div className="cart-footer">
                     <div className="mb-3 d-flex justify-content-center">
-                      <p className="font-color-light mr-2 font-weight-regular">Subtotal:</p>
+                      <p className="font-color-light mr-2 font-weight-regular">{t('Subtotal:')}</p>
                       <p>{cart.subtotal.formatted_with_symbol}</p>
                     </div>
                     <div className="row d-flex justify-content-center">
@@ -114,7 +115,7 @@ class Cart extends Component {
                       <div className="col-12 col-md-6   ">
                         <Link href="/checkout">
                           <a className="h-56 d-flex align-items-center justify-content-center bg-black w-100 flex-grow-1 font-weight-medium font-color-white px-3">
-                            Send an inquiry
+                            {t('Send inquiry')}
                           </a>
                         </Link>
                       </div>
@@ -142,6 +143,6 @@ class Cart extends Component {
   }
 }
 
-export default connect((state) => state, {
+export default withTranslation()(connect((state) => state, {
   dispatchRetreiveCart,
-})(Cart);
+})(Cart));

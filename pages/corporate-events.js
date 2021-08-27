@@ -21,12 +21,12 @@ const iconText2 = ' We manage it with a perfect schedule and execution tailored 
 const iconText3 =
   ' We got you covered from the arrival till departure.  If you will need anything else - we are there for you 24hrs straight.';
 const iconText4 =
-  'The Pragout team collaborates with stakeholders and vendors, working to create meaningful opportunities for attendee engagement and interaction. ';
+  'Pragout team collaborates with stakeholders and vendors, working to create meaningful opportunities for attendee engagement and interaction. ';
 //const iconText5 = ' You are provided with!';
 //const iconText6 = 'We really know the city at its best and we will make you love it!  ';
 const iconText7 = ' We are ready to adjust to all your company needs and ';
 const iconText8 = ' Or literally anything?';
-const iconText9 = ' Your tour manager will provide the best solution! We are open to any ideas!';
+const iconText9 = ' We are exceeding expectations. Guaranteed!';
 const CorporateEvents = () => (
   <Root>
     <Head>
@@ -39,6 +39,8 @@ const CorporateEvents = () => (
               content="Pragout team collaborates with stakeholders and vendors, working to create meaningful opportunities for attendee engagement and interaction."/>
       </Head>
     <Package
+      activitiesLeftPartStag={activitiesLeftPartStag}
+      activitiesRightPartStag={activitiesRightPartStag}
       iconUrl1={iconUrl1}
       iconUrl2={iconUrl2}
       iconUrl3={iconUrl3}

@@ -89,7 +89,7 @@
   "Airport RETURN transfer": "Airport RETURN transfer",
   "AK47 SHOOTING": "AK47 SHOOTING",
   "Beer Bike ": "Beer Bike ",
-  "Beer Bus": "Beer Bus",
+  "Beer bus": "Beer bus",
   "Beer pedal boat": "Beer pedal boat",
   "Beer spa": "Beer spa",
   "Bobsledding": "Bobsledding",
@@ -138,5 +138,14 @@
   "Guns and bullets" : "Guns and bullets",
   "Hot babies and pranks" : "Hot babies and pranks",
   "Nightlife" : "Nightlife",
-  "Transfer" : "Transfer"
+  "Transfer" : "Transfer",
+  "Subtotal:" : "Subtotal:",
+  "Send inquiry" : "Send inquiry",
+  "Your plan" : "Your plan",
+  "Total amount" : "Total amount",
+  "Person" : "Person:",
+  "Get it started!" : "Get it started!",
+  "Your order" : "Your order",
+  "Total amount" : "Total amount",
+  "Order notes" : "Order notes"
 }

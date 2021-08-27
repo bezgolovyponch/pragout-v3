@@ -6,7 +6,7 @@ import Package from '../components/common/Package';
 import Head from 'next/head';
 import {useTranslation} from 'react-i18next';
 const videoUrl =
-  'https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/60ed7f9bc2dd7951eb91d4e6_Stag BG No Music (838x210)-transcode.mp4';
+  'https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/612667ef85c251e1214d6e7d_Stag BG No Music (838x210) (2)-transcode.mp4';
 const iconUrl1 = '/images/beer-logo1.svg';
 const iconUrl2 = '/images/friends.svg';
 const iconUrl3 = '/images/ajustable1.svg';
@@ -15,8 +15,8 @@ const cardTitle2 = 'Everyone gets satisfied';
 const cardTitle3 = 'Fully adjustable';
 const packageName = 'PRAGOUT GENTLEMEN ESSENTIALS';
 const packagePrice = '€149';
-const activitiesLeftPartStag = ['· Return airport transfer', '· AK 47 shooting', '· Outdoor paintball'];
-const activitiesRightPartStag = ['· Steak and strip', ' · Private pub crawl', ' · VIP club entrance'];
+const activitiesLeftPartStag = ['- Return airport transfer', '- AK 47 shooting', '- Outdoor paintball'];
+const activitiesRightPartStag = ['- Steak and strip', ' - Private pub crawl', ' - VIP club entrance'];
 const packageIncludedText =
   'Boys, here we are! Thats the heart of Europe,the land of vice and beer. Welcome to Prague!';
 const iconText = 'Nice places, loads of beer and food, and best parties!.';
@@ -43,6 +43,7 @@ return (
             content="Best places and best parties! All come with a flexible schedule and service tailored to your needs."/>
     </Head>
     <Package
+      t={t}
       activitiesLeftPartStag={activitiesLeftPartStag}
       activitiesRightPartStag={activitiesRightPartStag}
       videoUrl={videoUrl}

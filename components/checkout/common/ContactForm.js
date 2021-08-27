@@ -6,20 +6,8 @@ import Modal from '../../common/atoms/Modal';
 import {Button} from '../../common/atoms/Button';
 import {withTranslation} from 'react-i18next';
 import {connect} from 'react-redux';
+import moment from 'moment';
 
-
-const preferredAccommodation = [
-  {code: '1', name: '1'},
-  {code: '2', name: '2'},
-  {code: '3', name: '3'},
-  {code: '4', name: '4'},
-  {code: '5', name: '5'},
-  {code: '6', name: '6'},
-  {code: '7', name: '7'},
-  {code: '8', name: '8'},
-  {code: '9', name: '9'},
-  {code: '10', name: '11'},
-];
 
 class ContactForm extends Component {
   constructor(props) {
@@ -71,10 +59,11 @@ class ContactForm extends Component {
       });
       const newRow = {
         Name: this.state.fullName,
-        CustomerEmail: this.state.customerEmail,
-        PhoneNumber: this.state.phoneNumber,
-        ContactNotes: this.state.contactNotes,
+        Email: this.state.customerEmail,
+        Phone: this.state.phoneNumber,
+        Notes: this.state.contactNotes,
         NumberOfPersons: this.state.numberOfPersons,
+        DateCreated: moment().format('MMMM Do YYYY, h:mm:ss a'),
       };
       await appendSpreadsheet(newRow);
     }
@@ -82,7 +71,6 @@ class ContactForm extends Component {
   render() {
     const {withAccommodation, onMainPage,t} = this.props;
     const name = t('Name');
-    const phoneNumber = t('Phone number');
     const ideas = t('Your ideas');
     return (
       <div className="contact-form-banner" id="contactForm">
@@ -91,15 +79,13 @@ class ContactForm extends Component {
             <p className="top-paragraph-contact">
               { onMainPage ? t('It does not end just here') :  t('Is that what you need?')
               }
-
               <br />
             </p>
             <h1 className="header-contact"> {onMainPage ? t('CONTACT US'): t('Enquire now')} </h1>
             <p className="down-paragraph-contact">
               {onMainPage
                 ? t('Drop us a line about the ideas you have on your mind and we will make it happen')
-                : t('Or drop us a line about the ideas you have on your mind and we will make it happen')}
-              .
+                : t('Or drop us a line about the ideas you have on your mind and we will make it happen')}.
             </p>
           </div>
           <div className="contact-form">
@@ -192,7 +178,7 @@ class ContactForm extends Component {
                   <Button className="button_contact" onClick={this.handleSubmit} text={t('Send')} withIcon={false} />
                 </div>
                 <Modal isOpen={this.state.openModal} onClose={this.handleClose} maxW="500px">
-                  Thank you! We will reach you out ASAP
+                  Thank you! We will reach you out as soon as possible
                 </Modal>
               </div>
             </div>
