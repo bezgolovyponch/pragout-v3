@@ -6,6 +6,8 @@ import {connect} from 'react-redux';
 import {addToCart} from '../../store/actions/cartActions';
 import {withTranslation} from 'react-i18next';
 
+export const pricePerGroupProducts = ['lP4Yq4', 'LnyKbT', '0PnZy6','HcCipn','Ps7kIE','mjAQH4','EisIvh','PB07z0'];
+
 class ProductDetail extends Component {
   constructor(props) {
     super(props);
@@ -123,16 +125,12 @@ class ProductDetail extends Component {
 
   render() {
     const {t} = this.props;
-    const PricePerGroup = ['lP4Yq4', 'LnyKbT', '0PnZy6','HcCipn','Ps7kIE','mjAQH4','EisIvh','PB07z0'] ;
-    const {name, description, price, variant_groups: variantGroups, extrafields} = this.props.product;
+    const {name, description, price, variant_groups: variantGroups, extrafields, permalink} = this.props.product;
+    const isPerGroupProduct = pricePerGroupProducts.includes(permalink);
     const priceSymbol = this.getCurrencySymbol(price.formatted_with_symbol);
     const {selectedOptions} = this.state;
     const reg = /(<([^>]+)>)/gi;
-    const translated = t(description);
-    const anotherOne = t(extrafields.map(({name}) => name));
-    const translated2 = description.replace(reg, ' ');
-    const translated3 = t('PedalBoatDesc');
-    console.log(anotherOne);
+    const descriptionTranslated = t(extrafields.map(({name}) => name));
     return (
       <div className="product-details">
         {/*        <p className="font-size-display3">{name}</p>*/}
@@ -142,7 +140,7 @@ class ProductDetail extends Component {
             whiteSpace: 'pre',
             listStyleType: 'square',
           }}>
-          {(anotherOne || '').replace(reg, '\n')}
+          {(descriptionTranslated || '').replace(reg, '\n')}
         </div>
 
         {/* Product Variant */}
@@ -168,9 +166,7 @@ class ProductDetail extends Component {
             </span>
           </button>
         </div>
-        <div className="price-per">
-          Price per person in case of 10 people group : Price per group
-
+        <div className="price-per"> {isPerGroupProduct ? t('Price per group') :  t(' Price per person in case of 10 people group')}
         </div>
       </div>
 

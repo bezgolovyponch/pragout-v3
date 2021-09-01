@@ -19,6 +19,7 @@ import {withRouter} from 'next/router';
 import {appendSpreadsheet} from '../../lib/sheets';
 import YAML from 'yaml';
 import moment from 'moment';
+import {pricePerGroupProducts} from '../../components/productAssets/ProductDetail';
 
 /**
  * Render the checkout page
@@ -347,7 +348,7 @@ class CheckoutPage extends Component {
               >
               <div className="bg-brand200 p-4 checkout-summary">
                 <div className="borderbottom font-size-subheader border-color-gray400 p-2 font-weight-medium">
-                  {t('Your order')}
+                  {t('Your plan')}
                 </div>
                 <div className="pt-3 borderbottom border-color-gray400">
                   {(checkout && cart.line_items ? cart.line_items : []).map((item, index, items) => {
@@ -363,7 +364,7 @@ class CheckoutPage extends Component {
                         <div className="d-flex flex-grow-1">
                           <div className="flex-grow-1">
                             <p className="font-weight-medium font-size-tiny">{t(item.product_name)}</p>
-                            <p className="font-color-light"> {t('Person')} {item.quantity}</p>
+                            <p className="font-color-light"> {pricePerGroupProducts.includes(item.permalink) ? t('Group')  : t('Person')}  {item.quantity}</p>
                             <div className="d-flex justify-content-between mb-2">
                               {item.selected_options.map((option) => (
                                 <p key={option.group_id} className="font-color-light font-weight-small">
@@ -424,8 +425,8 @@ class CheckoutPage extends Component {
                   ))}
                 </div>
                 <div className="d-flex justify-content-between align-items-center mb-2 pt-2">
-                  <p className="font-size-title ">{t('Total amount')}</p>
-                  <p className="text-right font-size-title">
+                  <p className="font-size-tiny ">{t('Estimated budget')}</p>
+                  <p className="text-right font-tiny">
                      {cart.subtotal ? cart.subtotal.formatted_with_code : ''}
                   </p>
                 </div>
