@@ -101,8 +101,13 @@ class Cart extends Component {
                   {/* Cart Footer */}
                   <div className="cart-footer">
                     <div className="mb-3 d-flex justify-content-center">
+                      <div className="total-price-approx">
+                        <p className="book-now">{t('Book now, pay upon arrival')}</p>
+                          <p className="mb-1 d-flex justify-content-center">{cart.subtotal.formatted_with_symbol}</p>
+
+                      </div>
                       <p className="font-color-light mr-2 font-weight-regular">{t('Subtotal:')}</p>
-                      <p>{cart.subtotal.formatted_with_symbol}</p>
+
                     </div>
                     <div className="row d-flex justify-content-center">
                       {/*<div className="col-6 d-none d-md-block ">

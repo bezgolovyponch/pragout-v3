@@ -163,7 +163,7 @@ class ContactForm extends Component {
                     type="checkbox"
                     checked={this.state.gdpr}
                     onChange={this.handleChange} />
-                  <p className="gdpr-text">{t('I agree with terms and conditions')}</p>
+                  <p className="gdpr-text">{t('I Agree to Privacy Policy')}</p>
                 </div>
                 <div className="button-hero-contact">
                   <Button className="button_contact" onClick={this.handleSubmit} text={t('Send')} withIcon={false} />

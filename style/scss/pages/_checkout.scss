@@ -59,4 +59,26 @@
     position: sticky;
     top: 15%;
   }
+  .total-price-approx{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    border-top: #1b1c22 ;
+    border-top-width: 0.05vw;
+    border-top-style: solid;
+    text-align: center;
+    padding-top: 0.8vw;
+    .book-now{
+      font-size: 0.8vw;
+      @include iphone6{
+        font-size: 3.5vw;
+      }
+    }
+    .idicative-total{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+  }
 }

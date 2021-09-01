@@ -4,7 +4,10 @@ import Footer from '../components/common/Footer';
 
 const PrivacyPolicy = () => (
   <Root>
-    <div className=""></div>
+    <div className="privacy text">
+
+
+    </div>
     <Footer />
   </Root>
 );

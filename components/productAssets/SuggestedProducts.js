@@ -10,10 +10,10 @@ class SuggestedProducts extends Component {
     return (
       <div className="d-flex flex-column align-items-center mb-5 pb-4">
         {/*        <p className="font-color-medium mb-4">Suggested products</p>*/}
-        <p className="text-center font-size-display1 mt-4 py-4 font-weight-medium" style={{maxWidth: '32rem'}}>
+        {/*<p className="text-center font-size-display1 mt-4 py-4 font-weight-medium" style={{maxWidth: '32rem'}}>
           You may also like to check out these products:
-        </p>
-        <ProductRow products={filteredProducts.slice(0, 4)} />
+        </p>*/}
+        <ProductRow products={[]} />
       </div>
     );
   }

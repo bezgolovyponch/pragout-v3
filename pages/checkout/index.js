@@ -317,6 +317,15 @@ class CheckoutPage extends Component {
                       phoneNumber={this.state.phoneNumber}
                     />
                   </div>
+                  <div className="gdpr-checkbox">
+                    <input
+                      className="gdpr"
+                      name="gdpr"
+                      type="checkbox"
+                      checked={this.state.gdpr}
+                      onChange={this.handleChange} />
+                    <p className="gdpr-text">{t('I Agree to Privacy Policy')}</p>
+                  </div>
                   <div className="checkout-button-contain">
                   <button
                     type="submit"
@@ -353,7 +362,7 @@ class CheckoutPage extends Component {
                         )}
                         <div className="d-flex flex-grow-1">
                           <div className="flex-grow-1">
-                            <p className="font-weight-medium">{t(item.product_name)}</p>
+                            <p className="font-weight-medium font-size-tiny">{t(item.product_name)}</p>
                             <p className="font-color-light"> {t('Person')} {item.quantity}</p>
                             <div className="d-flex justify-content-between mb-2">
                               {item.selected_options.map((option) => (
@@ -363,7 +372,7 @@ class CheckoutPage extends Component {
                               ))}
                             </div>
                           </div>
-                          <div className="text-right font-weight-semibold">{item.line_total.formatted_with_code}</div>
+                          <div className="text-right font-size-tiny">{item.line_total.formatted_with_code}</div>
                         </div>
                       </div>
                     );
@@ -414,12 +423,15 @@ class CheckoutPage extends Component {
                     </div>
                   ))}
                 </div>
-                <div className="d-flex justify-content-between align-items-center mb-2 pt-3">
-                  <p className="font-size-title font-weight-semibold">{t('Total amount')}</p>
-                  <p className="text-right font-weight-semibold font-size-title">
+                <div className="d-flex justify-content-between align-items-center mb-2 pt-2">
+                  <p className="font-size-title ">{t('Total amount')}</p>
+                  <p className="text-right font-size-title">
                      {cart.subtotal ? cart.subtotal.formatted_with_code : ''}
                   </p>
                 </div>
+                <div className="total-price-approx">
+                  <p className="book-now">{t('Book now, pay upon arrival!')}</p>
+              </div>
               </div>
             </div>
           </div>

@@ -80,6 +80,7 @@
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    align-items: center;
     width: auto;
     max-width: none;
     min-width: auto;
@@ -106,6 +107,11 @@
       @include iphone6{
         justify-content: center;
       }
+    }
+    .price-per {
+      display: flex;
+      justify-content: center;
+      font-size: 0.6vw;
     }
 
     }

@@ -32,6 +32,8 @@
       border-top: 1px solid $black;
       background: $brand-300;
       padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
 
       @include md {
         padding: 1.5rem 3rem 2.5rem;

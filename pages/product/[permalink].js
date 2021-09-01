@@ -36,7 +36,7 @@ class Product extends Component {
     return (
       <Root>
         <Head>
-          <title>{product.name} | commerce</title>
+          <title>{product.name}</title>
         </Head>
         <div className="product-section">
           <div className="product-details-image">
