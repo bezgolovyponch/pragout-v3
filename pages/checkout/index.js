@@ -331,7 +331,7 @@ class CheckoutPage extends Component {
                     <p  style={{padding: '5px'}}>{t('I agree to')}</p>
                     <Link href="/privacy-policy">
                       <a>
-                        <p>{t('privacy policy')}</p>
+                        <p>{t('Privacy Policy')}</p>
                       </a>
                     </Link>
                   </div>

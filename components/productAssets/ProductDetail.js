@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import {addToCart} from '../../store/actions/cartActions';
 import {withTranslation} from 'react-i18next';
 
-export const pricePerGroupProducts = ['lP4Yq4', 'LnyKbT', '0PnZy6','HcCipn','Ps7kIE','mjAQH4','EisIvh','PB07z0'];
+export const pricePerGroupProducts = ['beer-pedal-boat', 'prague-xxl-strip', 'prague-hummer-limo', 'beer-bike', 'jelly-wrestling','prague-midget-hire','hotel-maids','stag-arrest','stag-arrest-xxl','hotel-strip'];
 
 class ProductDetail extends Component {
   constructor(props) {

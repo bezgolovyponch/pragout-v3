@@ -112,6 +112,9 @@
       display: flex;
       justify-content: center;
       font-size: 0.6vw;
+      @include iphone6{
+        font-size: 3vw;
+      }
     }
 
     }

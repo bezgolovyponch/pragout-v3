@@ -166,7 +166,7 @@ class ContactForm extends Component {
                   <p className="gdpr-text">{t('I agree to')}</p>
                   <Link href="/privacy-policy">
                     <a>
-                      <p>{t('privacy policy')}</p>
+                      <p>{t('Privacy Policy')}</p>
                     </a>
                   </Link>
                 </div>

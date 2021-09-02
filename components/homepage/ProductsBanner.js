@@ -8,7 +8,7 @@ import {withTranslation} from 'react-i18next';
 class ProductsBanner extends Component {
   render() {
     const {products, t} = this.props;
-    const hottestProducts = ['AKgzxn', 'zsn22D', 'I8cIaL'] ;
+    const hottestProducts = ['prague-ak47-shooting', 'prague-sight-beer', 'beer-pedal-boat'] ;
     return (
       <div className="section-third">
         <div className="activities-text">

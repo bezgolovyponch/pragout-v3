@@ -3,6 +3,7 @@ import Root from '../../components/common/Root';
 import Link from 'next/link';
 import {connect} from 'react-redux';
 import {withRouter} from 'next/router';
+import {withTranslation} from 'react-i18next';
 
 class Confirm extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class Confirm extends Component {
   }
 
   render() {
+    const {t} = this.props;
     return (
       <Root>
         <div className="pt-5 mt-2 checkout-confirm receipt">
@@ -32,8 +34,8 @@ class Confirm extends Component {
             <div className="bg-success700 h-64 w-64 d-flex rounded-circle align-items-center justify-content-center mb-4">
               <img src="/icon/check.svg" className="w-40" alt="" />
             </div>
-            <h3 className="text-center font-family-secondary mb-3">Thank you for your purchase!</h3>
-            <h4 className="text-center font-size-subheader mb-3">Your order completed successfully</h4>
+            <h3 className="text-center font-family-secondary mb-3">{t('Thank you! Your journey has just begun!')}</h3>
+            <h4 className="text-center font-size-subheader mb-3">{t('The tour manager will be in touch with you shortly!')}</h4>
             <div className="d-flex w-100 justify-content-center flex-column flex-sm-row">
               <Link href="/">
                 <button className="checkout-confirm-buttons h-48 px-3 flex-grow-1 border bg-white border-color-gray500 font-color-light mb-2 mb-sm-0 mr-sm-2 no-print">
@@ -42,7 +44,7 @@ class Confirm extends Component {
               </Link>
               <Link href="/activities">
                 <button className="checkout-confirm-buttons h-48 px-3 flex-grow-1 bg-black font-color-white no-print">
-                  Continue shopping
+                  Continue
                 </button>
               </Link>
             </div>
@@ -53,4 +55,4 @@ class Confirm extends Component {
   }
 }
 
-export default withRouter(connect((state) => state)(Confirm));
+export default withTranslation()(withRouter(connect((state) => state)(Confirm)));
