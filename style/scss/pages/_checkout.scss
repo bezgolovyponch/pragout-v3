@@ -37,6 +37,10 @@
       opacity: 1;
       outline: none;
     }
+    &:disabled{
+      background-color: grey;
+      outline: none;
+    }
   }
 }
 

@@ -4,7 +4,6 @@ import Cart from '../cart/Cart';
 import commerce from '../../lib/commerce';
 import {Transition} from 'react-transition-group';
 import {connect} from 'react-redux';
-import {clearCustomer} from '../../store/actions/authenticateActions';
 import LanguageButton from './atoms/LanguageButton';
 import {withTranslation} from 'react-i18next';
 
@@ -101,7 +100,6 @@ class Header extends Component {
   }
 
   handleLogout() {
-    this.props.clearCustomer();
     this.setState({
       loggedIn: false,
     });
@@ -245,4 +243,4 @@ class Header extends Component {
   }
 }
 
-export default withTranslation()(connect((state) => state, {clearCustomer})(Header));
+export default withTranslation()(connect((state) => state)(Header));

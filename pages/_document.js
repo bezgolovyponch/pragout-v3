@@ -34,7 +34,7 @@ class MyDocument extends Document {
           }}>
           </script>
           <meta property="og:title" content="Pragout" />
-          <meta property="og:image" content="https://cdn.chec.io/email/assets/marketing/demo-preview.png" />
+          <meta property="og:image" content="/Var444-01-p-800.jpeg" />
           <meta
             property="og:description"
             content="Your best weekend in Prague!"

@@ -245,14 +245,14 @@
           .gdpr-checkbox{
             font-size: smaller;
             background-color: transparent;
-            color: #ef799b;
+            color: #d6d6d6;
             display: flex;
             flex-direction: row;
             align-items: center;
             @include iphone6 {
               font-size: 3vw;
             }
-            .gdpr-text{padding: 10px;}
+            .gdpr-text{padding: 5px;}
           }
         }
       }

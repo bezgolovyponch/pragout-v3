@@ -37,18 +37,12 @@ class CheckoutPage extends Component {
       'customer[id]': null,
       orderNotes: '',
       phoneNumber: '',
-
+      gdpr: true,
       errors: {
         'fulfillment[shipping_method]': null,
-        gateway_error: null,
-        'customer[email]': null,
-        'shipping[name]': null,
-        'shipping[street]': null,
-        'shipping[town_city]': null,
-        'shipping[postal_zip_code]': null,
       },
 
-      discountCode: 'CUSTOMCOMMERCE',
+      discountCode: '',
       loading: false,
     };
 
@@ -128,13 +122,11 @@ class CheckoutPage extends Component {
   }
 
   handleChangeForm(e) {
-    // when input cardNumber changes format using ccFormat helper
-    if (e.target.name === 'cardNumber') {
-      e.target.value = ccFormat(e.target.value);
-    }
-    // update form's input by name in state
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
     this.setState({
-      [e.target.name]: e.target.value,
+      [name]: value
     });
   }
 
@@ -219,26 +211,29 @@ class CheckoutPage extends Component {
 
     if (!this.state.customerEmail || !this.state.phoneNumber) {
       alert('Please fulfill your email or phone number with country code!');
-      return;
     }
-    const newRow = {
-      Name: this.state.firstName,
-      Email: this.state.customerEmail,
-      Phone: this.state.phoneNumber,
-      Notes: this.state.orderNotes,
-      NumberOfPersons: this.state.numberOfPersons,
-      Activities: YAML.stringify(
-        this.props.cart.line_items?.map((item) => ({
-          name: item.name,
-          quantity: item.quantity,
-          price: item.price.formatted_with_code,
-        })),
-      ),
-      DateCreated: moment().format('MMMM Do YYYY, h:mm:ss a')
-    };
-    await appendSpreadsheet(newRow);
+    if (!this.state.gdpr) {
+      alert('You need to accept terms and conditions first!');
+    }
+    if (this.state.customerEmail && this.state.phoneNumber && this.state.gdpr) {
+      const newRow = {
+        Name: this.state.firstName,
+        Email: this.state.customerEmail,
+        Phone: this.state.phoneNumber,
+        Notes: this.state.orderNotes,
+        NumberOfPersons: this.state.numberOfPersons,
+        Activities: YAML.stringify(
+          this.props.cart.line_items?.map((item) => ({
+            name: item.name,
+            quantity: item.quantity,
+            price: item.price.formatted_with_code,
+          })),
+        ),
+        DateCreated: moment().format('MMMM Do YYYY, h:mm:ss a')
+      };
+      await appendSpreadsheet(newRow);
 
-    this.handleCaptureSuccess(this.props.cart);
+      this.handleCaptureSuccess(this.props.cart);
     // reset error states
     this.setState({
       errors: {
@@ -280,7 +275,7 @@ class CheckoutPage extends Component {
       .then(this.handleCaptureSuccess)
       .catch(this.handleCaptureError);
   }
-
+  }
   render() {
     const {checkout, cart, t } = this.props;
     if (this.state.loading) {
@@ -318,20 +313,33 @@ class CheckoutPage extends Component {
                       phoneNumber={this.state.phoneNumber}
                     />
                   </div>
-                  <div className="gdpr-checkbox">
+                  <div
+                       style={{
+                    fontSize: 'smaller',
+                    backgroundColor: 'transparent',
+                    color: '#d6d6d6',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }}>
                     <input
                       className="gdpr"
                       name="gdpr"
                       type="checkbox"
                       checked={this.state.gdpr}
-                      onChange={this.handleChange} />
-                    <p className="gdpr-text">{t('I Agree to Privacy Policy')}</p>
+                      onChange={this.handleChangeForm} />
+                    <p  style={{padding: '5px'}}>{t('I agree to')}</p>
+                    <Link href="/privacy-policy">
+                      <a>
+                        <p>{t('privacy policy')}</p>
+                      </a>
+                    </Link>
                   </div>
                   <div className="checkout-button-contain">
                   <button
                     type="submit"
                     className="checkout-button"
-                    //disabled={!this.state['customer[email]']}
+                    disabled={!this.state.gdpr || !this.state.customerEmail}
                     onClick={this.captureOrder}>
                     {t('Get it started!')}
                   </button>

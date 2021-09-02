@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import {appendSpreadsheet} from '../../../lib/sheets';
 import Modal from '../../common/atoms/Modal';
@@ -163,7 +163,12 @@ class ContactForm extends Component {
                     type="checkbox"
                     checked={this.state.gdpr}
                     onChange={this.handleChange} />
-                  <p className="gdpr-text">{t('I Agree to Privacy Policy')}</p>
+                  <p className="gdpr-text">{t('I agree to')}</p>
+                  <Link href="/privacy-policy">
+                    <a>
+                      <p>{t('privacy policy')}</p>
+                    </a>
+                  </Link>
                 </div>
                 <div className="button-hero-contact">
                   <Button className="button_contact" onClick={this.handleSubmit} text={t('Send')} withIcon={false} />
