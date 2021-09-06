@@ -166,7 +166,7 @@ class ProductDetail extends Component {
             </span>
           </button>
         </div>
-        <div className="price-per"> {isPerGroupProduct ? t('Price per group') :  t(' Price per person in case of 10 people group')}
+        <div className="price-per"> {isPerGroupProduct ? t('Price per group') :  t('Price per person in case of 10 people group')}
         </div>
       </div>
 

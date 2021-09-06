@@ -279,6 +279,7 @@
     padding: 1vw;
     width: auto;
     height: auto;
+    display: flex;
     margin-left: 2.5vw;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -294,6 +295,7 @@
       -webkit-justify-content: center;
       -ms-flex-pack: center;
       justify-content: center;
+      align-items: center;
       border-style: solid;
       border-width: 0.05vw;
       border-color: hsla(0, 0%, 100%, 0.38);

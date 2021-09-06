@@ -230,7 +230,7 @@ class Header extends Component {
                       key={i}
                       href={item.link}
                       className="d-block mb-4 font-size-heading font-color-white text-right mr-4 pb-3 border-bottom border-color-black600 ml-4">
-                      {item.name}
+                      {t(item.name)}
                     </a>
                   ))}
                 </div>
