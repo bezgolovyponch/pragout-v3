@@ -145,7 +145,7 @@ class HeroSection extends Component {
               <h5 className="heading_05">{t('MAKE YOUR WEEKEND IN PRAGUE')}</h5>
               <img className="image-7" src="/images/Title-01.svg" />
               <div className="button-hero">
-                <Button className="button_contact" onClick={this.handleClick} text={t('Need help?')} withIcon={true} />
+                <Button className="button_contact" onClick={this.handleClick} text={t('Quick inquiry')} withIcon={true} />
               </div>
               <div className="mousescroll">
                 <img className="image-8" src="/images/Mouse_Scroll-01.svg" />
