@@ -11,7 +11,9 @@ const MyApp = ({Component, pageProps}) => {
   const store = useStore(pageProps.initialState);
 
   useEffect(() => {
-    TagManager.initialize({ gtmId: 'GTM-TQC4X45'});
+    TagManager.initialize({ gtmId: 'GTM-TQC4X45', events: {
+        sendContactForm: 'sendContactForm'
+      }});
     commerce.products.list({limit: 50}).then((res) => {
       store.dispatch({
         type: 'STORE_PRODUCTS',

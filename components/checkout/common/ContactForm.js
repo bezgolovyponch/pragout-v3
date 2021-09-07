@@ -7,7 +7,7 @@ import {Button} from '../../common/atoms/Button';
 import {withTranslation} from 'react-i18next';
 import {connect} from 'react-redux';
 import moment from 'moment';
-
+import TagManager from 'react-gtm-module'
 
 class ContactForm extends Component {
   constructor(props) {
@@ -47,6 +47,11 @@ class ContactForm extends Component {
   }
   async handleSubmit(event) {
     event.preventDefault();
+    TagManager.dataLayer({
+      dataLayer: {
+        event: 'sendContactForm',
+      }
+    });
     if (!this.state.gdpr) {
       alert('You need to accept terms and conditions first!');
     }
