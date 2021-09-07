@@ -129,7 +129,7 @@ class ContactForm extends Component {
                   value={this.state.numberOfPersons}
                   onChange={this.handleChange}
                   className="contact_text_field"
-                  placeholder="Number of persons"
+                  placeholder={t('Group size')}
                 />
 {/*                {withAccommodation && (
                   <div className="contact-dropdown">
@@ -174,7 +174,7 @@ class ContactForm extends Component {
                   <Button className="button_contact" onClick={this.handleSubmit} text={t('Send')} withIcon={false} />
                 </div>
                 <Modal isOpen={this.state.openModal} onClose={this.handleClose} maxW="500px">
-                  Thank you! We will reach you out as soon as possible
+                  {t('Thank you! The tour manager will be in touch with you shortly!')}
                 </Modal>
               </div>
             </div>

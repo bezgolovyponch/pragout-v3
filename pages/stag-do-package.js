@@ -19,7 +19,7 @@ const activitiesLeftPartStag = ['- Return airport transfer', '- AK 47 shooting',
 const activitiesRightPartStag = ['- Steak and strip', ' - Private pub crawl', ' - VIP club entrance'];
 const packageIncludedText =
   'Boys, here we are! Thats the heart of Europe,the land of vice and beer. Welcome to Prague!';
-const iconText = 'Nice places, loads of beer and food, and best parties!.';
+const iconText = 'Nice places, loads of beer and food, and best parties!g';
 const iconText2 = ' All come with a perfect schedule and execution tailored to your needs.';
 const iconText3 = 'We got you covered from the arrival till departure, 24hrs straight.';
 const iconText4 = ' Simplicity, safety , local tips and tricks - ';
