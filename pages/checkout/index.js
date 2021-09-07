@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import Link from 'next/link';
-import ccFormat from '../../utils/ccFormat';
 import Root from '../../components/common/Root';
 import ShippingForm from '../../components/checkout/common/ShippingForm';
 import Loader from '../../components/checkout/Loader';
@@ -20,6 +19,7 @@ import {appendSpreadsheet} from '../../lib/sheets';
 import YAML from 'yaml';
 import moment from 'moment';
 import {pricePerGroupProducts} from '../../components/productAssets/ProductDetail';
+import TagManager from 'react-gtm-module';
 
 /**
  * Render the checkout page
@@ -208,7 +208,11 @@ class CheckoutPage extends Component {
    */
   async captureOrder(e) {
     e.preventDefault();
-
+    TagManager.dataLayer({
+      dataLayer: {
+        event: 'sendCheckoutForm',
+      }
+    });
     if (!this.state.customerEmail || !this.state.phoneNumber) {
       alert('Please fulfill your email or phone number with country code!');
     }

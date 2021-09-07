@@ -12,7 +12,8 @@ const MyApp = ({Component, pageProps}) => {
 
   useEffect(() => {
     TagManager.initialize({ gtmId: 'GTM-TQC4X45', events: {
-        sendContactForm: 'sendContactForm'
+        sendContactForm: 'sendContactForm',
+        sendCheckoutForm: 'sendCheckoutForm'
       }});
     commerce.products.list({limit: 50}).then((res) => {
       store.dispatch({
