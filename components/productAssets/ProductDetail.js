@@ -5,6 +5,7 @@ import {animateScroll as scroll} from 'react-scroll';
 import {connect} from 'react-redux';
 import {addToCart} from '../../store/actions/cartActions';
 import {withTranslation} from 'react-i18next';
+import PropTypes from 'prop-types';
 
 export const pricePerGroupProducts = ['beer-pedal-boat', 'prague-xxl-strip', 'prague-hummer-limo', 'beer-bike', 'jelly-wrestling','prague-midget-hire','hotel-maids','stag-arrest','stag-arrest-xxl','hotel-strip'];
 
@@ -173,5 +174,11 @@ class ProductDetail extends Component {
     );
   }
 }
+ProductDetail.propTypes = {
+  product: PropTypes.object,
+};
 
+ProductDetail.defaultProps = {
+  product: {},
+};
 export default withTranslation()(connect((state) => state)(ProductDetail));

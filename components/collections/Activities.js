@@ -4,6 +4,7 @@ import Head from 'next/head';
 import {connect} from 'react-redux';
 import {addToCart} from '../../store/actions/cartActions';
 import {withTranslation} from 'react-i18next';
+import PropTypes from 'prop-types';
 
 class Activities extends Component {
   constructor(props) {
@@ -102,5 +103,13 @@ class Activities extends Component {
     );
   }
 }
+
+Activities.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.object),
+};
+
+Activities.defaultProps = {
+  products: [],
+};
 
 export default  withTranslation()(connect((state) => state)(Activities));

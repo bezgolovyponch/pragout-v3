@@ -162,7 +162,7 @@ class Header extends Component {
           </div>
           <div className="navbar_menu2">
             <Link href="/activities">
-              <a href="/activities" className="navbar_link2">
+              <a className="navbar_link2">
                 <p className="paragraph_nav2">{t('Activities')}</p>
               </a>
             </Link>
