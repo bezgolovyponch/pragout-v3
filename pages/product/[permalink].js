@@ -37,8 +37,7 @@ export default function Product() {
   }, [permalink]);
 
   if (loading) {
-    const loadingText = t('Loading');
-    return <TemplatePage page={{message: loadingText}} />
+    return <TemplatePage page={{message: t('Loading')}} />
   }
 
   if (product === null) {

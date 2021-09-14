@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Button} from '../common/atoms/Button';
 import {StagPack} from '../common/atoms/StagPack';
 import {motion} from 'framer-motion';
 import {withTranslation} from 'react-i18next';
@@ -143,17 +142,23 @@ class HeroSection extends Component {
           <div className="section_1">
             <div className="main">
               <h5 className="heading_05">{t('MAKE YOUR WEEKEND IN PRAGUE')}</h5>
-              <img className="image-7" src="/images/Title-01.svg" />
-              <div className="button-hero">
+              <img className="image-7" src={t('imagePathKey')} alt="imagePathKey"/>
+              <h5 className="heading_05">{t('True group party professionals at your service!')}</h5>
+              {/*<div className="button-hero">
                 <Button className="button_contact" onClick={this.handleClick} text={t('Quick inquiry')} withIcon={true} />
-              </div>
+              </div>*/}
               <div className="mousescroll">
-                <img className="image-8" src="/images/Mouse_Scroll-01.svg" />
-                <h1 className="heading-scroll">
-                  {t('scroll')}
-                  <br />
-                    {t('down')}
-                </h1>
+                <svg className="arrows">
+                  <path className="a1" d="M0 0 L30 32 L60 0"></path>
+                  <path className="a2" d="M0 20 L30 52 L60 20"></path>
+                  <path className="a3" d="M0 40 L30 72 L60 40"></path>
+                </svg>
+                {/*<img className="image-8" src="/images/Mouse_Scroll-01.svg" />*/}
+                {/*<h1 className="heading-scroll">*/}
+                {/*  {t('scroll')}*/}
+                {/*  <br />*/}
+                {/*    {t('down')}*/}
+                {/*</h1>*/}
               </div>
             </div>
           </div>

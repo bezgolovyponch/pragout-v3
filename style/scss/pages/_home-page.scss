@@ -281,7 +281,7 @@ $color: rgba(0, 0, 0, 0);
     }
 
     .heading_05 {
-      margin-top: 0px;
+      margin-top: 1.5vw;
       margin-bottom: 1vw;
       font-family: Rubik, sans-serif;
       color: #fff;
@@ -291,11 +291,24 @@ $color: rgba(0, 0, 0, 0);
       letter-spacing: 0.1vw;
       @include iphone6{
         font-size: 4vw;
-        line-height: 1;
+        line-height: 1.2;
         height: auto;
-        margin-bottom: 5vw;
+        margin-bottom: 2vw;
+        letter-spacing: 0.2vw;
+        margin-top: 3vw;
+        width: 70vw;
       }
     }
+.main-heading {
+ color: white;
+  font-family: Rubik, sans-serif;
+  font-size: 75px; font-weight: bold; letter-spacing: 5px; line-height: 1; text-align: center;
+  width: 33vw;
+  height: auto;
+  margin-right: 3.2vw;
+  margin-left: -3.45vw;
+  padding-left: 0px;
+}
 
     .image-7 {
       width: 33vw;
@@ -304,8 +317,8 @@ $color: rgba(0, 0, 0, 0);
       margin-left: -3.45vw;
       padding-left: 0px;
       @include iphone6{
-        width: 75vw;
-        height: auto;
+        width: 80vw;
+        height: 25vw;
         margin-right: 7.5vw;
         margin-left: -7.5vw;
         line-height: 1;
@@ -341,8 +354,90 @@ $color: rgba(0, 0, 0, 0);
       -ms-flex-order: 0;
       order: 0;
       @include iphone6{
-        display: none;
+        display: flex;
         overflow: hidden;
+        width: 100vw;
+        margin-top: 25vh;
+        /*background:#0b1d2a*/;
+      }
+
+      .arrows {
+        width: 60px;
+        height: 100%;
+        position: relative;
+        /*left: 50%;*/
+      }
+
+      .arrows path {
+        stroke: #ec4622;
+        fill: transparent;
+        stroke-width: 5px;
+        animation: arrow 2s infinite;
+        -webkit-animation: arrow 2s infinite;
+      }
+
+      @keyframes arrow
+      {
+        0% {opacity:0}
+        40% {opacity:1}
+        80% {opacity:0}
+        100% {opacity:0}
+      }
+
+      @-webkit-keyframes arrow /*Safari and Chrome*/
+      {
+        0% {opacity:0}
+        40% {opacity:1}
+        80% {opacity:0}
+        100% {opacity:0}
+      }
+
+      .arrows path.a1 {
+        animation-delay:-1s;
+        -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+      }
+
+      .arrows path.a2 {
+        animation-delay:-0.5s;
+        -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+      }
+
+      .arrows path.a3 {
+        animation-delay:0s;
+        -webkit-animation-delay:0s; /* Safari 和 Chrome */
+      }
+    }
+
+
+    .arrowdown {
+      position: relative;
+      left: 0%;
+      top: 0%;
+      right: auto;
+      bottom: auto;
+      z-index: 0;
+      width: auto;
+      height: 0.8vw;
+      margin-left: 2vw;
+      -webkit-align-self: center;
+      -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+      display: block;
+      margin-top: 0vw;
+      max-width: 100%;
+      vertical-align: middle;
+      border: 0;
+      transition: 0.3s;
+      @include iphone6{
+        height: 4vw;
+      }
+    }
+
+    .arrowdown:hover {
+      transform: translate(0, 10px);
+    }
+
       }
 
       .image-8 {
@@ -365,8 +460,7 @@ $color: rgba(0, 0, 0, 0);
         font-weight: 400;
       }
     }
-  }
-}
+
 
 .section_2 {
   width: auto;

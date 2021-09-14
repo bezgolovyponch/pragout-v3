@@ -10,6 +10,7 @@
   "CORPORATE EVENTS": "CORPORATE EVENTS",
   "MAKE YOUR WEEKEND IN PRAGUE": "MAKE YOUR WEEKEND IN PRAGUE",
   "A TRIP TO REMEMBER": "A TRIP TO REMEMBER",
+  "True group party professionals at your service!": "True group party professionals at your service!",
   "Gentlemen, take a look": "Gentlemen, take a look",
   "PRAGOUT ESSENTIALS": "PRAGOUT ESSENTIALS",
   "Plain and simple - we created a pre-made bundle of top-rated activities for you to enjoy. Let true professionals take care of the rest. Book your tour with a few clicks.": "Plain and simple - we created a pre-made bundle of top-rated activities for you to enjoy. Let true professionals take care of the rest. Book your tour with a few clicks.",
@@ -202,5 +203,6 @@
   "CzechDinKEy": "<p>Local Guide</p><p>Hotel pick up</p><p>Professional instructor</p><p>1 hour game</p><p>Beer each</p>",
   "RaftingKey": "<p>2 hours Vltava river rafting</p><p>Transfer</p><p>Instructor and safety gear</p><p>Beer and snacks</p><p>Local guide</p>",
   "BubbleKey": "<p>Local Guide</p><p>Hotel pick up</p><p>Professional instructor</p><p>1 hour game</p><p>Beer each</p>",
-  "Loading": "Loading..."
+  "Loading": "Loading...",
+  "imagePathKey": "/images/Title-01.svg"
 }

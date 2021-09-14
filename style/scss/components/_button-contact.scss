@@ -36,37 +36,7 @@
     -ms-flex-pack: end;
     justify-content: flex-end;
   }
-
-
-    .arrowdown {
-      position: relative;
-      left: 0%;
-      top: 0%;
-      right: auto;
-      bottom: auto;
-      z-index: 0;
-      width: auto;
-      height: 0.8vw;
-      margin-left: 2vw;
-      -webkit-align-self: center;
-      -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-      display: block;
-      margin-top: 0vw;
-      max-width: 100%;
-      vertical-align: middle;
-      border: 0;
-      transition: 0.3s;
-      @include iphone6{
-        height: 4vw;
-      }
-    }
-
-    .arrowdown:hover {
-      transform: translate(0, 10px);
-    }
-
+}
     .button_contact {
       display: -webkit-box;
       display: -webkit-flex;
@@ -113,7 +83,7 @@
         width: auto;
       }
     }
-  }
+
 
 .package-button-container {
   position: relative;
