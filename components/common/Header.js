@@ -6,6 +6,7 @@ import {Transition} from 'react-transition-group';
 import {connect} from 'react-redux';
 import LanguageButton from './atoms/LanguageButton';
 import {withTranslation} from 'react-i18next';
+import {Button} from './atoms/Button';
 
 
 const duration = 700;
@@ -95,6 +96,10 @@ class Header extends Component {
     });
   }
 
+  handleClick = () => {
+    document.getElementById('contactForm').scrollIntoView({behavior: 'smooth'});
+  };
+
   handleScroll() {
     window.requestAnimationFrame(this.animate);
   }
@@ -182,7 +187,12 @@ class Header extends Component {
               </a>
             </Link>
           </div>
-
+          {/*<div className="quick-inquiry-container">*/}
+          {/*&#128222;*/}
+          {/*</div>*/}
+          <button className="quick-inquiry-button" onClick={this.handleClick}>
+            &#128222;
+          </button>
           <button className="planner_01_button" onClick={this.toggleCart}>
             PLANNER
           </button>
