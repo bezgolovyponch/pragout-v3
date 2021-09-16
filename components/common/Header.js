@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Cart from '../cart/Cart';
 import commerce from '../../lib/commerce';
 import {Transition} from 'react-transition-group';
@@ -187,17 +188,19 @@ class Header extends Component {
               </a>
             </Link>
           </div>
+          <LanguageButton />
           {/*<div className="quick-inquiry-container">*/}
           {/*&#128222;*/}
           {/*</div>*/}
-          <button className="quick-inquiry-button" onClick={this.handleClick}>
-            &#128222;
-          </button>
           <button className="planner_01_button" onClick={this.toggleCart}>
             PLANNER
           </button>
           <Cart isOpen={showCart} toggle={(value) => this.toggleCart(value)} />
-          <LanguageButton />
+          <button className="quick-inquiry-button" onClick={this.handleClick}>
+            <img className="quick-inquiry-svg" src="/icon/talk.svg"/>
+          </button>
+
+
           {/*  <div className="position-relative cursor-pointer" onClick={this.toggleCart}>
             <Animation isStopped={this.state.playAddToCartAnimation} />
           </div>*/}

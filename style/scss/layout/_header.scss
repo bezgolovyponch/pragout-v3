@@ -278,18 +278,15 @@
     color: white;
     width: auto;
     height: auto;
-    padding: 1vw 2vw;
+    padding: 0.75vw 1vw;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
     border: 0vw none #fff;
-    background-color: #2f1959;
+    background-color: #eb4622;
     -webkit-transition-property: background-color;
     transition-property: background-color;
-    //font-size: 2vh;
-    font-weight: 400;
-    letter-spacing: 0.025vw;
     margin-right: 1.5vw;
     @include iphone6 {
       width: 5vw;
@@ -308,10 +305,6 @@
       -webkit-justify-content: center;
       -ms-flex-pack: center;
       justify-content: center;
-      border-style: solid;
-      border-width: 0.05vw;
-      border-color: hsla(0, 0%, 100%, 0.38);
-      border-radius: 0px;
       font-size: 2.5vw;
       padding: 2vw 4.5vw;
     }
@@ -319,6 +312,14 @@
       background-color: #5f1dbb;
       opacity: 1;
       outline: none;
+    }
+    .quick-inquiry-svg {
+      width: 1.5vw;
+      height: auto;
+      @include iphone6{
+        width: 6vw;
+        height: auto;
+      }
     }
 
   }
