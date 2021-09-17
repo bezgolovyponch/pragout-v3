@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import Cart from '../cart/Cart';
 import commerce from '../../lib/commerce';
 import {Transition} from 'react-transition-group';
