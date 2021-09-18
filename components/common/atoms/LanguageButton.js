@@ -11,11 +11,9 @@ const LanguageButton = () => {
    // setLanguage(lng);
   };
   return (
-  <div className="language-selector">
     <button className="language-selector-button"  style={{ color: 'white', textTransform: 'uppercase' }} onClick={handleLangChange}>
     {i18n.language === 'en' ? 'de' : 'en'}
     </button>
-  </div>
   );
 };
 

@@ -28,7 +28,7 @@ class ProductsBanner extends Component {
         </div>
         <div className="products-wrapper">
           <div className="product-dynamic-list">
-            <ProductRow products={products.filter((product) => hottestProducts.includes(product.permalink))} />
+            <ProductRow products={products.filter((product) => hottestProducts.includes(product.permalink))} t={t}/>
           </div>
         </div>
       </div>

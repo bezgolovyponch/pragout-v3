@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 
 class ProductRow extends Component {
   render() {
-    const {products} = this.props;
+    const {products, t} = this.props;
 
     return (
       <div className="product-list-item">
@@ -13,7 +13,7 @@ class ProductRow extends Component {
             id={id}
             permalink={permalink}
             image={media.source}
-            name={name}
+            name={t(name)}
             price={price.formatted_with_symbol}
           />
         ))}
