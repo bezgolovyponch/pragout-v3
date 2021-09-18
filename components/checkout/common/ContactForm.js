@@ -8,6 +8,7 @@ import {withTranslation} from 'react-i18next';
 import {connect} from 'react-redux';
 import moment from 'moment';
 import TagManager from 'react-gtm-module'
+import commerce from '../../../lib/commerce';
 
 class ContactForm extends Component {
   constructor(props) {
@@ -47,11 +48,14 @@ class ContactForm extends Component {
   }
   async handleSubmit(event) {
     event.preventDefault();
-    TagManager.dataLayer({
-      dataLayer: {
-        event: 'sendContactForm',
-      }
-    });
+    // TagManager.dataLayer({
+    //   dataLayer: {
+    //     event: 'sendContactForm',
+    //   }
+   // });
+    const permalink = 'prague-ak47-shooting';
+    const product = await commerce.products.retrieve(permalink, {type: 'permalink '});
+    console.log(product);
     if (!this.state.gdpr) {
       alert('You need to accept terms and conditions first!');
     }
