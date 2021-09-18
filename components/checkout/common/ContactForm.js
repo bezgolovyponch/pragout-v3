@@ -46,16 +46,7 @@ class ContactForm extends Component {
   handleClose() {
     this.setState({openModal: false});
   }
-  async handleSubmit(event) {
-    event.preventDefault();
-    // TagManager.dataLayer({
-    //   dataLayer: {
-    //     event: 'sendContactForm',
-    //   }
-   // });
-    const permalink = 'prague-ak47-shooting';
-    const product = await commerce.products.retrieve(permalink, {type: 'permalink '});
-    console.log(product);
+  async handleSubmit() {
     if (!this.state.gdpr) {
       alert('You need to accept terms and conditions first!');
     }
@@ -75,6 +66,12 @@ class ContactForm extends Component {
         DateCreated: moment().format('MMMM Do YYYY, h:mm:ss a'),
       };
       await appendSpreadsheet(newRow);
+
+      TagManager.dataLayer({
+        dataLayer: {
+          event: 'sendContactForm',
+        }
+      });
     }
   }
   render() {
