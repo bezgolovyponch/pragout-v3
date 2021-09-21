@@ -141,13 +141,30 @@ class HeroSection extends Component {
         <div>
           <div className="section_1">
             <div className="main">
-              <h5 className="heading_05">{t('MAKE YOUR WEEKEND IN PRAGUE')}</h5>
-              <img className="image-7" src={t('imagePathKey')} alt="imagePathKey"/>
-              <h5 className="heading_05">{t('True group party professionals at your service!')}</h5>
+              {/*<h5 className="heading_05">{t('MAKE YOUR WEEKEND IN PRAGUE')}</h5>*/}
+              <h1 className="heading-main">
+                {t('EPIC FINAL')}
+                <br />
+                {t('WEEKEND')}
+                <br />
+                {t('OF FREEDOM')}
+              </h1>
+              <h5 className="heading_05">
+                {t('Specialist in bachelor, bachelorette, birthday')}
+                <br />
+                {t('retirement, divorce, and private party events')}
+              </h5>
               {/*<div className="button-hero">
                 <Button className="button_contact" onClick={this.handleClick} text={t('Quick inquiry')} withIcon={true} />
               </div>*/}
+
               <div className="mousescroll">
+                {/*<h5 className="scroll">
+                  {t('scroll down')}
+                  <br />
+                  {t('to have fun')}
+
+                </h5>*/}
                 <svg className="arrows">
                   <path className="a1" d="M0 0 L30 32 L60 0"></path>
                   <path className="a2" d="M0 20 L30 52 L60 20"></path>
@@ -167,10 +184,10 @@ class HeroSection extends Component {
           <div className="section_2">
             <div className="main-stag-package-div">
               <div className="main-stag-package-text">
-                <p className="main-package-top-text">{t('Gentlemen, take a look')}</p>
-                <h1 className="main-package-mid-text">{t('PRAGOUT ESSENTIALS')}</h1>
+                <p className="main-package-top-text">{t('Make planning easier with the')}</p>
+                <h1 className="main-package-mid-text">{t('BACHELOR PARTY ESSENTIALS')}</h1>
                 <p className="main-package-low-text">
-                  {t('Plain and simple - we created a pre-made bundle of top-rated activities for you to enjoy. Let true professionals take care of the rest. Book your tour with a few clicks.')}
+                  {t('Cool and complete - we created a pre-made bundle of top-rated activities for you to enjoy. Let true professionals take care of the rest. Book your tour with a few clicks.')}
                 </p>
               </div>
 

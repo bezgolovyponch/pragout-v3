@@ -15,9 +15,9 @@ class ProductsBanner extends Component {
           <div>
             <p className="top-text-section">{t('Check out our most popular activities')}</p>
             <h1 className="top-text-section-h1">
-              {t('HOTTEST CHOICES')}
+              {t('BUILD YOUR')}
               <br />
-                {t('THIS SEASON')}
+                {t('OWN PARTY')}
             </h1>
           </div>
           <div className="div-block-7">

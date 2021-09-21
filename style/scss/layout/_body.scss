@@ -258,3 +258,20 @@ a.border.border-color-white {
     background-color: rgba(255, 255, 255, 0.248) !important;
   }
 }
+.pagination {
+  font-size: 1vw;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 1px;
+  width: auto;
+  height: auto;
+  &:hover, &:active{
+    opacity: 1;
+    outline: none;
+    color: #5f1dbb;
+  }
+  &:disabled{
+    background-color: grey;
+    outline: none;
+  }
+}

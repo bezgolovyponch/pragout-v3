@@ -48,10 +48,10 @@ class ContactForm extends Component {
   }
   async handleSubmit() {
     if (!this.state.gdpr) {
-      alert('You need to accept terms and conditions first!');
+      alert('You must accept the privacy policy!');
     }
     if (!this.state.customerEmail || !this.state.phoneNumber) {
-      alert('Please fulfill your email or phone number with country code!');
+      alert('Please enter your e-mail address or telephone number with country code!');
     }
     if (this.state.customerEmail && this.state.phoneNumber && this.state.gdpr) {
       this.setState({
