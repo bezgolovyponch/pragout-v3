@@ -41,7 +41,7 @@ export const ButtonWrapper = ({linkTo}) => {
     <div className="main-package-price">
       <Link href={linkTo}>
         <a>
-          <img className="benjamin-button-image" src="/images/stag2.svg" />
+          <p className="benjamin-button-image">BOOK for<br/>only<br/>99 €<br/>per person</p>
         </a>
       </Link>
     </div>
@@ -53,7 +53,7 @@ export const ButtonWrapperHen = ({linkTo}) => {
     <Link href={linkTo}>
     <div className="main-package-price">
         <a>
-          <img className="benjamin-button-image" src="/images/hen2.svg" />
+          <p className="benjamin-button-image">BOOK FOR 74 € per person</p>
         </a>
     </div>
     </Link>
@@ -65,7 +65,8 @@ export const ButtonWrapperMobile = ({linkTo}) => {
     <div className="main-package-price-mobile">
       <Link href={linkTo}>
         <a>
-          <img className="benjamin-button-image-mobile" src="/images/stag2.svg" />
+          {/*<img className="benjamin-button-image-mobile" src="/images/stag2.svg" />*/}
+          <p className="benjamin-button-image"style={{ color: '#f8f9fa' }}>BOOK FOR ONLY 94 € per person</p>
         </a>
       </Link>
     </div>
@@ -77,7 +78,8 @@ export const ButtonWrapperMobileHen = ({linkTo}) => {
     <div className="main-package-price-mobile">
       <Link href={linkTo}>
         <a>
-          <img className="benjamin-button-image-mobile" src="/images/hen2.svg" />
+          <p className="benjamin-button-image"style={{ color: '#f8f9fa' }}>BOOK FOR<br/>only<br/>74 €<br/>per person</p>
+          {/*<img className="benjamin-button-image-mobile" src="/images/hen2.svg" />*/}
         </a>
       </Link>
     </div>

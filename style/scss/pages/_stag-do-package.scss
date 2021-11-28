@@ -34,7 +34,7 @@
     display: block;
     min-height: auto;
     min-width: auto;
-    padding: 4vw 12.5vw 8vw;
+    padding: 4vw 12.5vw 5vw;
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
@@ -103,7 +103,7 @@
           margin-bottom: 0px;
           padding-bottom: 0px;
           color: #fff;
-          font-size: 3.4vw;
+          font-size: 2.6vw;
           line-height: 1.2;
           font-weight: 700;
           letter-spacing: 0.1vw;
@@ -231,7 +231,17 @@
       }
     }
   }
-
+  .divider-package {
+    display:flex;
+    justify-content: center;
+    margin-bottom: 5vw;
+    .divider-text {
+      font-size: 1.8vw;
+      @include iphone6 { font-size: 3vw;
+      margin-top: 2vw;
+      margin-bottom: 2vw;}
+    }
+  }
   .package-section2 {
     display: -webkit-box;
     display: -webkit-flex;

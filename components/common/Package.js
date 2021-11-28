@@ -54,6 +54,9 @@ export const Package = ({
         </div>
       </div>
     </div>
+    <div className="divider-package">
+      <p className="divider-text">Why go with us?</p>
+    </div>
     <div className="package-section2">
       <PackageCard
         iconUrl={iconUrl1}

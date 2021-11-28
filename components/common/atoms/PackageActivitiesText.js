@@ -13,7 +13,7 @@ export const PackageNamePrice = ({packageName, packagePrice, t}) => (
   <div className="package-name-price">
     <h1 className="package-name">{t(packageName)}</h1>
     {packageName !== 'CORPORATE EVENTS' ? (
-    <p className="package-text-price"> {t('Estimated price per person')} </p>
+    <p className="package-text-price"> {t('Estimated budget per person')} </p>
       ) : ''}
     <p className="package-price">{packagePrice}</p>
   </div>

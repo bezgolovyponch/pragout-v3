@@ -14,9 +14,9 @@ const cardTitle1 = 'Easy peasy';
 const cardTitle2 = 'Everyone gets satisfied';
 const cardTitle3 = 'Fully adjustable';
 const packageName = 'BACHELOR PARTY ESSENTIALS';
-const packagePrice = '€149';
-const activitiesLeftPartStag = ['- Return airport transfer', '- AK 47 shooting', '- Outdoor paintball'];
-const activitiesRightPartStag = ['- Steak and strip', ' - Private pub crawl', ' - VIP club entrance'];
+const packagePrice = '€94';
+const activitiesLeftPartStag = ['- Return airport transfer', '- Old brewery tour', '- Best viewing beer tour'];
+const activitiesRightPartStag = ['- Steak and strip', '- Private pub crawl', '- VIP club entrance'];
 const packageIncludedText =
   'Boys, here we are! Thats the heart of Europe,the land of vice and beer. Welcome to Prague!';
 const iconText = 'Nice places, loads of beer and food, and best parties!';

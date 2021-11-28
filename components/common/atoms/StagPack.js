@@ -13,14 +13,14 @@ export const StagPack = ({t}) => {
           <h2 className="stag-pack">{t('GENTLEMEN ESSENTIALS')}</h2>
           <div className="hero-package-description">
             <p className="paragraph-hero-package">
-              {t('- Return airport transfer')} <br />
-              {t('- Outdoor paintball')} <br />
-              {t('- AK 47 shooting')} <br />
+              - {t('Return airport transfer')} <br />
+              - {t('Old brewery tour')} <br />
+              - {t('Best viewing beer tour')} <br />
             </p>
             <p className="paragraph-hero-package">
-              {t('- Steak and strip')} <br />
-              {t('- Private pub crawl')} <br />
-              {t('- VIP club entrance')} <br />
+              - {t('Steak and strip')} <br />
+              - {t('Private pub crawl')} <br />
+              - {t('VIP club entrance')} <br />
             </p>
           </div>
         </div>
