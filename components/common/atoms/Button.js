@@ -80,7 +80,7 @@ export const ButtonWrapperMobileHen = ({linkTo}) => {
     <div className="main-package-price-mobile">
       <Link href={linkTo}>
         <a>
-          <p className="benjamin-button-image"style={{ color: '#f8f9fa' }}>BOO </p>
+          <p className="benjamin-button-image"style={{ color: '#f8f9fa' }}>BOOK FOR ONLY 74 € per person</p>
           {/*<img className="benjamin-button-image-mobile" src="/images/hen2.svg" />*/}
         </a>
       </Link>
