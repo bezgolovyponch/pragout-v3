@@ -221,7 +221,7 @@ $color: rgba(0, 0, 0, 0);
   min-height: auto;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding: 0px 12.5vw 0px 15vw;
+  padding: 0px 12.5vw 0px;
   -webkit-box-align: start;
   align-items: flex-start;
   background-color: transparent;
@@ -244,7 +244,7 @@ $color: rgba(0, 0, 0, 0);
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    height: 42vw;
+    height: 34vw;
     margin: 0vw;
     padding-top: 0px;
     -webkit-box-orient: vertical;
@@ -303,7 +303,7 @@ $color: rgba(0, 0, 0, 0);
     .heading-main {
       width: 35vw;
       height: auto;
-      font-size: 5vw;
+      font-size: 4.8vw;
       color: white;
       line-height: 1;
       font-family: 'Raleway', sans-serif;
@@ -317,33 +317,7 @@ $color: rgba(0, 0, 0, 0);
     }
 
     .mousescroll {
-      width: 80vw;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      margin-top: 0vw;
-      margin-bottom: 0vw;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -webkit-box-pack: start;
-      -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-      justify-content: flex-end;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-align-self: auto;
-      -ms-flex-item-align: auto;
-      align-self: auto;
-      -webkit-box-ordinal-group: 1;
-      -webkit-order: 0;
-      -ms-flex-order: 0;
-      order: 0;
+      display: none;
       @include iphone6{
         display: flex;
         overflow: hidden;
@@ -360,7 +334,6 @@ $color: rgba(0, 0, 0, 0);
 
       .arrows {
         width: 60px;
-        height: 100%;
         position: relative;
         /*left: 50%;*/
         @include iphone6{
@@ -369,11 +342,12 @@ $color: rgba(0, 0, 0, 0);
       }
 
       .arrows path {
-        stroke: #ed1134;
+        stroke: #fdd9fc;
         fill: transparent;
         stroke-width: 10px;
         animation: arrow 2s infinite;
         -webkit-animation: arrow 2s infinite;
+        transform: rotate(-7deg);
       }
 
       @keyframes arrow
@@ -406,6 +380,10 @@ $color: rgba(0, 0, 0, 0);
         animation-delay:0s;
         -webkit-animation-delay:0s; /* Safari 和 Chrome */
       }
+     .scroll-text{
+       margin-top: -3vw;
+       transform: rotate(-7deg);
+     }
     }
 
 

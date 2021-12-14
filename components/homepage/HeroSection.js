@@ -158,25 +158,26 @@ class HeroSection extends Component {
                 <Button className="button_contact" onClick={this.handleClick} text={t('Quick inquiry')} withIcon={true} />
               </div>*/}
 
-              <div className="mousescroll">
-                {/*<h5 className="scroll">
+              {/*<div className="mousescroll">
+                <h5 className="scroll">
                   {t('scroll down')}
                   <br />
                   {t('to have fun')}
 
-                </h5>*/}
+                </h5>
                 <svg className="arrows">
                   <path className="a1" d="M0 0 L30 32 L60 0"></path>
                   <path className="a2" d="M0 20 L30 52 L60 20"></path>
                   <path className="a3" d="M0 40 L30 72 L60 40"></path>
                 </svg>
-                {/*<img className="image-8" src="/images/Mouse_Scroll-01.svg" />*/}
-                {/*<h1 className="heading-scroll">*/}
-                {/*  {t('scroll')}*/}
-                {/*  <br />*/}
-                {/*    {t('down')}*/}
-                {/*</h1>*/}
-              </div>
+                <img className="image-8" src="/images/Mouse_Scroll-01.svg" />
+                <h1 className="heading-scroll">
+                  {t('scroll')}
+                  <br />
+                    {t('down')}
+                </h1>
+                <p className="scroll-text">scroll down to have fun</p>
+              </div>*/}
             </div>
           </div>
         </div>

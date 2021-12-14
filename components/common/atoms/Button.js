@@ -41,7 +41,9 @@ export const ButtonWrapper = ({linkTo}) => {
     <div className="main-package-price">
       <Link href={linkTo}>
         <a>
-          <p className="benjamin-button-image">BOOK for<br/>only<br/>99 €<br/>per person</p>
+          <div className="button-image-text">
+          <p className="benjamin-button-image">BOOK for<br/>only<br/>94 €<br/>per person</p>
+          </div>
         </a>
       </Link>
     </div>
@@ -53,7 +55,7 @@ export const ButtonWrapperHen = ({linkTo}) => {
     <Link href={linkTo}>
     <div className="main-package-price">
         <a>
-          <p className="benjamin-button-image">BOOK FOR 74 € per person</p>
+          <p className="benjamin-button-image">BOOK for<br/>only<br/>74 €<br/>per person</p>
         </a>
     </div>
     </Link>
@@ -78,7 +80,7 @@ export const ButtonWrapperMobileHen = ({linkTo}) => {
     <div className="main-package-price-mobile">
       <Link href={linkTo}>
         <a>
-          <p className="benjamin-button-image"style={{ color: '#f8f9fa' }}>BOOK FOR<br/>only<br/>74 €<br/>per person</p>
+          <p className="benjamin-button-image"style={{ color: '#f8f9fa' }}>BOOK FOR ONLY 74 € per person</p>
           {/*<img className="benjamin-button-image-mobile" src="/images/hen2.svg" />*/}
         </a>
       </Link>
