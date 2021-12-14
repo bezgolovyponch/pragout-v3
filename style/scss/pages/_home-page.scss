@@ -293,10 +293,12 @@ $color: rgba(0, 0, 0, 0);
         font-size: 4vw;
         line-height: 1.2;
         height: auto;
-        margin-bottom: 2vw;
+        margin-bottom: 15vw;
         letter-spacing: 0.2vw;
         margin-top: 3vw;
         width: 70vw;
+        text-align: center;
+
       }
     }
 
@@ -313,6 +315,8 @@ $color: rgba(0, 0, 0, 0);
         font-size: 9vw;
         line-height: 1;
         font-family: 'Raleway', sans-serif;
+        text-align: center;
+        margin-left: 3vw;
       }
     }
 
