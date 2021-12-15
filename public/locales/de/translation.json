@@ -216,6 +216,8 @@
   "RaftingKey": "<p>2 Stunden Vltava River-Rafting</p><p>Transfer</p><p>Instruktor und Sicherheitsausrüstung</p><p>Bier und Snacks</p><p>Lokaler Guide</p>",
   "<p>Private transfer from/to the airport </p>": "<p>Privater Transfer vom Flughafen</p>",
   "Loading": "Laden...",
+  "InstaKey": "<p>Eine Tour zu den fotogensten Orten Prags</p><p>Vergessen Sie die Hauptplätze, wir zeigen nur einzigartige Ansichten</p><p>Champagner/Bier inklusive:)",
+  "VipKey": "<p>Warteschlangenfreier Eintritt in einen der besten Prager Clubs</p><p>Tischreservierung</p>",
   "imagePathKey": "/images/main-phrase-GER.svg",
   "A trip to remember": "EINE denkwürdige Reise"
 }
