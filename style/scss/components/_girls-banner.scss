@@ -79,7 +79,6 @@
       -webkit-box-align: start;
       -webkit-align-items: flex-start;
       -ms-flex-align: start;
-      align-items: center;
       -webkit-box-flex: 0;
       -webkit-flex: 0 auto;
       -ms-flex: 0 auto;
@@ -90,19 +89,22 @@
       @include iphone6{
         width: auto;
         padding-right: 7vw;
+        align-items: center;
+
+
       }
 
       .top-text-ladies {
         margin-bottom: 0px;
         -webkit-align-self: auto;
         -ms-flex-item-align: auto;
-        align-self: auto;
         color: #fff;
         font-size: 1.3vw;
         line-height: 1;
         font-weight: 500;
         text-align: left;
         letter-spacing: 0.06vw;
+        align-self: flex-end;
         @include iphone6{
           color: #fff;
           font-size: 4vw;

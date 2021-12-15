@@ -501,7 +501,6 @@ $color: rgba(0, 0, 0, 0);
       -webkit-box-align: start;
       -webkit-align-items: flex-start;
       -ms-flex-align: start;
-      align-items: center;
       -webkit-box-flex: 0;
       -webkit-flex: 0 auto;
       -ms-flex: 0 auto;
@@ -513,6 +512,7 @@ $color: rgba(0, 0, 0, 0);
         width: auto;
         padding-right: 7vw;
         padding-left: 7vw;
+        align-items: center;
       }
 
       .main-package-top-text {
