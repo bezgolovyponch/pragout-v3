@@ -203,10 +203,6 @@
             /*margin-left: 3vw;*/
             display: flex;
             flex-direction: column;
-            text-decoration: solid;
-            text-decoration-color: white;
-            text-decoration-line: underline ;
-
             @include iphone6
 
             .package-activities {
@@ -220,6 +216,7 @@
               font-weight: 500;
               white-space: nowrap;
               color: white;
+              border-bottom: 5px solid white;
               @include iphone6 {
                 font-size: 3vw;
                 text-align: left;
