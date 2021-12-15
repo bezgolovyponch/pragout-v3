@@ -15,8 +15,8 @@ const cardTitle2 = 'Everyone gets satisfied';
 const cardTitle3 = 'Fully adjustable';
 const packageName = 'PRAGOUT BACHELORETTE ESSSENTIALS';
 const packagePrice = '€74';
-const activitiesLeftPartStag = ['- Return airport transfer', '- Champagne limo drive '];
-const activitiesRightPartStag = [' - Instagram tour', ' - VIP club entrance'];
+const activitiesLeftPartStag = [{text: '- Return airport transfer', href: '/product/airport-transfer'}, {text: '- Champagne limo drive ', href: '/prague-hummer-limo'}];
+const activitiesRightPartStag = [{text: '- Instagram tour ', href: '/instagram-tour'}, {text: '- VIP club entrance', href: '/product/vip-entrance'}];
 const packageIncludedText =
   'A fairytale city in the very heart of Europe. It shines during the day and burns bright by night!';
 const iconText = ' Nice places, loads of memories, and unique experience!';

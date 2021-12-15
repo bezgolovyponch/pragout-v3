@@ -310,13 +310,13 @@ $color: rgba(0, 0, 0, 0);
       line-height: 1;
       font-family: 'Raleway', sans-serif;
       @include iphone6{
-        width: 60vw;
+        width: 70vw;
         height: auto;
         font-size: 9vw;
         line-height: 1;
         font-family: 'Raleway', sans-serif;
         text-align: center;
-        margin-left: 3vw;
+        /*margin-left: 3vw;*/
       }
     }
 
@@ -501,7 +501,7 @@ $color: rgba(0, 0, 0, 0);
       -webkit-box-align: start;
       -webkit-align-items: flex-start;
       -ms-flex-align: start;
-      align-items: flex-start;
+      align-items: center;
       -webkit-box-flex: 0;
       -webkit-flex: 0 auto;
       -ms-flex: 0 auto;
@@ -530,6 +530,7 @@ $color: rgba(0, 0, 0, 0);
           color: #fff;
           font-size: 4vw;
           font-weight: 400;
+          text-align: center;
         }
       }
 
@@ -549,6 +550,7 @@ $color: rgba(0, 0, 0, 0);
           font-size: 6vw;
           line-height: 1.2;
           letter-spacing: 0.1vw;
+          text-align: center;
         }
       }
 

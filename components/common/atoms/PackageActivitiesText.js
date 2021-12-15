@@ -1,10 +1,10 @@
 import React from 'react';
-
+import Link from 'next/link';
 
 export const PackageIncludedActivities = ({activities, t}) => (
   <div className="package-included-activities">
     {activities?.map((text) => (
-      <p className="package-activities">{t(text)}</p>
+        <a className="package-activities" href={text.href}>{t(text.text)}</a>
     ))}
   </div>
 );

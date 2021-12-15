@@ -49,6 +49,7 @@
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center;
+      padding: 4vw 12.5vw 4vw;
     }
 
     .package-title {
@@ -169,6 +170,7 @@
         @include iphone6 {
           margin-top: 3vw;
           font-size: 3vw;
+          align-items: center;
         }
 
         .package-included-columns {
@@ -178,7 +180,7 @@
           height: auto;
           margin-top: 1vw;
           margin-right: 0vw;
-          margin-left: 0vw;
+          margin-left: 5vw;
           padding-right: 0px;
           padding-bottom: 0px;
           -webkit-box-orient: horizontal;
@@ -194,10 +196,18 @@
           @include iphone6 {
             margin-top: 4vw;
             align-items: flex-start;
+            margin-left: 0vw;
           }
 
           .package-included-activities {
-            margin-right: 3vw;
+            /*margin-left: 3vw;*/
+            display: flex;
+            flex-direction: column;
+            text-decoration: solid;
+            text-decoration-color: white;
+            text-decoration-line: underline ;
+
+            @include iphone6
 
             .package-activities {
               width: auto;
@@ -215,6 +225,9 @@
                 text-align: left;
               }
             }
+          }
+          .package-included-activities:hover{
+            color: #1b1c22
           }
         }
       }

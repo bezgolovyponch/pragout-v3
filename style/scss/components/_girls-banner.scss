@@ -79,7 +79,7 @@
       -webkit-box-align: start;
       -webkit-align-items: flex-start;
       -ms-flex-align: start;
-      align-items: flex-start;
+      align-items: center;
       -webkit-box-flex: 0;
       -webkit-flex: 0 auto;
       -ms-flex: 0 auto;
@@ -130,6 +130,7 @@
           font-size: 7vw;
           line-height: 1.2;
           letter-spacing: 0.1vw;
+          text-align: center;
         }
       }
 
