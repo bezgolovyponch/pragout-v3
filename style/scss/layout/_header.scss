@@ -340,7 +340,7 @@
     letter-spacing: 0.025vw;
     cursor: pointer;
     @include iphone6 {
-      width: 10vw;
+      width: auto;
       height: auto;
       -webkit-box-pack: center;
       -webkit-justify-content: center;
@@ -353,7 +353,7 @@
       border-radius: 0px;
       font-size: 2.5vw;
       background-color: transparent;
-      padding: 1.8vw;
+      padding: 2vw 4.5vw;
       cursor: pointer;
     }
     &:hover, &:active, &:focus{
