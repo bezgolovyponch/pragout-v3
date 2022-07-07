@@ -8,7 +8,11 @@ import {withTranslation} from 'react-i18next';
 class ProductsBanner extends Component {
   render() {
     const {products, t} = this.props;
-    const hottestProducts = ['prague-ak47-shooting', 'prague-sight-beer', 'beer-pedal-boat'] ;
+    //const hottestProducts = ['prague-ak47-shooting', 'prague-sight-beer', 'beer-pedal-boat'] ;
+    const fileteredProducts = products.filter((product) =>
+      product.categories.find((productCategory) => productCategory.slug === 'hottest'),
+    );
+    const hottestProducts = fileteredProducts.slice(0, 3) ;
     return (
       <div className="section-third">
         <div className="activities-text">
@@ -28,7 +32,8 @@ class ProductsBanner extends Component {
         </div>
         <div className="products-wrapper">
           <div className="product-dynamic-list">
-            <ProductRow products={products.filter((product) => hottestProducts.includes(product.permalink))} t={t}/>
+            {/* <ProductRow products={products.filter((product) => hottestProducts.includes(product.permalink))} t={t}/> */}
+                        <ProductRow products={hottestProducts} t={t}/>
           </div>
         </div>
       </div>

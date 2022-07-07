@@ -10,7 +10,7 @@ class Activities extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: 'all',
+      category: 'hottest',
     };
     this.handleAddToCart = this.handleAddToCart.bind(this);
   }
@@ -24,7 +24,8 @@ class Activities extends Component {
 
   renderSidebar() {
     const {categories, t} = this.props;
-    const sortedCategories = categories.sort((a, b) => a.slug.localeCompare(b.slug));
+    const hiddenUnusedCategories = categories.filter((category) => category.slug !== 'hottest');
+    const sortedCategories = hiddenUnusedCategories.sort((a, b) => a.slug.localeCompare(b.slug));
     return (
       <>
         {sortedCategories.map((category) => (

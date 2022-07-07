@@ -9,12 +9,27 @@ import TagManager from 'react-gtm-module';
 
 const MyApp = ({Component, pageProps}) => {
   const store = useStore(pageProps.initialState);
-
+  const category = 'hottest';
   useEffect(() => {
     TagManager.initialize({ gtmId: 'GTM-TQC4X45', events: {
         sendContactForm: 'sendContactForm',
         sendCheckoutForm: 'sendCheckoutForm'
       }});
+
+      commerce.products.list({category_slug: category }).then((res) => {
+        store.dispatch({
+          type: 'STORE_PRODUCTS',
+          payload: res.data,
+        });
+      });
+    
+    commerce.categories.list().then((res) => {
+      store.dispatch({
+        type: 'STORE_CATEGORIES',
+        payload: res.data,
+      });
+    });
+     
     commerce.products.list({limit: 50}).then((res) => {
       store.dispatch({
         type: 'STORE_PRODUCTS',
@@ -22,12 +37,6 @@ const MyApp = ({Component, pageProps}) => {
       });
     });
 
-    commerce.categories.list().then((res) => {
-      store.dispatch({
-        type: 'STORE_CATEGORIES',
-        payload: res.data,
-      });
-    });
   }, [store]);
 
   return (
