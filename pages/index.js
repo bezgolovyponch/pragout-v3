@@ -26,7 +26,7 @@ const Home = () => (
     <ProductsBanner />
     <GirlsBanner />
     <CorporateBanner />
-    <ContactForm withAccommodation={false} onMainPage={true} />
+    <ContactForm withAccommodation={false} onMainPage={false} />
     <Footer />
   </Root>
 );

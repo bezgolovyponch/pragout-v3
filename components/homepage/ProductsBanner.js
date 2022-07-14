@@ -17,7 +17,7 @@ class ProductsBanner extends Component {
       <div className="section-third">
         <div className="activities-text">
           <div>
-            <p className="top-text-section">{t('Check out our most popular activities')}</p>
+            <p className="top-text-section">{t('Check out our most popular things to do in Prague')}</p>
             <h1 className="top-text-section-h1">
               {t('BUILD YOUR')}
               <br />
@@ -26,7 +26,7 @@ class ProductsBanner extends Component {
           </div>
           <div className="div-block-7">
             <Link href="/activities">
-              <a className="button-link">{t('Browse all')}</a>
+              <a className="button-link">{t('Check it out!')}</a>
             </Link>
           </div>
         </div>

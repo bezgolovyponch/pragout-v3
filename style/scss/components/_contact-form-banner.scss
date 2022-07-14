@@ -164,6 +164,9 @@
         padding-left: 0vw;
       }
       .contact-fields-form{
+        display: flex;
+        flex-direction: column;
+        flex-grow: initial;
         .input-fields-form{
           display: -webkit-box;
           display: -webkit-flex;
@@ -348,8 +351,9 @@
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
+        align-items: center;
         height: auto;
-        margin-top: 4.5vw;
+        margin-top: 2vw;
         margin-bottom: 0px;
         padding-bottom: 0vh;
         -webkit-box-orient: horizontal;

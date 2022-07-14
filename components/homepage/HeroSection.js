@@ -143,14 +143,14 @@ class HeroSection extends Component {
             <div className="main">
               {/*<h5 className="heading_05">{t('MAKE YOUR WEEKEND IN PRAGUE')}</h5>*/}
               <h1 className="heading-main">
-                {t('EPIC FINAL')}
+                {t('EPIC')}
                 <br />
                 {t('WEEKEND')}
                 <br />
-                {t('OF FREEDOM')}
+                {t('OF FREEDOM IN PRAGUE')}
               </h1>
               <h5 className="heading_05">
-                {t('Specialist in bachelor, bachelorette, birthday')}
+                {t('Pragout is specialist in bachelor, bachelorette, birthday')}
                 <br />
                 {t('retirement, divorce, and private party events')}
               </h5>
@@ -188,7 +188,7 @@ class HeroSection extends Component {
                 <p className="main-package-top-text">{t('Make planning easier with the')}</p>
                 <h1 className="main-package-mid-text">{t('BACHELOR PARTY ESSENTIALS')}</h1>
                 <p className="main-package-low-text">
-                  {t('Cool and complete - we created a pre-made bundle of top-rated activities for you to enjoy. Let true professionals take care of the rest. Book your tour with a few clicks.')}
+                  {t('Cool and complete - we created a pre-made bundle of top-rated activities in Prague for you to enjoy. Let true professionals who know what to do take care of the rest. Book your tour with a few clicks.')}
                 </p>
               </div>
 

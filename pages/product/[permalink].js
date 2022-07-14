@@ -4,9 +4,11 @@ import {connect} from 'react-redux';
 import Head from 'next/head';
 import Root from '../../components/common/Root';
 import ProductDetail from '../../components/productAssets/ProductDetail';
-import SuggestedProducts from '../../components/productAssets/SuggestedProducts';
+/* import SuggestedProducts from '../../components/productAssets/SuggestedProducts'; */
 import Footer from '../../components/common/Footer';
 import reduceProductImages from '../../utils/reduceProductImages';
+import ContactForm from '../../components/checkout/common/ContactForm';
+
 
 class Product extends Component {
   constructor(props) {
@@ -33,7 +35,8 @@ class Product extends Component {
           <div />
           <ProductDetail product={product} />
         </div>
-        <SuggestedProducts currentProduct={product} />
+     {/*    <SuggestedProducts currentProduct={product} /> */}
+        <ContactForm withAccommodation={false} onMainPage={false} />
         <Footer />
       </Root>
     );

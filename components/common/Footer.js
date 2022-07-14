@@ -35,14 +35,14 @@ const Footer = () => (
     <div className="social_links">
       <div className="links_media">
         <div className="social-container">
-          <a href="#" className="footer_social_link">
-            <img src="images/Icon_Inst-01.svg" className="social_link_image" />
+          <a href="https://instagram.com/pragout?igshid=YmMyMTA2M2Y=in" className="footer_social_link">
+            <img src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/5fe9ebb6db03c2769e54e9c9_Icon_Inst-01.svg" className="social_link_image" />
           </a>
-          <a href="#" className="footer_social_link">
-            <img src="images/Icon_twitter-01.svg" className="social_link_image" />
+          <a href="https://www.facebook.com/pragout69" className="footer_social_link">
+            <img src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/5fe9ebb7256d349b21a62d9c_Icon_twitter-01.svg" className="social_link_image" />
           </a>
-          <a href="#" className="footer_social_link">
-            <img src="images/Icon_FB-01.svg" className="social_link_image" />
+          <a href="https://www.facebook.com/pragout69" className="footer_social_link">
+            <img src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/5fe9ebf8cc48472e9bedafc4_Icon_FB-01.svg" className="social_link_image" />
           </a>
         </div>
       </div>

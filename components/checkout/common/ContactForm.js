@@ -176,9 +176,10 @@ class ContactForm extends Component {
                     </a>
                   </Link>
                 </div>
+               
+                </div>
                 <div className="button-hero-contact">
                   <Button className="button_contact" onClick={this.handleSubmit} text={t('Send')} withIcon={false} />
-                </div>
                 <Modal isOpen={this.state.openModal} onClose={this.handleClose} maxW="500px">
                   {t('Thank you! The tour manager will be in touch with you shortly!')}
                 </Modal>
@@ -187,15 +188,15 @@ class ContactForm extends Component {
           </div>
         </div>
         <div className="cont_img_light">
-          <img src="images/ContactsLight-01.svg" className="light" />
+          <img src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/6032f2ee143e8e0e5ecc8fb1_ContactsLight-01.svg" className="light" />
         </div>
         <div className="cont_img_mid">
-          <img src="images/ContactLow-01-01.svg" className="mid" />
+          <img src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/6033dbea3ede913f40c57b52_ContactLow-01-01.svg" className="mid" />
         </div>
         <div className="cont_img_high">
-          <img src="images/ContactHigh-01-01.svg" className="high" />
+          <img src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/6033dbe99bcc203480fc400e_ContactHigh-01-01.svg" className="high" />
         </div>
-        <img src="images/Mainbg_light-01.svg" className="image-21" />
+        <img src="https://uploads-ssl.webflow.com/5ecbc94a1fd6e39a650b0933/602d53867ad04e8d2dac1aeb_Mainbg_light-01.svg" className="image-21" />
       </div>
     );
   }

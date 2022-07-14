@@ -18,7 +18,7 @@ export function GirlsBanner() {
             <p className="top-text-ladies">{t('Ladies , this one is for you!')}</p>
             <h1 className="text-header">{t('FABULOUS GIRLS WEEKEND')}</h1>
             <p className="paragraph-text">
-              {t('Girls just wanna have fun! And we know it. Let us introduce you to hen do classics. Ladies only!')}
+              {t('Girls just wanna have fun! And we know it. Let us introduce you to Prague hen party classics. Ladies only!')}
             </p>
           </div>
           <div className="girls-container">
