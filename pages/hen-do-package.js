@@ -11,14 +11,14 @@ const iconUrl1 = '/images/champaigne-glass (2).svg';
 const iconUrl2 = '/images/girls-group.svg';
 const iconUrl3 = '/images/ajustable1.svg';
 const cardTitle1 = 'Perfect girls night';
-const cardTitle2 = 'Everyone gets satisfied';
-const cardTitle3 = 'Fully adjustable';
-const packageName = 'PRAGOUT BACHELORETTE ESSSENTIALS';
+const cardTitle2 = 'Total satisfaction';
+const cardTitle3 = 'Do it your way';
+const packageName = 'PRAGUE BACHELORETTE ESSSENTIALS';
 const packagePrice = '€74';
 const activitiesLeftPartStag = [{text: '- Return airport transfer', href: '/product/airport-transfer'}, {text: '- Champagne limo drive ', href: '/prague-hummer-limo'}];
 const activitiesRightPartStag = [{text: '- Instagram tour ', href: '/product/instagram-tour'}, {text: '- VIP club entrance', href: '/product/vip-entrance'}];
 const packageIncludedText =
-  'A fairytale city in the very heart of Europe. It shines during the day and burns bright by night!';
+  'Last fling before the ring. In the very heart of Europe, shine during the day and burns bright by night!';
 const iconText = ' Nice places, loads of memories, and unique experience!';
 const iconText2 = ' All come with a perfect schedule and execution tailored to your needs.';
 const iconText3 = ' We got you covered from the arrival till departure, 24hrs straight.';

@@ -16,7 +16,7 @@ export function GirlsBanner() {
         <div className="stag-package-girls">
           <div className="text-package-girls-container">
             <p className="top-text-ladies">{t('Ladies , this one is for you!')}</p>
-            <h1 className="text-header">{t('FABULOUS GIRLS WEEKEND')}</h1>
+            <h1 className="text-header">{t('FABULOUS HEN DO PARTY')}</h1>
             <p className="paragraph-text">
               {t('Girls just wanna have fun! And we know it. Let us introduce you to Prague hen party classics. Ladies only!')}
             </p>

@@ -186,6 +186,11 @@ class Header extends Component {
                 <p className="paragraph_nav2">{t('Corporate events')}</p>
               </a>
             </Link>
+            <Link href="/stag-journal">
+              <a href="/stag-journal" className="navbar_link2">
+                <p className="paragraph_nav2">{t('Stag Journal')}</p>
+              </a>
+            </Link>
           </div>
           <LanguageButton />
           {/*<div className="quick-inquiry-container">*/}

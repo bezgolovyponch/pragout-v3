@@ -11,15 +11,15 @@ const iconUrl1 = '/images/beer-logo1.svg';
 const iconUrl2 = '/images/friends.svg';
 const iconUrl3 = '/images/ajustable1.svg';
 const cardTitle1 = 'Easy peasy';
-const cardTitle2 = 'Everyone gets satisfied';
-const cardTitle3 = 'Fully adjustable';
+const cardTitle2 = 'Total satisfaction';
+const cardTitle3 = 'Do it your way';
 const packageName = 'BACHELOR PARTY ESSENTIALS';
 const packagePrice = '€94';
 const activitiesLeftPartStag = [{text: '- Return airport transfer', href: '/product/airport-transfer'}, {text: '- Old brewery tour', href: '/product/brewery-tour'}, {text: '- Best viewing beer tour', href: '/product/prague-sight-beer'}];
 //const activitiesRightPartStag = ['- Steak and strip', '- Private pub crawl', '- VIP club entrance'];
 const activitiesRightPartStag = [{text: '- Steak and strip', href: '/product/steak-strip'}, {text: '- Private pub crawl', href: '/product/prague-private-pub-crawl'}, {text: '- VIP club entrance', href: '/product/vip-entrance'}];
 const packageIncludedText =
-  'Boys, here we are! Thats the heart of Europe,the land of vice and beer. Welcome to Prague!';
+  'Boys, here we are! Thats the heart of Europe, the land of vice and beer. Welcome to Prague!';
 const iconText = 'Nice places, loads of beer and food, and best parties!';
 const iconText2 = ' All come with a perfect schedule and execution tailored to your needs.';
 const iconText3 = 'We got you covered from the arrival till departure, 24hrs straight.';
