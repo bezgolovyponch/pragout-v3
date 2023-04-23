@@ -33,7 +33,7 @@ $color: rgba(0, 0, 0, 0);
     display: block;
     overflow: hidden;
     width: auto;
-    height: 205vw;
+    // height: 205vw;
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
@@ -73,10 +73,10 @@ $color: rgba(0, 0, 0, 0);
   right: 0%;
   bottom: auto;
   width: 25vw;
-  margin-top: 137vw;
+  margin-top: 63vww;
   @include iphone6{
     width: 75vw;
-    margin-top: 445vw;
+    margin-top: 161vw;
     z-index: -9999;
   }
 }
@@ -323,7 +323,9 @@ $color: rgba(0, 0, 0, 0);
       display: none;
       @include iphone6{
         display: flex;
+        align-items: center;
         overflow: hidden;
+        flex-direction: column;
         width: 74vw;
         margin-top: 30vw;
         /*background:#0b1d2a*/;
@@ -350,7 +352,7 @@ $color: rgba(0, 0, 0, 0);
         stroke-width: 10px;
         animation: arrow 2s infinite;
         -webkit-animation: arrow 2s infinite;
-        transform: rotate(-7deg);
+        
       }
 
       @keyframes arrow
@@ -385,7 +387,7 @@ $color: rgba(0, 0, 0, 0);
       }
      .scroll-text{
        margin-top: -3vw;
-       transform: rotate(-7deg);
+       
      }
     }
 
@@ -467,7 +469,7 @@ $color: rgba(0, 0, 0, 0);
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     flex-direction: row;
-    display: flex;
+    display: none;
     width: auto;
     min-width: auto;
     margin-right: 0vw;
@@ -665,9 +667,12 @@ $color: rgba(0, 0, 0, 0);
     .product-dynamic-list {
       margin-top: 0;
       display: flex;
+  
 
       .product-list-item {
         display: flex;
+        flex-wrap: wrap;
+      width: 100%;
         @include iphone6{
           -webkit-box-orient: vertical;
           -webkit-box-direction: normal;
@@ -688,24 +693,14 @@ $color: rgba(0, 0, 0, 0);
           margin-right: 0.2vw;
           margin-left: 0.2vw;
           padding-right: 0px;
-          padding-left: 0px;
-          -webkit-box-pack: end;
-          -webkit-justify-content: flex-end;
-          -ms-flex-pack: end;
-          justify-content: flex-end;
-          -webkit-box-align: end;
-          -webkit-align-items: flex-end;
-          -ms-flex-align: end;
-          align-items: flex-end;
-          -webkit-align-self: auto;
-          -ms-flex-item-align: auto;
+          padding-left: 0px; 
           align-self: auto;
           border-radius: 1vw;
           -webkit-transition: opacity 200ms ease;
           //transition: opacity 200ms ease;
           font-size: 14vw;
           line-height: 1;
-          transition: 0.4s ease;
+          transition: all .2s ease-in-out;
           @include iphone6{
             width: 86vw;
             height: 35vw;
@@ -723,7 +718,7 @@ $color: rgba(0, 0, 0, 0);
           }
 
           &:hover {
-            transform: translate3d(0px, 3vh, 0px);
+            transform: scale(1.5);
             cursor: pointer;
           }
 

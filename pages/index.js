@@ -24,8 +24,8 @@ const Home = () => (
     <HeroSection />
     <Facebook/>
     <ProductsBanner />
-    <GirlsBanner />
-    <CorporateBanner />
+    {/* <GirlsBanner />
+    <CorporateBanner /> */}
     <ContactForm withAccommodation={false} onMainPage={false} />
     <Footer />
   </Root>

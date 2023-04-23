@@ -279,7 +279,7 @@
       @include iphone6 {
         display: -webkit-box;
         margin-top: 2vw;
-        margin-left: 3vw;
+        margin-left: 2vw;
         width: auto;
         margin-bottom: 2vw;
         display: -webkit-flex;
@@ -438,7 +438,7 @@
 
   }
   &:hover {
-    transform: translate3d(0px, 3vh, 0px);
+    transform: scale(1.1);
     cursor: pointer;
   }
 }

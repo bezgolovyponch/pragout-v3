@@ -113,4 +113,4 @@ Activities.defaultProps = {
   products: [],
 };
 
-export default  withTranslation()(connect((state) => state)(Activities));
+export default withTranslation()(connect((state) => state)(Activities));

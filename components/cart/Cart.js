@@ -6,9 +6,9 @@ import CartItem from '../cart/CartItem';
 import {connect} from 'react-redux';
 import {withTranslation} from 'react-i18next';
 // Cart redux action creators
-import {retrieveCart as dispatchRetreiveCart} from '../../store/actions/cartActions';
+// import {retrieveCart as dispatchRetreiveCart} from '../../store/actions/cartActions';
 
-const duration = 100;
+const duration = 1;
 
 const defaultStyle = {
   transition: `transform ${duration}ms ease-in-out`,
@@ -42,7 +42,7 @@ class Cart extends Component {
    * Retrieve cart and contents client-side to dispatch to store
    */
   componentDidMount() {
-    this.props.dispatchRetreiveCart();
+    // this.props.dispatchRetreiveCart();
   }
 
   componentWillUnmount() {
@@ -149,5 +149,4 @@ class Cart extends Component {
 }
 
 export default withTranslation()(connect((state) => state, {
-  dispatchRetreiveCart,
 })(Cart));
